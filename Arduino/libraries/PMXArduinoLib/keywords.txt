@@ -1,0 +1,546 @@
+#######################################
+# Syntax Coloring Map PmxBaseClass
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+PMX KEYWORD1
+RamAddrList KEYWORD1
+ControlMode KEYWORD1
+TrajectoryType KEYWORD1
+EditBaudrate KEYWORD1
+EditParity  KEYWORD1
+SendCmd  KEYWORD1
+BuffPter  KEYWORD1
+ReceiveDataOption  KEYWORD1
+ComError  KEYWORD1
+MinimumLength  KEYWORD1
+PmxStatusErrorList  KEYWORD1
+TorqueSwitchType  KEYWORD1
+CloneReverseType  KEYWORD1
+PmxBase  KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+MemREADToByte   KEYWORD2
+MemREADToInt16  KEYWORD2
+MemREADToUint16  KEYWORD2
+MemREADToInt32  KEYWORD2
+MemREADToUint32  KEYWORD2
+MemWRITEToByte  KEYWORD2
+MemWRITEToInt16  KEYWORD2
+MemWRITEToUint16  KEYWORD2
+MemWRITEToInt32  KEYWORD2
+MemWRITEToUint32  KEYWORD2
+MemREAD  KEYWORD2
+MemWRITE  KEYWORD2
+LOAD  KEYWORD2
+SAVE  KEYWORD2
+MotorREAD  KEYWORD2
+MotorWRITE  KEYWORD2
+SystemREAD  KEYWORD2
+SystemWRITE  KEYWORD2
+ReBoot  KEYWORD2
+FactoryReset  KEYWORD2
+SystemINIT  KEYWORD2
+MotorWRITESingle  KEYWORD2
+MotorWRITEDouble  KEYWORD2
+MotorWRITETriple  KEYWORD2
+
+getSerialNumber  KEYWORD2
+getModelNum  KEYWORD2
+getVersion  KEYWORD2
+getResponseTime  KEYWORD2
+
+setId  KEYWORD2
+setBaudrate  KEYWORD2
+setParity  KEYWORD2
+setResponseTime  KEYWORD2
+
+getPositionKpGain  KEYWORD2
+getPositionKiGain  KEYWORD2
+getPositionKdGain  KEYWORD2
+getPositionGain  KEYWORD2
+getPositionStretchGain  KEYWORD2
+getSpeedKpGain  KEYWORD2
+getSpeedKiGain  KEYWORD2
+getSpeedKdGain  KEYWORD2
+getSpeedGain  KEYWORD2
+getCurrentKpGain  KEYWORD2
+getCurrentKiGain  KEYWORD2
+getCurrentKdGain  KEYWORD2
+getCurrentGain  KEYWORD2
+getTorqueKpGain  KEYWORD2
+getTorqueKiGain  KEYWORD2
+getTorqueKdGain  KEYWORD2
+getTorqueGain  KEYWORD2
+getCenterOffset  KEYWORD2
+getCloneReverse  KEYWORD2
+getMinVoltageLimit  KEYWORD2
+getMinVoltageLimitPower  KEYWORD2
+getMaxVoltageLimit  KEYWORD2
+getMaxVoltageLimitPower  KEYWORD2
+getCurrentLimit  KEYWORD2
+getCurrentLimitPower  KEYWORD2
+getMotorTempLimit  KEYWORD2
+getMotorTempLimitPower  KEYWORD2
+getCpuTempLimit  KEYWORD2
+getCpuTempLimitPower  KEYWORD2
+getCwPositionLimit  KEYWORD2
+getCwPositionLimitPower  KEYWORD2
+getCcwPositionLimit  KEYWORD2
+getCcwPositionLimitPower  KEYWORD2
+getMaxGoalSpeed  KEYWORD2
+getMaxGoalCurrent  KEYWORD2
+getMaxGoalTorque  KEYWORD2
+getTotalPowerRate  KEYWORD2
+getLockDetectTime  KEYWORD2
+getLockThresholdPower  KEYWORD2
+getLockDetectOutputPower  KEYWORD2
+
+getPositionPresetNum  KEYWORD2
+getSpeedPresetNum  KEYWORD2
+getCurrentPresetNum  KEYWORD2
+getTorquePresetNum  KEYWORD2
+getAllPresetNum  KEYWORD2
+
+getPositionKpGain2  KEYWORD2
+getPositionKiGain2  KEYWORD2
+getPositionKdGain2  KEYWORD2
+getPositionGain2  KEYWORD2
+getPositionStretchGain2  KEYWORD2
+getSpeedKpGain2  KEYWORD2
+getSpeedKiGain2  KEYWORD2
+getSpeedKdGain2  KEYWORD2
+getSpeedGain2  KEYWORD2
+getCurrentKpGain2  KEYWORD2
+getCurrentKiGain2  KEYWORD2
+getCurrentKdGain2  KEYWORD2
+getCurrentGain2  KEYWORD2
+getTorqueKpGain2  KEYWORD2
+getTorqueKiGain2  KEYWORD2
+getTorqueKdGain2  KEYWORD2
+getTorqueGain2  KEYWORD2
+
+getPositionKpGain3  KEYWORD2
+getPositionKiGain3  KEYWORD2
+getPositionKdGain3  KEYWORD2
+getPositionGain3  KEYWORD2
+getPositionStretchGain3  KEYWORD2
+getSpeedKpGain3  KEYWORD2
+getSpeedKiGain3  KEYWORD2
+getSpeedKdGain3  KEYWORD2
+getSpeedGain3  KEYWORD2
+getCurrentKpGain3  KEYWORD2
+getCurrentKiGain3  KEYWORD2
+getCurrentKdGain3  KEYWORD2
+getCurrentGain3  KEYWORD2
+getTorqueKpGain3  KEYWORD2
+getTorqueKiGain3  KEYWORD2
+getTorqueKdGain3  KEYWORD2
+getTorqueGain3  KEYWORD2
+
+
+getPosition  KEYWORD2
+getSpeed  KEYWORD2
+getCurrent  KEYWORD2
+getTorque  KEYWORD2
+getPwm  KEYWORD2
+getMotorTemp  KEYWORD2
+getCPUTemp  KEYWORD2
+getInputVoltage  KEYWORD2
+getTrajectoryTime  KEYWORD2
+getEncoder  KEYWORD2
+getStatus  KEYWORD2
+getSystemStatus  KEYWORD2
+getMotorStatus  KEYWORD2
+getRamAccessStatus  KEYWORD2
+getFullStatus  KEYWORD2
+resetFullStatus  KEYWORD2
+getTorqueSwitch  KEYWORD2
+getControlMode  KEYWORD2
+getMotorReceive  KEYWORD2
+getTrajectory  KEYWORD2
+getLedMode  KEYWORD2
+
+getCenterOffsetRange  KEYWORD2
+getMinVoltageLimitRange  KEYWORD2
+getMaxVoltageLimitRange  KEYWORD2
+getCurrentLimitRange  KEYWORD2
+getMotorTempLimitRange  KEYWORD2
+getCpuTempLimitRange  KEYWORD2
+getMaxGoalSpeedRange  KEYWORD2
+getMaxGoalCurrentRange  KEYWORD2
+getMaxGoalTorqueRange  KEYWORD2
+getCwPositionLimitRange  KEYWORD2
+getCcwPositionLimitRange  KEYWORD2
+
+setPositionKpGain  KEYWORD2
+setPositionKiGain  KEYWORD2
+setPositionKdGain  KEYWORD2
+setPositionGain  KEYWORD2
+setPositionStretchGain  KEYWORD2
+setSpeedKpGain  KEYWORD2
+setSpeedKiGain  KEYWORD2
+setSpeedKdGain  KEYWORD2
+setSpeedGain  KEYWORD2
+setCurrentKpGain  KEYWORD2
+setCurrentKiGain  KEYWORD2
+setCurrentKdGain  KEYWORD2
+setCurrentGain  KEYWORD2
+setTorqueKpGain  KEYWORD2
+setTorqueKiGain  KEYWORD2
+setTorqueKdGain  KEYWORD2
+setTorqueGain  KEYWORD2
+setCenterOffset  KEYWORD2
+setCloneReverse  KEYWORD2
+setMinVoltageLimit  KEYWORD2
+setMaxVoltageLimit  KEYWORD2
+setCurrentLimit  KEYWORD2
+setMotorTempLimit  KEYWORD2
+setCpuTempLimit  KEYWORD2
+setPositionLimit  KEYWORD2
+setMaxGoalSpeed  KEYWORD2
+setMaxGoalCurrent  KEYWORD2
+setMaxGoalTorque  KEYWORD2
+setTotalPowerRate  KEYWORD2
+setLockDetect  KEYWORD2
+
+
+setPositionPresetNum  KEYWORD2
+setSpeedPresetNum  KEYWORD2
+setCurrentPresetNum  KEYWORD2
+setTorquePresetNum  KEYWORD2
+setAllPresetNum  KEYWORD2
+
+setPositionKpGain2  KEYWORD2
+setPositionKiGain2  KEYWORD2
+setPositionKdGain2  KEYWORD2
+setPositionGain2  KEYWORD2
+setPositionStretchGain2  KEYWORD2
+setSpeedKpGain2  KEYWORD2
+setSpeedKiGain2  KEYWORD2
+setSpeedKdGain2  KEYWORD2
+setSpeedGain2  KEYWORD2
+setCurrentKpGain2  KEYWORD2
+setCurrentKiGain2  KEYWORD2
+setCurrentKdGain2  KEYWORD2
+setCurrentGain2  KEYWORD2
+setTorqueKpGain2  KEYWORD2
+setTorqueKiGain2  KEYWORD2
+setTorqueKdGain2  KEYWORD2
+setTorqueGain2  KEYWORD2
+
+setPositionKpGain3  KEYWORD2
+setPositionKiGain3  KEYWORD2
+setPositionKdGain3  KEYWORD2
+setPositionGain3  KEYWORD2
+setPositionStretchGain3  KEYWORD2
+setSpeedKpGain3  KEYWORD2
+setSpeedKiGain3  KEYWORD2
+setSpeedKdGain3  KEYWORD2
+setSpeedGain3  KEYWORD2
+setCurrentKpGain3  KEYWORD2
+setCurrentKiGain3  KEYWORD2
+setCurrentKdGain3  KEYWORD2
+setCurrentGain3  KEYWORD2
+setTorqueKpGain3  KEYWORD2
+setTorqueKiGain3  KEYWORD2
+setTorqueKdGain3  KEYWORD2
+setTorqueGain3  KEYWORD2
+
+
+setTorqueSwitch   KEYWORD2
+setControlMode  KEYWORD2
+setMotorReceive  KEYWORD2
+setTrajectory  KEYWORD2
+setLedMode  KEYWORD2
+
+setMotorTorqueOn  KEYWORD2
+setMotorFree  KEYWORD2
+setMotorBrake  KEYWORD2
+setMotorHold  KEYWORD2
+setPosition  KEYWORD2
+
+
+#######################################
+# Constants (LITERAL1) (定数)
+#######################################
+
+ErrorByteData   LITERAL1
+ErrorUint16Data LITERAL1
+ErrorUint32Data LITERAL1
+
+PositionKp LITERAL1
+PositionKi LITERAL1
+PositionKd LITERAL1
+PositionSt LITERAL1
+SpeedKp LITERAL1
+SpeedKi LITERAL1
+SpeedKd LITERAL1
+CurrentKp LITERAL1
+CurrentKi LITERAL1
+CurrentKd LITERAL1
+TorqueKp LITERAL1
+TorqueKi LITERAL1
+TorqueKd LITERAL1
+PositionDeadBand LITERAL1
+SpeedDeadBand LITERAL1
+CurrentDeadBand LITERAL1
+TorqueDeadBand LITERAL1
+CenterOffset LITERAL1
+CloneReverse LITERAL1
+MinVoltageLimit LITERAL1
+MinVoltageLimitPower LITERAL1
+MaxVoltageLimit LITERAL1
+MaxVoltageLimitPower LITERAL1
+CurrentLimit LITERAL1
+CurrentLimitPower LITERAL1
+MotorTempLimit LITERAL1
+MotorTempLimitPower LITERAL1
+CpuTempLimit LITERAL1
+CpuTempLimitPower LITERAL1
+CwPositionLimit LITERAL1
+CwPositionLimitPower LITERAL1
+CcwPositionLimit LITERAL1
+CcwPositionLimitPower LITERAL1
+MaxGoalSpeed LITERAL1
+MaxGoalCurrent LITERAL1
+MaxGoalTorque LITERAL1
+TotalPowerRate LITERAL1
+LockDetectTime LITERAL1
+LockThresholdPower LITERAL1
+LockDetectOutputPower LITERAL1
+
+PresetPosAddr LITERAL1
+PresetSpdAddr LITERAL1
+PresetCurAddr LITERAL1
+PresetTrqAddr LITERAL1
+
+PositionKp2 LITERAL1
+PositionKi2 LITERAL1
+PositionKd2 LITERAL1
+PositionSt2 LITERAL1
+SpeedKp2 LITERAL1
+SpeedKi2 LITERAL1
+SpeedKd2 LITERAL1
+CurrentKp2 LITERAL1
+CurrentKi2 LITERAL1
+CurrentKd2 LITERAL1
+TorqueKp2 LITERAL1
+TorqueKi2 LITERAL1
+TorqueKd2 LITERAL1
+
+PositionKp3 LITERAL1
+PositionKi3 LITERAL1
+PositionKd3 LITERAL1
+PositionSt3 LITERAL1
+SpeedKp3 LITERAL1
+SpeedKi3 LITERAL1
+SpeedKd3 LITERAL1
+CurrentKp3 LITERAL1
+CurrentKi3 LITERAL1
+CurrentKd3 LITERAL1
+TorqueKp3 LITERAL1
+TorqueKi3 LITERAL1
+TorqueKd3 LITERAL1
+
+
+NowPosition LITERAL1
+NowSpeed LITERAL1
+NowCurrent LITERAL1
+NowTorque LITERAL1
+NowPwm LITERAL1
+MotorTemp LITERAL1
+CPUTemp LITERAL1
+InputVoltage LITERAL1
+TrajectoryTime LITERAL1
+EncoderValue LITERAL1
+EncoderTotalCount LITERAL1
+ErrorStatus LITERAL1
+ErrorSystem LITERAL1
+ErrorMotor LITERAL1
+ErrorRamAccess LITERAL1
+TorqueSwitch LITERAL1
+ControlMode LITERAL1
+MotorReceiveData LITERAL1
+Trajectory LITERAL1
+GoalPosition LITERAL1
+GoalSpeed LITERAL1
+GoalCurrent LITERAL1
+GoalTorque LITERAL1
+GoalPwm LITERAL1
+GoalTime LITERAL1
+ShortBrakeCurrent LITERAL1
+ShortBrakeTorque LITERAL1
+ShortBrakePWM LITERAL1
+
+CenterOffsetMinRange LITERAL1
+CenterOffsetMaxRange LITERAL1
+MinVoltageMinRange LITERAL1
+MinVoltageMaxRange LITERAL1
+MaxVoltageMinRange LITERAL1
+MaxVoltageMaxRange LITERAL1
+FailSafeVoltageMinRange LITERAL1
+FailSafeVoltageMaxRange LITERAL1
+CurrentMinRange LITERAL1
+CurrentMaxRange LITERAL1
+MotorTempMinRange LITERAL1
+MotorTempMaxRange LITERAL1
+CpuTempMinRange LITERAL1
+CpuTempMaxRange LITERAL1
+CwPositionMinRange LITERAL1
+CwPositionMaxRange LITERAL1
+CcwPositionMaxRange LITERAL1
+MaxGoalSpeedMinRange LITERAL1
+MaxGoalSpeedMaxRange LITERAL1
+MaxGoalCurrentMinRange LITERAL1
+MaxGoalCurrentMaxRange LITERAL1
+MaxGoalTorqueMinRange LITERAL1
+MaxGoalTorqueMaxRange LITERAL1
+GoalCommandValue1 LITERAL1
+GoalCommandValue2 LITERAL1
+GoalCommandValue3 LITERAL1
+
+Position LITERAL1
+Speed LITERAL1
+PositionSpeed LITERAL1
+Current LITERAL1
+PositionCurrent LITERAL1
+SpeedCurrent LITERAL1
+PositionSpeedCurrent LITERAL1 
+Torque LITERAL1
+PositionTorque LITERAL1
+SpeedTorque LITERAL1
+PositionSpeedTorque LITERAL1
+PWM LITERAL1
+Time LITERAL1
+PositionTime LITERAL1
+PositionCurrentTime LITERAL1
+PositionTorqueTime LITERAL1
+
+Even LITERAL1
+FifthPoly LITERAL1
+ParityNone LITERAL1
+Odd LITERAL1
+Even LITERAL1
+
+NoReturn LITERAL1
+Voltage LITERAL1
+Full LITERAL1
+
+OK LITERAL1
+TimeOut LITERAL1
+CrcError LITERAL1
+FormatError LITERAL1
+SendError LITERAL1
+ReceiveError LITERAL1
+MotorREADConvertError LITERAL1
+NG LITERAL1
+ErrorMask LITERAL1
+
+SystemError LITERAL1
+MotorError LITERAL1
+CommunicationError LITERAL1
+CommandError LITERAL1
+RamAccessError LITERAL1
+ModeError LITERAL1
+DataError LITERAL1
+RunError LITERAL1
+
+Control LITERAL1
+TorqueOn LITERAL1
+Free LITERAL1
+Brake LITERAL1
+Hold LITERAL1
+Mask LITERAL1
+
+#######################################
+# Syntax Coloring Map PmxCRC 
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+PmxCrc16 KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+getCrc16    KEYWORD2
+setCrc16    KEYWORD2
+checkCrc16  KEYWORD2
+
+#######################################
+# Constants (LITERAL1) (定数)
+#######################################
+
+
+
+
+#######################################
+# Syntax Coloring Map DataConvert
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+DataConv KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+bytesToInt16    KEYWORD2
+bytesToUint16   KEYWORD2
+bytesToInt32    KEYWORD2
+bytesToUint32   KEYWORD2
+int16ToBytes    KEYWORD2
+uint16ToBytes   KEYWORD2
+int32ToBytes    KEYWORD2
+uint32ToBytes   KEYWORD2
+
+#######################################
+# Structure (KEYWORD3)
+#######################################
+
+Uint16Byte  KEYWORD3
+Int16Byte   KEYWORD3
+Uint32Byte  KEYWORD3
+Int32Byte   KEYWORD3
+
+#######################################
+# Constants (LITERAL1) (定数)
+#######################################
+
+
+
+#######################################
+# Syntax Coloring Map PmxHardSerialClass
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+PmxHardSerial KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+begin KEYWORD2
+isSynchronize KEYWORD2
+synchronize KEYWORD2
+synchronizeVariableRead KEYWORD2
+synchronizeNoRead KEYWORD2
+setLogSerial KEYWORD2
+
+#######################################
+# Constants (LITERAL1) (定数)
+#######################################

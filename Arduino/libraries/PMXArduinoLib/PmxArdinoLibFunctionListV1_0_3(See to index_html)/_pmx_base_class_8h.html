@@ -1,0 +1,1007 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PmxArdinoLib: PmxBaseClass.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="800-KONDO-Arduino.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">PmxArdinoLib<span id="projectnumber">&#160;1.0.3</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_pmx_base_class_8h.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle"><div class="title">PmxBaseClass.h ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="namespace_p_m_x.html" title="PMXの固有値の定義">PMX</a> library header file  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &quot;Arduino.h&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+PmxBaseClass.h の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_pmx_base_class_8h__incl.png" border="0" usemap="#a_pmx_base_class_8h" alt=""/></div>
+<map name="a_pmx_base_class_8h" id="a_pmx_base_class_8h">
+<area shape="rect" title="PMX library header file" alt="" coords="5,5,128,32"/>
+<area shape="rect" title=" " alt="" coords="28,80,105,107"/>
+<area shape="poly" title=" " alt="" coords="69,33,69,64,64,64,64,33"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_pmx_base_class_8h__dep__incl.png" border="0" usemap="#a_pmx_base_class_8hdep" alt=""/></div>
+<map name="a_pmx_base_class_8hdep" id="a_pmx_base_class_8hdep">
+<area shape="rect" title="PMX library header file" alt="" coords="118,5,240,32"/>
+<area shape="rect" href="_pmx_base_class_8cpp.html" title="PMX library source file" alt="" coords="5,80,142,107"/>
+<area shape="poly" title=" " alt="" coords="150,43,93,82,90,77,147,39"/>
+<area shape="rect" href="_pmx_hard_serial_class_8cpp.html" title="PMX arduino (HardwareSerial) library source file" alt="" coords="152,155,318,181"/>
+<area shape="poly" title=" " alt="" coords="188,46,207,106,230,153,225,155,202,108,183,48"/>
+<area shape="rect" href="_pmx_hard_serial_class_8h.html" title="PMX arduino (HardwareSerial) library header file" alt="" coords="216,80,368,107"/>
+<area shape="poly" title=" " alt="" coords="213,38,274,77,271,82,210,43"/>
+<area shape="poly" title=" " alt="" coords="275,121,247,156,243,153,271,117"/>
+</map>
+</div>
+</div>
+<p><a href="_pmx_base_class_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pmx_base.html">PmxBase</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">PMXで使用する関数や定義をひとまとまりにしたものです  <a href="class_pmx_base.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x.html">PMX</a></td></tr>
+<tr class="memdesc:namespace_p_m_x"><td class="mdescLeft">&#160;</td><td class="mdescRight">PMXの固有値の定義 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html">PMX::RamAddrList</a></td></tr>
+<tr class="memdesc:namespace_p_m_x_1_1_ram_addr_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAMのアドレス一覧 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_control_mode.html">PMX::ControlMode</a></td></tr>
+<tr class="memdesc:namespace_p_m_x_1_1_control_mode"><td class="mdescLeft">&#160;</td><td class="mdescRight">コントロールモード一覧 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_trajectory_type.html">PMX::TrajectoryType</a></td></tr>
+<tr class="memdesc:namespace_p_m_x_1_1_trajectory_type"><td class="mdescLeft">&#160;</td><td class="mdescRight">PMXの時間制御で使用する加減速具合を設定します <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_edit_baudrate.html">PMX::EditBaudrate</a></td></tr>
+<tr class="memdesc:namespace_p_m_x_1_1_edit_baudrate"><td class="mdescLeft">&#160;</td><td class="mdescRight">通信速度の定義 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_edit_parity.html">PMX::EditParity</a></td></tr>
+<tr class="memdesc:namespace_p_m_x_1_1_edit_parity"><td class="mdescLeft">&#160;</td><td class="mdescRight">PMXで設定するパリティの値を定義します <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_send_cmd.html">PMX::SendCmd</a></td></tr>
+<tr class="memdesc:namespace_p_m_x_1_1_send_cmd"><td class="mdescLeft">&#160;</td><td class="mdescRight">送信コマンド一覧 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_buff_pter.html">PMX::BuffPter</a></td></tr>
+<tr class="memdesc:namespace_p_m_x_1_1_buff_pter"><td class="mdescLeft">&#160;</td><td class="mdescRight">送受信データ位置 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_receive_data_option.html">PMX::ReceiveDataOption</a></td></tr>
+<tr class="memdesc:namespace_p_m_x_1_1_receive_data_option"><td class="mdescLeft">&#160;</td><td class="mdescRight">MotorREAD等で使用する応答モードのリスト <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_com_error.html">PMX::ComError</a></td></tr>
+<tr class="memdesc:namespace_p_m_x_1_1_com_error"><td class="mdescLeft">&#160;</td><td class="mdescRight">データが返ってこないなどサーボモータ外に起因するエラー一覧の定義 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_minimum_length.html">PMX::MinimumLength</a></td></tr>
+<tr class="memdesc:namespace_p_m_x_1_1_minimum_length"><td class="mdescLeft">&#160;</td><td class="mdescRight">コマンドの最低サイズ値の定義 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_pmx_status_error_list.html">PMX::PmxStatusErrorList</a></td></tr>
+<tr class="memdesc:namespace_p_m_x_1_1_pmx_status_error_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">PMXのステータスの返信/エラー状態の値 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_torque_switch_type.html">PMX::TorqueSwitchType</a></td></tr>
+<tr class="memdesc:namespace_p_m_x_1_1_torque_switch_type"><td class="mdescLeft">&#160;</td><td class="mdescRight">TorqueOnの値の定義 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_clone_reverse_type.html">PMX::CloneReverseType</a></td></tr>
+<tr class="memdesc:namespace_p_m_x_1_1_clone_reverse_type"><td class="mdescLeft">&#160;</td><td class="mdescRight">CloneReverseの値の定義 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_led_mode_type.html">PMX::LedModeType</a></td></tr>
+<tr class="memdesc:namespace_p_m_x_1_1_led_mode_type"><td class="mdescLeft">&#160;</td><td class="mdescRight">LED点灯モードの値の定義 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a6520b83bd5f8614ced4e0cd3dadfe781" id="r_a6520b83bd5f8614ced4e0cd3dadfe781"><td class="memItemLeft" align="right" valign="top"><a id="a6520b83bd5f8614ced4e0cd3dadfe781" name="a6520b83bd5f8614ced4e0cd3dadfe781"></a>
+static constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ErrorByteData</b> = 0xFF</td></tr>
+<tr class="memdesc:a6520b83bd5f8614ced4e0cd3dadfe781"><td class="mdescLeft">&#160;</td><td class="mdescRight">byte型のエラー値の定義 <br /></td></tr>
+<tr class="separator:a6520b83bd5f8614ced4e0cd3dadfe781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5331bc97f8d3d9a7a2e11bc070f6e4b" id="r_aa5331bc97f8d3d9a7a2e11bc070f6e4b"><td class="memItemLeft" align="right" valign="top"><a id="aa5331bc97f8d3d9a7a2e11bc070f6e4b" name="aa5331bc97f8d3d9a7a2e11bc070f6e4b"></a>
+static constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ErrorUint16Data</b> = 0x7FFF</td></tr>
+<tr class="memdesc:aa5331bc97f8d3d9a7a2e11bc070f6e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">byte型のエラー値の定義 <br /></td></tr>
+<tr class="separator:aa5331bc97f8d3d9a7a2e11bc070f6e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fa3b71980ec92ff450b1b704773132e" id="r_a5fa3b71980ec92ff450b1b704773132e"><td class="memItemLeft" align="right" valign="top"><a id="a5fa3b71980ec92ff450b1b704773132e" name="a5fa3b71980ec92ff450b1b704773132e"></a>
+static constexpr unsigned long&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ErrorUint32Data</b> = 0x7FFFFFFF</td></tr>
+<tr class="memdesc:a5fa3b71980ec92ff450b1b704773132e"><td class="mdescLeft">&#160;</td><td class="mdescRight">byte型のエラー値の定義 <br /></td></tr>
+<tr class="separator:a5fa3b71980ec92ff450b1b704773132e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22ab26739e368f0480cde37158cd2d72" id="r_a22ab26739e368f0480cde37158cd2d72"><td class="memItemLeft" align="right" valign="top"><a id="a22ab26739e368f0480cde37158cd2d72" name="a22ab26739e368f0480cde37158cd2d72"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::PositionKp</b> = 0</td></tr>
+<tr class="memdesc:a22ab26739e368f0480cde37158cd2d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置制御のPゲイン <br /></td></tr>
+<tr class="separator:a22ab26739e368f0480cde37158cd2d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b30369265f1d38473b55583552b5e11" id="r_a6b30369265f1d38473b55583552b5e11"><td class="memItemLeft" align="right" valign="top"><a id="a6b30369265f1d38473b55583552b5e11" name="a6b30369265f1d38473b55583552b5e11"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::PositionKi</b> = 4</td></tr>
+<tr class="memdesc:a6b30369265f1d38473b55583552b5e11"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置制御のIゲイン <br /></td></tr>
+<tr class="separator:a6b30369265f1d38473b55583552b5e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4345e36f7e7186af7dac42f9f7f5bdc4" id="r_a4345e36f7e7186af7dac42f9f7f5bdc4"><td class="memItemLeft" align="right" valign="top"><a id="a4345e36f7e7186af7dac42f9f7f5bdc4" name="a4345e36f7e7186af7dac42f9f7f5bdc4"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::PositionKd</b> = 8</td></tr>
+<tr class="memdesc:a4345e36f7e7186af7dac42f9f7f5bdc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置制御のDゲイン <br /></td></tr>
+<tr class="separator:a4345e36f7e7186af7dac42f9f7f5bdc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b3653b010055871545cb048530cbae5" id="r_a3b3653b010055871545cb048530cbae5"><td class="memItemLeft" align="right" valign="top"><a id="a3b3653b010055871545cb048530cbae5" name="a3b3653b010055871545cb048530cbae5"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::PositionSt</b> = 12</td></tr>
+<tr class="memdesc:a3b3653b010055871545cb048530cbae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置制御のストレッチ <br /></td></tr>
+<tr class="separator:a3b3653b010055871545cb048530cbae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ad7dceeaaf5cd8193503942fe705269" id="r_a0ad7dceeaaf5cd8193503942fe705269"><td class="memItemLeft" align="right" valign="top"><a id="a0ad7dceeaaf5cd8193503942fe705269" name="a0ad7dceeaaf5cd8193503942fe705269"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::SpeedKp</b> = 16</td></tr>
+<tr class="memdesc:a0ad7dceeaaf5cd8193503942fe705269"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度制御のPゲイン <br /></td></tr>
+<tr class="separator:a0ad7dceeaaf5cd8193503942fe705269"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03a4da4809ebab31d4b4d84f4e88124a" id="r_a03a4da4809ebab31d4b4d84f4e88124a"><td class="memItemLeft" align="right" valign="top"><a id="a03a4da4809ebab31d4b4d84f4e88124a" name="a03a4da4809ebab31d4b4d84f4e88124a"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::SpeedKi</b> = 20</td></tr>
+<tr class="memdesc:a03a4da4809ebab31d4b4d84f4e88124a"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度制御のIゲイン <br /></td></tr>
+<tr class="separator:a03a4da4809ebab31d4b4d84f4e88124a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb175cc444d40101cd9abedf89735675" id="r_afb175cc444d40101cd9abedf89735675"><td class="memItemLeft" align="right" valign="top"><a id="afb175cc444d40101cd9abedf89735675" name="afb175cc444d40101cd9abedf89735675"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::SpeedKd</b> = 24</td></tr>
+<tr class="memdesc:afb175cc444d40101cd9abedf89735675"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度制御のDゲイン <br /></td></tr>
+<tr class="separator:afb175cc444d40101cd9abedf89735675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630b8ba655b8863593bc9c8161561274" id="r_a630b8ba655b8863593bc9c8161561274"><td class="memItemLeft" align="right" valign="top"><a id="a630b8ba655b8863593bc9c8161561274" name="a630b8ba655b8863593bc9c8161561274"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CurrentKp</b> = 32</td></tr>
+<tr class="memdesc:a630b8ba655b8863593bc9c8161561274"><td class="mdescLeft">&#160;</td><td class="mdescRight">電流制御のPゲイン <br /></td></tr>
+<tr class="separator:a630b8ba655b8863593bc9c8161561274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98a5b8a37dac890b7db8afd7ce42704d" id="r_a98a5b8a37dac890b7db8afd7ce42704d"><td class="memItemLeft" align="right" valign="top"><a id="a98a5b8a37dac890b7db8afd7ce42704d" name="a98a5b8a37dac890b7db8afd7ce42704d"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CurrentKi</b> = 36</td></tr>
+<tr class="memdesc:a98a5b8a37dac890b7db8afd7ce42704d"><td class="mdescLeft">&#160;</td><td class="mdescRight">電流制御のIゲイン <br /></td></tr>
+<tr class="separator:a98a5b8a37dac890b7db8afd7ce42704d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d7a339029e56884ddaf12661de2f7f9" id="r_a3d7a339029e56884ddaf12661de2f7f9"><td class="memItemLeft" align="right" valign="top"><a id="a3d7a339029e56884ddaf12661de2f7f9" name="a3d7a339029e56884ddaf12661de2f7f9"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CurrentKd</b> = 40</td></tr>
+<tr class="memdesc:a3d7a339029e56884ddaf12661de2f7f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">電流制御のDゲイン <br /></td></tr>
+<tr class="separator:a3d7a339029e56884ddaf12661de2f7f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93fb59f278b500bccf5714208f783b1d" id="r_a93fb59f278b500bccf5714208f783b1d"><td class="memItemLeft" align="right" valign="top"><a id="a93fb59f278b500bccf5714208f783b1d" name="a93fb59f278b500bccf5714208f783b1d"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::TorqueKp</b> = 48</td></tr>
+<tr class="memdesc:a93fb59f278b500bccf5714208f783b1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルク制御のPゲイン <br /></td></tr>
+<tr class="separator:a93fb59f278b500bccf5714208f783b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dda47c259d121769475b292f1906915" id="r_a8dda47c259d121769475b292f1906915"><td class="memItemLeft" align="right" valign="top"><a id="a8dda47c259d121769475b292f1906915" name="a8dda47c259d121769475b292f1906915"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::TorqueKi</b> = 52</td></tr>
+<tr class="memdesc:a8dda47c259d121769475b292f1906915"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルク制御のIゲイン <br /></td></tr>
+<tr class="separator:a8dda47c259d121769475b292f1906915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa673527c8701bf5f9a841b6fa1d215a9" id="r_aa673527c8701bf5f9a841b6fa1d215a9"><td class="memItemLeft" align="right" valign="top"><a id="aa673527c8701bf5f9a841b6fa1d215a9" name="aa673527c8701bf5f9a841b6fa1d215a9"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::TorqueKd</b> = 56</td></tr>
+<tr class="memdesc:aa673527c8701bf5f9a841b6fa1d215a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルク制御のDゲイン <br /></td></tr>
+<tr class="separator:aa673527c8701bf5f9a841b6fa1d215a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab274f53473ec62b629a5e86a0b0b33df" id="r_ab274f53473ec62b629a5e86a0b0b33df"><td class="memItemLeft" align="right" valign="top"><a id="ab274f53473ec62b629a5e86a0b0b33df" name="ab274f53473ec62b629a5e86a0b0b33df"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::PositionDeadBand</b> = 64</td></tr>
+<tr class="memdesc:ab274f53473ec62b629a5e86a0b0b33df"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置制御　不感帯 <br /></td></tr>
+<tr class="separator:ab274f53473ec62b629a5e86a0b0b33df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b6fca4fc7f80e5308ac1da170867e7a" id="r_a7b6fca4fc7f80e5308ac1da170867e7a"><td class="memItemLeft" align="right" valign="top"><a id="a7b6fca4fc7f80e5308ac1da170867e7a" name="a7b6fca4fc7f80e5308ac1da170867e7a"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::SpeedDeadBand</b> = 66</td></tr>
+<tr class="memdesc:a7b6fca4fc7f80e5308ac1da170867e7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度制御　不感帯 <br /></td></tr>
+<tr class="separator:a7b6fca4fc7f80e5308ac1da170867e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b46a0f5c34028a01312d4f2aaaac9d0" id="r_a1b46a0f5c34028a01312d4f2aaaac9d0"><td class="memItemLeft" align="right" valign="top"><a id="a1b46a0f5c34028a01312d4f2aaaac9d0" name="a1b46a0f5c34028a01312d4f2aaaac9d0"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CurrentDeadBand</b> = 68</td></tr>
+<tr class="memdesc:a1b46a0f5c34028a01312d4f2aaaac9d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">電流制御　不感帯 <br /></td></tr>
+<tr class="separator:a1b46a0f5c34028a01312d4f2aaaac9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a406c71a89e3feb116ccb6022c3c53108" id="r_a406c71a89e3feb116ccb6022c3c53108"><td class="memItemLeft" align="right" valign="top"><a id="a406c71a89e3feb116ccb6022c3c53108" name="a406c71a89e3feb116ccb6022c3c53108"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::TorqueDeadBand</b> = 70</td></tr>
+<tr class="memdesc:a406c71a89e3feb116ccb6022c3c53108"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルク制御　不感帯 <br /></td></tr>
+<tr class="separator:a406c71a89e3feb116ccb6022c3c53108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7385e417bb5a1ca8cdae14dd3cb8a6a" id="r_ac7385e417bb5a1ca8cdae14dd3cb8a6a"><td class="memItemLeft" align="right" valign="top"><a id="ac7385e417bb5a1ca8cdae14dd3cb8a6a" name="ac7385e417bb5a1ca8cdae14dd3cb8a6a"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CenterOffset</b> = 72</td></tr>
+<tr class="memdesc:ac7385e417bb5a1ca8cdae14dd3cb8a6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">中央値オフセット <br /></td></tr>
+<tr class="separator:ac7385e417bb5a1ca8cdae14dd3cb8a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b1d978c22aa819b39959af7b07ab284" id="r_a2b1d978c22aa819b39959af7b07ab284"><td class="memItemLeft" align="right" valign="top"><a id="a2b1d978c22aa819b39959af7b07ab284" name="a2b1d978c22aa819b39959af7b07ab284"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CloneReverse</b> = 74</td></tr>
+<tr class="memdesc:a2b1d978c22aa819b39959af7b07ab284"><td class="mdescLeft">&#160;</td><td class="mdescRight">クローン/リバース <br /></td></tr>
+<tr class="separator:a2b1d978c22aa819b39959af7b07ab284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afceb2a6ef07e4602f0b64b0b0f26ca6c" id="r_afceb2a6ef07e4602f0b64b0b0f26ca6c"><td class="memItemLeft" align="right" valign="top"><a id="afceb2a6ef07e4602f0b64b0b0f26ca6c" name="afceb2a6ef07e4602f0b64b0b0f26ca6c"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MinVoltageLimit</b> = 76</td></tr>
+<tr class="memdesc:afceb2a6ef07e4602f0b64b0b0f26ca6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">入力電圧最小値 <br /></td></tr>
+<tr class="separator:afceb2a6ef07e4602f0b64b0b0f26ca6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89737438b86d40bce1b6982b62953f78" id="r_a89737438b86d40bce1b6982b62953f78"><td class="memItemLeft" align="right" valign="top"><a id="a89737438b86d40bce1b6982b62953f78" name="a89737438b86d40bce1b6982b62953f78"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MinVoltageLimitPower</b> = 78</td></tr>
+<tr class="memdesc:a89737438b86d40bce1b6982b62953f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">入力電圧最小時の出力％値 <br /></td></tr>
+<tr class="separator:a89737438b86d40bce1b6982b62953f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb233d33ca7fb501e3a20f95428b3934" id="r_adb233d33ca7fb501e3a20f95428b3934"><td class="memItemLeft" align="right" valign="top"><a id="adb233d33ca7fb501e3a20f95428b3934" name="adb233d33ca7fb501e3a20f95428b3934"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MaxVoltageLimit</b> = 80</td></tr>
+<tr class="memdesc:adb233d33ca7fb501e3a20f95428b3934"><td class="mdescLeft">&#160;</td><td class="mdescRight">入力電圧最大値 <br /></td></tr>
+<tr class="separator:adb233d33ca7fb501e3a20f95428b3934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10dbf1990f78cbb616c2f4d937ed241e" id="r_a10dbf1990f78cbb616c2f4d937ed241e"><td class="memItemLeft" align="right" valign="top"><a id="a10dbf1990f78cbb616c2f4d937ed241e" name="a10dbf1990f78cbb616c2f4d937ed241e"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MaxVoltageLimitPower</b> = 82</td></tr>
+<tr class="memdesc:a10dbf1990f78cbb616c2f4d937ed241e"><td class="mdescLeft">&#160;</td><td class="mdescRight">入力電圧最大時の出力％値 <br /></td></tr>
+<tr class="separator:a10dbf1990f78cbb616c2f4d937ed241e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a652a6402ee018df4c54c17b737ffcda6" id="r_a652a6402ee018df4c54c17b737ffcda6"><td class="memItemLeft" align="right" valign="top"><a id="a652a6402ee018df4c54c17b737ffcda6" name="a652a6402ee018df4c54c17b737ffcda6"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CurrentLimit</b> = 84</td></tr>
+<tr class="memdesc:a652a6402ee018df4c54c17b737ffcda6"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータ消費電流最大値 <br /></td></tr>
+<tr class="separator:a652a6402ee018df4c54c17b737ffcda6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5aef5f4894e648e6ffb17e249400ff84" id="r_a5aef5f4894e648e6ffb17e249400ff84"><td class="memItemLeft" align="right" valign="top"><a id="a5aef5f4894e648e6ffb17e249400ff84" name="a5aef5f4894e648e6ffb17e249400ff84"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CurrentLimitPower</b> = 86</td></tr>
+<tr class="memdesc:a5aef5f4894e648e6ffb17e249400ff84"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータ消費電流最大時の出力％値 <br /></td></tr>
+<tr class="separator:a5aef5f4894e648e6ffb17e249400ff84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f2897c04ac11f2f2d2722524c0d10eb" id="r_a6f2897c04ac11f2f2d2722524c0d10eb"><td class="memItemLeft" align="right" valign="top"><a id="a6f2897c04ac11f2f2d2722524c0d10eb" name="a6f2897c04ac11f2f2d2722524c0d10eb"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MotorTempLimit</b> = 88</td></tr>
+<tr class="memdesc:a6f2897c04ac11f2f2d2722524c0d10eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータ温度最大値 <br /></td></tr>
+<tr class="separator:a6f2897c04ac11f2f2d2722524c0d10eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ff6b98a28b2ee04e5f5f12785d9235" id="r_a92ff6b98a28b2ee04e5f5f12785d9235"><td class="memItemLeft" align="right" valign="top"><a id="a92ff6b98a28b2ee04e5f5f12785d9235" name="a92ff6b98a28b2ee04e5f5f12785d9235"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MotorTempLimitPower</b> = 90</td></tr>
+<tr class="memdesc:a92ff6b98a28b2ee04e5f5f12785d9235"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータ温度最大時の出力％値 <br /></td></tr>
+<tr class="separator:a92ff6b98a28b2ee04e5f5f12785d9235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d2e5ffaaae57a60c13a8c5714e537cc" id="r_a2d2e5ffaaae57a60c13a8c5714e537cc"><td class="memItemLeft" align="right" valign="top"><a id="a2d2e5ffaaae57a60c13a8c5714e537cc" name="a2d2e5ffaaae57a60c13a8c5714e537cc"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CpuTempLimit</b> = 92</td></tr>
+<tr class="memdesc:a2d2e5ffaaae57a60c13a8c5714e537cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU温度最大値 <br /></td></tr>
+<tr class="separator:a2d2e5ffaaae57a60c13a8c5714e537cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa761c09c12f2700adb156c256d23a6f9" id="r_aa761c09c12f2700adb156c256d23a6f9"><td class="memItemLeft" align="right" valign="top"><a id="aa761c09c12f2700adb156c256d23a6f9" name="aa761c09c12f2700adb156c256d23a6f9"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CpuTempLimitPower</b> = 94</td></tr>
+<tr class="memdesc:aa761c09c12f2700adb156c256d23a6f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU温度最大時の出力％値 <br /></td></tr>
+<tr class="separator:aa761c09c12f2700adb156c256d23a6f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab920b1b3c2a6a79ef74fe03abcecb880" id="r_ab920b1b3c2a6a79ef74fe03abcecb880"><td class="memItemLeft" align="right" valign="top"><a id="ab920b1b3c2a6a79ef74fe03abcecb880" name="ab920b1b3c2a6a79ef74fe03abcecb880"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CwPositionLimit</b> = 96</td></tr>
+<tr class="memdesc:ab920b1b3c2a6a79ef74fe03abcecb880"><td class="mdescLeft">&#160;</td><td class="mdescRight">CW方向最大角値 <br /></td></tr>
+<tr class="separator:ab920b1b3c2a6a79ef74fe03abcecb880"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e160820e628102c711ef7842b6de35d" id="r_a4e160820e628102c711ef7842b6de35d"><td class="memItemLeft" align="right" valign="top"><a id="a4e160820e628102c711ef7842b6de35d" name="a4e160820e628102c711ef7842b6de35d"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CwPositionLimitPower</b> = 98</td></tr>
+<tr class="memdesc:a4e160820e628102c711ef7842b6de35d"><td class="mdescLeft">&#160;</td><td class="mdescRight">CW方向最大角閾値外時の出力％値 <br /></td></tr>
+<tr class="separator:a4e160820e628102c711ef7842b6de35d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8cbe775c7a7ef9fbb24b7582b166789" id="r_ad8cbe775c7a7ef9fbb24b7582b166789"><td class="memItemLeft" align="right" valign="top"><a id="ad8cbe775c7a7ef9fbb24b7582b166789" name="ad8cbe775c7a7ef9fbb24b7582b166789"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CcwPositionLimit</b> = 100</td></tr>
+<tr class="memdesc:ad8cbe775c7a7ef9fbb24b7582b166789"><td class="mdescLeft">&#160;</td><td class="mdescRight">CCW方向最大角値 <br /></td></tr>
+<tr class="separator:ad8cbe775c7a7ef9fbb24b7582b166789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc77ddc6da0e307f5036b824a894b087" id="r_acc77ddc6da0e307f5036b824a894b087"><td class="memItemLeft" align="right" valign="top"><a id="acc77ddc6da0e307f5036b824a894b087" name="acc77ddc6da0e307f5036b824a894b087"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CcwPositionLimitPower</b> = 102</td></tr>
+<tr class="memdesc:acc77ddc6da0e307f5036b824a894b087"><td class="mdescLeft">&#160;</td><td class="mdescRight">CCW方向最大角閾値外時の出力％値 <br /></td></tr>
+<tr class="separator:acc77ddc6da0e307f5036b824a894b087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ecddba10aaa4ab34e0387fc2264be45" id="r_a8ecddba10aaa4ab34e0387fc2264be45"><td class="memItemLeft" align="right" valign="top"><a id="a8ecddba10aaa4ab34e0387fc2264be45" name="a8ecddba10aaa4ab34e0387fc2264be45"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MaxGoalSpeed</b> = 104</td></tr>
+<tr class="memdesc:a8ecddba10aaa4ab34e0387fc2264be45"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大速度指令値 <br /></td></tr>
+<tr class="separator:a8ecddba10aaa4ab34e0387fc2264be45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d9b859203d8d6cfc6336ff6f1162d62" id="r_a4d9b859203d8d6cfc6336ff6f1162d62"><td class="memItemLeft" align="right" valign="top"><a id="a4d9b859203d8d6cfc6336ff6f1162d62" name="a4d9b859203d8d6cfc6336ff6f1162d62"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MaxGoalCurrent</b> = 106</td></tr>
+<tr class="memdesc:a4d9b859203d8d6cfc6336ff6f1162d62"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大電流指令値 <br /></td></tr>
+<tr class="separator:a4d9b859203d8d6cfc6336ff6f1162d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe2dd056db68b3888924b28b493aba58" id="r_abe2dd056db68b3888924b28b493aba58"><td class="memItemLeft" align="right" valign="top"><a id="abe2dd056db68b3888924b28b493aba58" name="abe2dd056db68b3888924b28b493aba58"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MaxGoalTorque</b> = 108</td></tr>
+<tr class="memdesc:abe2dd056db68b3888924b28b493aba58"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大動推定トルク指令値 <br /></td></tr>
+<tr class="separator:abe2dd056db68b3888924b28b493aba58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71d9fd71eb1c75489ef62861aa941098" id="r_a71d9fd71eb1c75489ef62861aa941098"><td class="memItemLeft" align="right" valign="top"><a id="a71d9fd71eb1c75489ef62861aa941098" name="a71d9fd71eb1c75489ef62861aa941098"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::TotalPowerRate</b> = 110</td></tr>
+<tr class="memdesc:a71d9fd71eb1c75489ef62861aa941098"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータ出力制限％値 <br /></td></tr>
+<tr class="separator:a71d9fd71eb1c75489ef62861aa941098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8440a4342b0d24b5751420b20e6eeb5" id="r_aa8440a4342b0d24b5751420b20e6eeb5"><td class="memItemLeft" align="right" valign="top"><a id="aa8440a4342b0d24b5751420b20e6eeb5" name="aa8440a4342b0d24b5751420b20e6eeb5"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::LockDetectTime</b> = 112</td></tr>
+<tr class="memdesc:aa8440a4342b0d24b5751420b20e6eeb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">ロック時間 <br /></td></tr>
+<tr class="separator:aa8440a4342b0d24b5751420b20e6eeb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7462ceab8b3b430252de3e4eae64365b" id="r_a7462ceab8b3b430252de3e4eae64365b"><td class="memItemLeft" align="right" valign="top"><a id="a7462ceab8b3b430252de3e4eae64365b" name="a7462ceab8b3b430252de3e4eae64365b"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::LockThresholdPower</b> = 114</td></tr>
+<tr class="memdesc:a7462ceab8b3b430252de3e4eae64365b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ロックと認識される出力割合 <br /></td></tr>
+<tr class="separator:a7462ceab8b3b430252de3e4eae64365b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e014ccd20b5cd76f35c4e5c721eb7a7" id="r_a7e014ccd20b5cd76f35c4e5c721eb7a7"><td class="memItemLeft" align="right" valign="top"><a id="a7e014ccd20b5cd76f35c4e5c721eb7a7" name="a7e014ccd20b5cd76f35c4e5c721eb7a7"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::LockDetectOutputPower</b> = 116</td></tr>
+<tr class="memdesc:a7e014ccd20b5cd76f35c4e5c721eb7a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">ロック時間の出力％値 <br /></td></tr>
+<tr class="separator:a7e014ccd20b5cd76f35c4e5c721eb7a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9838e9e22e722dd77d0961ae974183f6" id="r_a9838e9e22e722dd77d0961ae974183f6"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a9838e9e22e722dd77d0961ae974183f6">PMX::RamAddrList::PresetPosAddr</a> = 118</td></tr>
+<tr class="memdesc:a9838e9e22e722dd77d0961ae974183f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置制御ゲインプリセット(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a9838e9e22e722dd77d0961ae974183f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5365137ba6673bc90c284f4a72caf645" id="r_a5365137ba6673bc90c284f4a72caf645"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a5365137ba6673bc90c284f4a72caf645">PMX::RamAddrList::PresetSpdAddr</a> = 119</td></tr>
+<tr class="memdesc:a5365137ba6673bc90c284f4a72caf645"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度制御ゲインプリセット(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a5365137ba6673bc90c284f4a72caf645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accd5000dad1e57051f1fed33eb817bb2" id="r_accd5000dad1e57051f1fed33eb817bb2"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#accd5000dad1e57051f1fed33eb817bb2">PMX::RamAddrList::PresetCurAddr</a> = 120</td></tr>
+<tr class="memdesc:accd5000dad1e57051f1fed33eb817bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">電流制御ゲインプリセット(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:accd5000dad1e57051f1fed33eb817bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab412f83c86e78eb22dcc2fae2cba4075" id="r_ab412f83c86e78eb22dcc2fae2cba4075"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#ab412f83c86e78eb22dcc2fae2cba4075">PMX::RamAddrList::PresetTrqAddr</a> = 121</td></tr>
+<tr class="memdesc:ab412f83c86e78eb22dcc2fae2cba4075"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルク制御ゲインプリセット(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:ab412f83c86e78eb22dcc2fae2cba4075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e288890610acef772f10453be82645a" id="r_a2e288890610acef772f10453be82645a"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a2e288890610acef772f10453be82645a">PMX::RamAddrList::PositionKp2</a> = 124</td></tr>
+<tr class="memdesc:a2e288890610acef772f10453be82645a"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置制御のPゲイン2(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a2e288890610acef772f10453be82645a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5af4e94ebfc8e553c87e622eeae8b95" id="r_ac5af4e94ebfc8e553c87e622eeae8b95"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#ac5af4e94ebfc8e553c87e622eeae8b95">PMX::RamAddrList::PositionKi2</a> = 128</td></tr>
+<tr class="memdesc:ac5af4e94ebfc8e553c87e622eeae8b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置制御のIゲイン2(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:ac5af4e94ebfc8e553c87e622eeae8b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa540e55212bb7791c107a933014e85e" id="r_afa540e55212bb7791c107a933014e85e"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#afa540e55212bb7791c107a933014e85e">PMX::RamAddrList::PositionKd2</a> = 132</td></tr>
+<tr class="memdesc:afa540e55212bb7791c107a933014e85e"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置制御のDゲイン2(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:afa540e55212bb7791c107a933014e85e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c0af9c0343f75afd2d1a4beb9418cb9" id="r_a2c0af9c0343f75afd2d1a4beb9418cb9"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a2c0af9c0343f75afd2d1a4beb9418cb9">PMX::RamAddrList::PositionSt2</a> = 136</td></tr>
+<tr class="memdesc:a2c0af9c0343f75afd2d1a4beb9418cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置制御のストレッチ2(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a2c0af9c0343f75afd2d1a4beb9418cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3252c51c0877ad3fb5add49289ecc74e" id="r_a3252c51c0877ad3fb5add49289ecc74e"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a3252c51c0877ad3fb5add49289ecc74e">PMX::RamAddrList::SpeedKp2</a> = 140</td></tr>
+<tr class="memdesc:a3252c51c0877ad3fb5add49289ecc74e"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度制御のPゲイン2(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a3252c51c0877ad3fb5add49289ecc74e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69b794f3aa6e00c00552f3ea26dd2a79" id="r_a69b794f3aa6e00c00552f3ea26dd2a79"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a69b794f3aa6e00c00552f3ea26dd2a79">PMX::RamAddrList::SpeedKi2</a> = 144</td></tr>
+<tr class="memdesc:a69b794f3aa6e00c00552f3ea26dd2a79"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度制御のIゲイン2(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a69b794f3aa6e00c00552f3ea26dd2a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d2c3bd46ad907b2f048fb530614c405" id="r_a1d2c3bd46ad907b2f048fb530614c405"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a1d2c3bd46ad907b2f048fb530614c405">PMX::RamAddrList::SpeedKd2</a> = 148</td></tr>
+<tr class="memdesc:a1d2c3bd46ad907b2f048fb530614c405"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度制御のDゲイン2(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a1d2c3bd46ad907b2f048fb530614c405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ce5f30355f0f1cc02b913976f1f7ea5" id="r_a9ce5f30355f0f1cc02b913976f1f7ea5"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a9ce5f30355f0f1cc02b913976f1f7ea5">PMX::RamAddrList::CurrentKp2</a> = 156</td></tr>
+<tr class="memdesc:a9ce5f30355f0f1cc02b913976f1f7ea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">電流制御のPゲイン2(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a9ce5f30355f0f1cc02b913976f1f7ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0891c93d9c871c989d442b8e95e123c5" id="r_a0891c93d9c871c989d442b8e95e123c5"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a0891c93d9c871c989d442b8e95e123c5">PMX::RamAddrList::CurrentKi2</a> = 160</td></tr>
+<tr class="memdesc:a0891c93d9c871c989d442b8e95e123c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">電流制御のIゲイン2(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a0891c93d9c871c989d442b8e95e123c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4d10c4c8efb34e182e0885e0b937e68" id="r_ae4d10c4c8efb34e182e0885e0b937e68"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#ae4d10c4c8efb34e182e0885e0b937e68">PMX::RamAddrList::CurrentKd2</a> = 164</td></tr>
+<tr class="memdesc:ae4d10c4c8efb34e182e0885e0b937e68"><td class="mdescLeft">&#160;</td><td class="mdescRight">電流制御のDゲイン2(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:ae4d10c4c8efb34e182e0885e0b937e68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b34471fcfe842fda19ce8d65ac8b5c9" id="r_a6b34471fcfe842fda19ce8d65ac8b5c9"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a6b34471fcfe842fda19ce8d65ac8b5c9">PMX::RamAddrList::TorqueKp2</a> = 172</td></tr>
+<tr class="memdesc:a6b34471fcfe842fda19ce8d65ac8b5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルク制御のPゲイン2(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a6b34471fcfe842fda19ce8d65ac8b5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90b02889da0f49415356608c667d3796" id="r_a90b02889da0f49415356608c667d3796"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a90b02889da0f49415356608c667d3796">PMX::RamAddrList::TorqueKi2</a> = 176</td></tr>
+<tr class="memdesc:a90b02889da0f49415356608c667d3796"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルク制御のIゲイン2(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a90b02889da0f49415356608c667d3796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46418e586fd74c2a5d9a6ffd5118e7c6" id="r_a46418e586fd74c2a5d9a6ffd5118e7c6"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a46418e586fd74c2a5d9a6ffd5118e7c6">PMX::RamAddrList::TorqueKd2</a> = 180</td></tr>
+<tr class="memdesc:a46418e586fd74c2a5d9a6ffd5118e7c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルク制御のDゲイン2(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a46418e586fd74c2a5d9a6ffd5118e7c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7068c537825eed48dbb9814742df2dd4" id="r_a7068c537825eed48dbb9814742df2dd4"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a7068c537825eed48dbb9814742df2dd4">PMX::RamAddrList::PositionKp3</a> = 188</td></tr>
+<tr class="memdesc:a7068c537825eed48dbb9814742df2dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置制御のPゲイン3(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a7068c537825eed48dbb9814742df2dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7dd235caed415ecc73481399fa73848" id="r_ac7dd235caed415ecc73481399fa73848"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#ac7dd235caed415ecc73481399fa73848">PMX::RamAddrList::PositionKi3</a> = 192</td></tr>
+<tr class="memdesc:ac7dd235caed415ecc73481399fa73848"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置制御のIゲイン3(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:ac7dd235caed415ecc73481399fa73848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c4d084c69bc5fb1565d320e4365b62c" id="r_a8c4d084c69bc5fb1565d320e4365b62c"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a8c4d084c69bc5fb1565d320e4365b62c">PMX::RamAddrList::PositionKd3</a> = 196</td></tr>
+<tr class="memdesc:a8c4d084c69bc5fb1565d320e4365b62c"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置制御のDゲイン3(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a8c4d084c69bc5fb1565d320e4365b62c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a863acf98df8fa4180afbe8064deacc8d" id="r_a863acf98df8fa4180afbe8064deacc8d"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a863acf98df8fa4180afbe8064deacc8d">PMX::RamAddrList::PositionSt3</a> = 200</td></tr>
+<tr class="memdesc:a863acf98df8fa4180afbe8064deacc8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置制御のストレッチ3(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a863acf98df8fa4180afbe8064deacc8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0a88d5f6cef45d4fd3574910020c619" id="r_ab0a88d5f6cef45d4fd3574910020c619"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#ab0a88d5f6cef45d4fd3574910020c619">PMX::RamAddrList::SpeedKp3</a> = 204</td></tr>
+<tr class="memdesc:ab0a88d5f6cef45d4fd3574910020c619"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度制御のPゲイン3(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:ab0a88d5f6cef45d4fd3574910020c619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cb9012ec97548c8477eec502bb672d6" id="r_a9cb9012ec97548c8477eec502bb672d6"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a9cb9012ec97548c8477eec502bb672d6">PMX::RamAddrList::SpeedKi3</a> = 208</td></tr>
+<tr class="memdesc:a9cb9012ec97548c8477eec502bb672d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度制御のIゲイン3(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a9cb9012ec97548c8477eec502bb672d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e023961a35d3f4460305847e4607964" id="r_a0e023961a35d3f4460305847e4607964"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a0e023961a35d3f4460305847e4607964">PMX::RamAddrList::SpeedKd3</a> = 212</td></tr>
+<tr class="memdesc:a0e023961a35d3f4460305847e4607964"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度制御のDゲイン3(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a0e023961a35d3f4460305847e4607964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab528d3df96d996daf553c66889ab88c9" id="r_ab528d3df96d996daf553c66889ab88c9"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#ab528d3df96d996daf553c66889ab88c9">PMX::RamAddrList::CurrentKp3</a> = 220</td></tr>
+<tr class="memdesc:ab528d3df96d996daf553c66889ab88c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">電流制御のPゲイン3(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:ab528d3df96d996daf553c66889ab88c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f64b7583cabd0250928d1ca01e45d58" id="r_a8f64b7583cabd0250928d1ca01e45d58"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a8f64b7583cabd0250928d1ca01e45d58">PMX::RamAddrList::CurrentKi3</a> = 224</td></tr>
+<tr class="memdesc:a8f64b7583cabd0250928d1ca01e45d58"><td class="mdescLeft">&#160;</td><td class="mdescRight">電流制御のIゲイン3(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a8f64b7583cabd0250928d1ca01e45d58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b0a3bc14a037f8136fcca03d50d1394" id="r_a8b0a3bc14a037f8136fcca03d50d1394"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a8b0a3bc14a037f8136fcca03d50d1394">PMX::RamAddrList::CurrentKd3</a> = 228</td></tr>
+<tr class="memdesc:a8b0a3bc14a037f8136fcca03d50d1394"><td class="mdescLeft">&#160;</td><td class="mdescRight">電流制御のDゲイン3(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a8b0a3bc14a037f8136fcca03d50d1394"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fafa18cc7e624b9c5979217021420bf" id="r_a6fafa18cc7e624b9c5979217021420bf"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a6fafa18cc7e624b9c5979217021420bf">PMX::RamAddrList::TorqueKp3</a> = 236</td></tr>
+<tr class="memdesc:a6fafa18cc7e624b9c5979217021420bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルク制御のPゲイン3(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a6fafa18cc7e624b9c5979217021420bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f387c05a78632caed27cb79d7791f84" id="r_a7f387c05a78632caed27cb79d7791f84"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a7f387c05a78632caed27cb79d7791f84">PMX::RamAddrList::TorqueKi3</a> = 240</td></tr>
+<tr class="memdesc:a7f387c05a78632caed27cb79d7791f84"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルク制御のIゲイン3(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:a7f387c05a78632caed27cb79d7791f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5f9e6d5c1a999f5b6980339f4aa467a" id="r_ab5f9e6d5c1a999f5b6980339f4aa467a"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#ab5f9e6d5c1a999f5b6980339f4aa467a">PMX::RamAddrList::TorqueKd3</a> = 244</td></tr>
+<tr class="memdesc:ab5f9e6d5c1a999f5b6980339f4aa467a"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルク制御のDゲイン3(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:ab5f9e6d5c1a999f5b6980339f4aa467a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8462c336e20f6974908d4ee93288c9d" id="r_ad8462c336e20f6974908d4ee93288c9d"><td class="memItemLeft" align="right" valign="top"><a id="ad8462c336e20f6974908d4ee93288c9d" name="ad8462c336e20f6974908d4ee93288c9d"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::NowPosition</b> = 300</td></tr>
+<tr class="memdesc:ad8462c336e20f6974908d4ee93288c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在位置 <br /></td></tr>
+<tr class="separator:ad8462c336e20f6974908d4ee93288c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cb954ade1a41ea27e36d6a4a76e2096" id="r_a3cb954ade1a41ea27e36d6a4a76e2096"><td class="memItemLeft" align="right" valign="top"><a id="a3cb954ade1a41ea27e36d6a4a76e2096" name="a3cb954ade1a41ea27e36d6a4a76e2096"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::NowSpeed</b> = 302</td></tr>
+<tr class="memdesc:a3cb954ade1a41ea27e36d6a4a76e2096"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在速度 <br /></td></tr>
+<tr class="separator:a3cb954ade1a41ea27e36d6a4a76e2096"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c25f3f7eddb43c887d6dd1e7c48bc6e" id="r_a0c25f3f7eddb43c887d6dd1e7c48bc6e"><td class="memItemLeft" align="right" valign="top"><a id="a0c25f3f7eddb43c887d6dd1e7c48bc6e" name="a0c25f3f7eddb43c887d6dd1e7c48bc6e"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::NowCurrent</b> = 304</td></tr>
+<tr class="memdesc:a0c25f3f7eddb43c887d6dd1e7c48bc6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在電流 <br /></td></tr>
+<tr class="separator:a0c25f3f7eddb43c887d6dd1e7c48bc6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab430568156e0d7138517281043fbd662" id="r_ab430568156e0d7138517281043fbd662"><td class="memItemLeft" align="right" valign="top"><a id="ab430568156e0d7138517281043fbd662" name="ab430568156e0d7138517281043fbd662"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::NowTorque</b> = 306</td></tr>
+<tr class="memdesc:ab430568156e0d7138517281043fbd662"><td class="mdescLeft">&#160;</td><td class="mdescRight">出力推定トルク <br /></td></tr>
+<tr class="separator:ab430568156e0d7138517281043fbd662"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af25850bfa0893c9e4a619d1d3f531999" id="r_af25850bfa0893c9e4a619d1d3f531999"><td class="memItemLeft" align="right" valign="top"><a id="af25850bfa0893c9e4a619d1d3f531999" name="af25850bfa0893c9e4a619d1d3f531999"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::NowPwm</b> = 308</td></tr>
+<tr class="memdesc:af25850bfa0893c9e4a619d1d3f531999"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在のPWM割合 <br /></td></tr>
+<tr class="separator:af25850bfa0893c9e4a619d1d3f531999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93201990f248e2a8f9972076a943aefa" id="r_a93201990f248e2a8f9972076a943aefa"><td class="memItemLeft" align="right" valign="top"><a id="a93201990f248e2a8f9972076a943aefa" name="a93201990f248e2a8f9972076a943aefa"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MotorTemp</b> = 310</td></tr>
+<tr class="memdesc:a93201990f248e2a8f9972076a943aefa"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータ温度 <br /></td></tr>
+<tr class="separator:a93201990f248e2a8f9972076a943aefa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a116c15fb4bbeff43c3b8dd3e1ee88142" id="r_a116c15fb4bbeff43c3b8dd3e1ee88142"><td class="memItemLeft" align="right" valign="top"><a id="a116c15fb4bbeff43c3b8dd3e1ee88142" name="a116c15fb4bbeff43c3b8dd3e1ee88142"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CPUTemp</b> = 312</td></tr>
+<tr class="memdesc:a116c15fb4bbeff43c3b8dd3e1ee88142"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU温度 <br /></td></tr>
+<tr class="separator:a116c15fb4bbeff43c3b8dd3e1ee88142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a278e139c1cddd3ad5b7e44d3818db84f" id="r_a278e139c1cddd3ad5b7e44d3818db84f"><td class="memItemLeft" align="right" valign="top"><a id="a278e139c1cddd3ad5b7e44d3818db84f" name="a278e139c1cddd3ad5b7e44d3818db84f"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::InputVoltage</b> = 314</td></tr>
+<tr class="memdesc:a278e139c1cddd3ad5b7e44d3818db84f"><td class="mdescLeft">&#160;</td><td class="mdescRight">入力電圧 <br /></td></tr>
+<tr class="separator:a278e139c1cddd3ad5b7e44d3818db84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a06693a3be07734eb58d13df0ecf069" id="r_a2a06693a3be07734eb58d13df0ecf069"><td class="memItemLeft" align="right" valign="top"><a id="a2a06693a3be07734eb58d13df0ecf069" name="a2a06693a3be07734eb58d13df0ecf069"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::TrajectoryTime</b> = 316</td></tr>
+<tr class="memdesc:a2a06693a3be07734eb58d13df0ecf069"><td class="mdescLeft">&#160;</td><td class="mdescRight">現在の補間時間 <br /></td></tr>
+<tr class="separator:a2a06693a3be07734eb58d13df0ecf069"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3806f1bf7243cb45d45b7deb5bfe8930" id="r_a3806f1bf7243cb45d45b7deb5bfe8930"><td class="memItemLeft" align="right" valign="top"><a id="a3806f1bf7243cb45d45b7deb5bfe8930" name="a3806f1bf7243cb45d45b7deb5bfe8930"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::EncoderValue</b> = 318</td></tr>
+<tr class="memdesc:a3806f1bf7243cb45d45b7deb5bfe8930"><td class="mdescLeft">&#160;</td><td class="mdescRight">エンコーダの現在値 <br /></td></tr>
+<tr class="separator:a3806f1bf7243cb45d45b7deb5bfe8930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e4d5b9b52643d18a7869b54d1e33d74" id="r_a4e4d5b9b52643d18a7869b54d1e33d74"><td class="memItemLeft" align="right" valign="top"><a id="a4e4d5b9b52643d18a7869b54d1e33d74" name="a4e4d5b9b52643d18a7869b54d1e33d74"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::ErrorStatus</b> = 400</td></tr>
+<tr class="memdesc:a4e4d5b9b52643d18a7869b54d1e33d74"><td class="mdescLeft">&#160;</td><td class="mdescRight">エラーステータス <br /></td></tr>
+<tr class="separator:a4e4d5b9b52643d18a7869b54d1e33d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32dc10eb7e3312a2259bcc157b75e55e" id="r_a32dc10eb7e3312a2259bcc157b75e55e"><td class="memItemLeft" align="right" valign="top"><a id="a32dc10eb7e3312a2259bcc157b75e55e" name="a32dc10eb7e3312a2259bcc157b75e55e"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::ErrorSystem</b> = 401</td></tr>
+<tr class="memdesc:a32dc10eb7e3312a2259bcc157b75e55e"><td class="mdescLeft">&#160;</td><td class="mdescRight">システムエラー <br /></td></tr>
+<tr class="separator:a32dc10eb7e3312a2259bcc157b75e55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae47d7b3c3677b30401c32dbc91e5793c" id="r_ae47d7b3c3677b30401c32dbc91e5793c"><td class="memItemLeft" align="right" valign="top"><a id="ae47d7b3c3677b30401c32dbc91e5793c" name="ae47d7b3c3677b30401c32dbc91e5793c"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::ErrorMotor</b> = 402</td></tr>
+<tr class="memdesc:ae47d7b3c3677b30401c32dbc91e5793c"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータエラー <br /></td></tr>
+<tr class="separator:ae47d7b3c3677b30401c32dbc91e5793c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7de6501b46bc2daeb5e57d873934e3b4" id="r_a7de6501b46bc2daeb5e57d873934e3b4"><td class="memItemLeft" align="right" valign="top"><a id="a7de6501b46bc2daeb5e57d873934e3b4" name="a7de6501b46bc2daeb5e57d873934e3b4"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::ErrorRamAccess</b> = 404</td></tr>
+<tr class="memdesc:a7de6501b46bc2daeb5e57d873934e3b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAMアクセスエラー時のアドレス <br /></td></tr>
+<tr class="separator:a7de6501b46bc2daeb5e57d873934e3b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a681955e30dab4983dae0dfd995daf97b" id="r_a681955e30dab4983dae0dfd995daf97b"><td class="memItemLeft" align="right" valign="top"><a id="a681955e30dab4983dae0dfd995daf97b" name="a681955e30dab4983dae0dfd995daf97b"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::TorqueSwitch</b> = 500</td></tr>
+<tr class="memdesc:a681955e30dab4983dae0dfd995daf97b"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルクスイッチ <br /></td></tr>
+<tr class="separator:a681955e30dab4983dae0dfd995daf97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac26ebf07e6e505c3f7f385724fc2223a" id="r_ac26ebf07e6e505c3f7f385724fc2223a"><td class="memItemLeft" align="right" valign="top"><a id="ac26ebf07e6e505c3f7f385724fc2223a" name="ac26ebf07e6e505c3f7f385724fc2223a"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::ControlMode</b> = 501</td></tr>
+<tr class="memdesc:ac26ebf07e6e505c3f7f385724fc2223a"><td class="mdescLeft">&#160;</td><td class="mdescRight">制御モード <br /></td></tr>
+<tr class="separator:ac26ebf07e6e505c3f7f385724fc2223a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32d21d6dda8be1af20fbb50dc5d8ea4d" id="r_a32d21d6dda8be1af20fbb50dc5d8ea4d"><td class="memItemLeft" align="right" valign="top"><a id="a32d21d6dda8be1af20fbb50dc5d8ea4d" name="a32d21d6dda8be1af20fbb50dc5d8ea4d"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MotorReceiveData</b> = 502</td></tr>
+<tr class="memdesc:a32d21d6dda8be1af20fbb50dc5d8ea4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">応答データフラグ <br /></td></tr>
+<tr class="separator:a32d21d6dda8be1af20fbb50dc5d8ea4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec5ac5fef54688ac886a6fa4fc05891c" id="r_aec5ac5fef54688ac886a6fa4fc05891c"><td class="memItemLeft" align="right" valign="top"><a id="aec5ac5fef54688ac886a6fa4fc05891c" name="aec5ac5fef54688ac886a6fa4fc05891c"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::Trajectory</b> = 503</td></tr>
+<tr class="memdesc:aec5ac5fef54688ac886a6fa4fc05891c"><td class="mdescLeft">&#160;</td><td class="mdescRight">補間制御起動生成タイプ指定 <br /></td></tr>
+<tr class="separator:aec5ac5fef54688ac886a6fa4fc05891c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3dd39ee54091c076c44ae65775779e7" id="r_af3dd39ee54091c076c44ae65775779e7"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#af3dd39ee54091c076c44ae65775779e7">PMX::RamAddrList::ShortBrakeCurrent</a> = 530</td></tr>
+<tr class="memdesc:af3dd39ee54091c076c44ae65775779e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">電流制御時のショートブレーキ指定(PMXのV1.0.1.x～)  <br /></td></tr>
+<tr class="separator:af3dd39ee54091c076c44ae65775779e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b5ed6fb283116f8387aa1b0c6c906a8" id="r_a1b5ed6fb283116f8387aa1b0c6c906a8"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a1b5ed6fb283116f8387aa1b0c6c906a8">PMX::RamAddrList::ShortBrakeTorque</a> = 531</td></tr>
+<tr class="memdesc:a1b5ed6fb283116f8387aa1b0c6c906a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルク制御時のショートブレーキ指定(PMXのV1.0.1.x～)  <br /></td></tr>
+<tr class="separator:a1b5ed6fb283116f8387aa1b0c6c906a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb302ed9cfc426ad6c2c6e0373216aa1" id="r_abb302ed9cfc426ad6c2c6e0373216aa1"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#abb302ed9cfc426ad6c2c6e0373216aa1">PMX::RamAddrList::ShortBrakePWM</a> = 532</td></tr>
+<tr class="memdesc:abb302ed9cfc426ad6c2c6e0373216aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM制御時のショートブレーキ指定(PMXのV1.0.1.x～)  <br /></td></tr>
+<tr class="separator:abb302ed9cfc426ad6c2c6e0373216aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaaa97b49d3ea029b98b0685c992d3ee" id="r_adaaa97b49d3ea029b98b0685c992d3ee"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#adaaa97b49d3ea029b98b0685c992d3ee">PMX::RamAddrList::LedMode</a> = 533</td></tr>
+<tr class="memdesc:adaaa97b49d3ea029b98b0685c992d3ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">LED点灯モード(PMXのV1.1.0.0～)  <br /></td></tr>
+<tr class="separator:adaaa97b49d3ea029b98b0685c992d3ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dd960c31d7655a4798cafe320b46114" id="r_a6dd960c31d7655a4798cafe320b46114"><td class="memItemLeft" align="right" valign="top"><a id="a6dd960c31d7655a4798cafe320b46114" name="a6dd960c31d7655a4798cafe320b46114"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CenterOffsetMinRange</b> = 600</td></tr>
+<tr class="memdesc:a6dd960c31d7655a4798cafe320b46114"><td class="mdescLeft">&#160;</td><td class="mdescRight">中央値オフセット　最小値 <br /></td></tr>
+<tr class="separator:a6dd960c31d7655a4798cafe320b46114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb191795f5b3d69a21ad1e1bd80198f0" id="r_aeb191795f5b3d69a21ad1e1bd80198f0"><td class="memItemLeft" align="right" valign="top"><a id="aeb191795f5b3d69a21ad1e1bd80198f0" name="aeb191795f5b3d69a21ad1e1bd80198f0"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CenterOffsetMaxRange</b> = 602</td></tr>
+<tr class="memdesc:aeb191795f5b3d69a21ad1e1bd80198f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">中央値オフセット　最大値 <br /></td></tr>
+<tr class="separator:aeb191795f5b3d69a21ad1e1bd80198f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35def3b52b5ccc97f664594845148121" id="r_a35def3b52b5ccc97f664594845148121"><td class="memItemLeft" align="right" valign="top"><a id="a35def3b52b5ccc97f664594845148121" name="a35def3b52b5ccc97f664594845148121"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MinVoltageMinRange</b> = 604</td></tr>
+<tr class="memdesc:a35def3b52b5ccc97f664594845148121"><td class="mdescLeft">&#160;</td><td class="mdescRight">入力電圧最小制限値　最小値 <br /></td></tr>
+<tr class="separator:a35def3b52b5ccc97f664594845148121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a366a1ed219eb305e744ea784ed7a7f91" id="r_a366a1ed219eb305e744ea784ed7a7f91"><td class="memItemLeft" align="right" valign="top"><a id="a366a1ed219eb305e744ea784ed7a7f91" name="a366a1ed219eb305e744ea784ed7a7f91"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MinVoltageMaxRange</b> = 606</td></tr>
+<tr class="memdesc:a366a1ed219eb305e744ea784ed7a7f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">入力電圧最小制限値　最大値 <br /></td></tr>
+<tr class="separator:a366a1ed219eb305e744ea784ed7a7f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf89fea0a3f4a29f0bf746a65776a44c" id="r_adf89fea0a3f4a29f0bf746a65776a44c"><td class="memItemLeft" align="right" valign="top"><a id="adf89fea0a3f4a29f0bf746a65776a44c" name="adf89fea0a3f4a29f0bf746a65776a44c"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MaxVoltageMinRange</b> = 608</td></tr>
+<tr class="memdesc:adf89fea0a3f4a29f0bf746a65776a44c"><td class="mdescLeft">&#160;</td><td class="mdescRight">入力電圧最大制限値　最小値 <br /></td></tr>
+<tr class="separator:adf89fea0a3f4a29f0bf746a65776a44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc5be942ed5eda48a0a26ddcd7e78564" id="r_afc5be942ed5eda48a0a26ddcd7e78564"><td class="memItemLeft" align="right" valign="top"><a id="afc5be942ed5eda48a0a26ddcd7e78564" name="afc5be942ed5eda48a0a26ddcd7e78564"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MaxVoltageMaxRange</b> = 610</td></tr>
+<tr class="memdesc:afc5be942ed5eda48a0a26ddcd7e78564"><td class="mdescLeft">&#160;</td><td class="mdescRight">入力電圧最大制限値　最大値 <br /></td></tr>
+<tr class="separator:afc5be942ed5eda48a0a26ddcd7e78564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fd71dba1d0f0bacf8c323b1b743bf3b" id="r_a5fd71dba1d0f0bacf8c323b1b743bf3b"><td class="memItemLeft" align="right" valign="top"><a id="a5fd71dba1d0f0bacf8c323b1b743bf3b" name="a5fd71dba1d0f0bacf8c323b1b743bf3b"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::FailSafeVoltageMinRange</b> = 612</td></tr>
+<tr class="memdesc:a5fd71dba1d0f0bacf8c323b1b743bf3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">フェールセーフ電圧　最小値 <br /></td></tr>
+<tr class="separator:a5fd71dba1d0f0bacf8c323b1b743bf3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e7c84636c3c307c1a73673054c52439" id="r_a3e7c84636c3c307c1a73673054c52439"><td class="memItemLeft" align="right" valign="top"><a id="a3e7c84636c3c307c1a73673054c52439" name="a3e7c84636c3c307c1a73673054c52439"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::FailSafeVoltageMaxRange</b> = 614</td></tr>
+<tr class="memdesc:a3e7c84636c3c307c1a73673054c52439"><td class="mdescLeft">&#160;</td><td class="mdescRight">フェールセーフ電圧　最大値 <br /></td></tr>
+<tr class="separator:a3e7c84636c3c307c1a73673054c52439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b69a830ba7cc721c2f3d62a0e0873c8" id="r_a3b69a830ba7cc721c2f3d62a0e0873c8"><td class="memItemLeft" align="right" valign="top"><a id="a3b69a830ba7cc721c2f3d62a0e0873c8" name="a3b69a830ba7cc721c2f3d62a0e0873c8"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CurrentMinRange</b> = 616</td></tr>
+<tr class="memdesc:a3b69a830ba7cc721c2f3d62a0e0873c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータ消費電流設定値　最小値 <br /></td></tr>
+<tr class="separator:a3b69a830ba7cc721c2f3d62a0e0873c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bde3e271debbd4eba24be5acc7a2629" id="r_a1bde3e271debbd4eba24be5acc7a2629"><td class="memItemLeft" align="right" valign="top"><a id="a1bde3e271debbd4eba24be5acc7a2629" name="a1bde3e271debbd4eba24be5acc7a2629"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CurrentMaxRange</b> = 618</td></tr>
+<tr class="memdesc:a1bde3e271debbd4eba24be5acc7a2629"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータ消費電流設定値　最大値 <br /></td></tr>
+<tr class="separator:a1bde3e271debbd4eba24be5acc7a2629"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ac8fa1eacb2304a77bb25854d68e413" id="r_a2ac8fa1eacb2304a77bb25854d68e413"><td class="memItemLeft" align="right" valign="top"><a id="a2ac8fa1eacb2304a77bb25854d68e413" name="a2ac8fa1eacb2304a77bb25854d68e413"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MotorTempMinRange</b> = 620</td></tr>
+<tr class="memdesc:a2ac8fa1eacb2304a77bb25854d68e413"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータ温度設定値　最小値 <br /></td></tr>
+<tr class="separator:a2ac8fa1eacb2304a77bb25854d68e413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dc545d67c77d54a3a9405801d024c48" id="r_a7dc545d67c77d54a3a9405801d024c48"><td class="memItemLeft" align="right" valign="top"><a id="a7dc545d67c77d54a3a9405801d024c48" name="a7dc545d67c77d54a3a9405801d024c48"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MotorTempMaxRange</b> = 622</td></tr>
+<tr class="memdesc:a7dc545d67c77d54a3a9405801d024c48"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータ温度設定値　最大値 <br /></td></tr>
+<tr class="separator:a7dc545d67c77d54a3a9405801d024c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb4cbc2d0a3e491bb4644317392bb70d" id="r_acb4cbc2d0a3e491bb4644317392bb70d"><td class="memItemLeft" align="right" valign="top"><a id="acb4cbc2d0a3e491bb4644317392bb70d" name="acb4cbc2d0a3e491bb4644317392bb70d"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CpuTempMinRange</b> = 624</td></tr>
+<tr class="memdesc:acb4cbc2d0a3e491bb4644317392bb70d"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU温度設定値　最小値 <br /></td></tr>
+<tr class="separator:acb4cbc2d0a3e491bb4644317392bb70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0cafea2f5b8991d10b350a84ff5f07d" id="r_ad0cafea2f5b8991d10b350a84ff5f07d"><td class="memItemLeft" align="right" valign="top"><a id="ad0cafea2f5b8991d10b350a84ff5f07d" name="ad0cafea2f5b8991d10b350a84ff5f07d"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CpuTempMaxRange</b> = 626</td></tr>
+<tr class="memdesc:ad0cafea2f5b8991d10b350a84ff5f07d"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU温度設定値　最大値 <br /></td></tr>
+<tr class="separator:ad0cafea2f5b8991d10b350a84ff5f07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9bfd2dd215a4308f5fe6aaeb08f3dd5" id="r_ae9bfd2dd215a4308f5fe6aaeb08f3dd5"><td class="memItemLeft" align="right" valign="top"><a id="ae9bfd2dd215a4308f5fe6aaeb08f3dd5" name="ae9bfd2dd215a4308f5fe6aaeb08f3dd5"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CwPositionMinRange</b> = 628</td></tr>
+<tr class="memdesc:ae9bfd2dd215a4308f5fe6aaeb08f3dd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">CW方向最大値　最小値 <br /></td></tr>
+<tr class="separator:ae9bfd2dd215a4308f5fe6aaeb08f3dd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa35f205c74e1552cf32c4e7f557023f4" id="r_aa35f205c74e1552cf32c4e7f557023f4"><td class="memItemLeft" align="right" valign="top"><a id="aa35f205c74e1552cf32c4e7f557023f4" name="aa35f205c74e1552cf32c4e7f557023f4"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CwPositionMaxRange</b> = 630</td></tr>
+<tr class="memdesc:aa35f205c74e1552cf32c4e7f557023f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">CW方向最大値　最大値 <br /></td></tr>
+<tr class="separator:aa35f205c74e1552cf32c4e7f557023f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0ab08fb8013073b4361e52c487e28d0" id="r_ac0ab08fb8013073b4361e52c487e28d0"><td class="memItemLeft" align="right" valign="top"><a id="ac0ab08fb8013073b4361e52c487e28d0" name="ac0ab08fb8013073b4361e52c487e28d0"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CcwPositionMinRange</b> = 632</td></tr>
+<tr class="memdesc:ac0ab08fb8013073b4361e52c487e28d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">CCW方向最大値　最小値 <br /></td></tr>
+<tr class="separator:ac0ab08fb8013073b4361e52c487e28d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a626c955d725cc7e14de6ffa9f80372be" id="r_a626c955d725cc7e14de6ffa9f80372be"><td class="memItemLeft" align="right" valign="top"><a id="a626c955d725cc7e14de6ffa9f80372be" name="a626c955d725cc7e14de6ffa9f80372be"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::CcwPositionMaxRange</b> = 634</td></tr>
+<tr class="memdesc:a626c955d725cc7e14de6ffa9f80372be"><td class="mdescLeft">&#160;</td><td class="mdescRight">CCW方向最大値　最大値 <br /></td></tr>
+<tr class="separator:a626c955d725cc7e14de6ffa9f80372be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65500eb94e584eed29102948e0fa353a" id="r_a65500eb94e584eed29102948e0fa353a"><td class="memItemLeft" align="right" valign="top"><a id="a65500eb94e584eed29102948e0fa353a" name="a65500eb94e584eed29102948e0fa353a"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MaxGoalSpeedMinRange</b> = 636</td></tr>
+<tr class="memdesc:a65500eb94e584eed29102948e0fa353a"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大速度設定値　最小値 <br /></td></tr>
+<tr class="separator:a65500eb94e584eed29102948e0fa353a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b521cb067e132db108a3e924d1a6dfb" id="r_a8b521cb067e132db108a3e924d1a6dfb"><td class="memItemLeft" align="right" valign="top"><a id="a8b521cb067e132db108a3e924d1a6dfb" name="a8b521cb067e132db108a3e924d1a6dfb"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MaxGoalSpeedMaxRange</b> = 638</td></tr>
+<tr class="memdesc:a8b521cb067e132db108a3e924d1a6dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大速度設定値　最大値 <br /></td></tr>
+<tr class="separator:a8b521cb067e132db108a3e924d1a6dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad22843bba320a10d74e6e6749c589497" id="r_ad22843bba320a10d74e6e6749c589497"><td class="memItemLeft" align="right" valign="top"><a id="ad22843bba320a10d74e6e6749c589497" name="ad22843bba320a10d74e6e6749c589497"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MaxGoalCurrentMinRange</b> = 640</td></tr>
+<tr class="memdesc:ad22843bba320a10d74e6e6749c589497"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大電流設定値　最小値 <br /></td></tr>
+<tr class="separator:ad22843bba320a10d74e6e6749c589497"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a266ac917166ee0259163c2faf11d3ac1" id="r_a266ac917166ee0259163c2faf11d3ac1"><td class="memItemLeft" align="right" valign="top"><a id="a266ac917166ee0259163c2faf11d3ac1" name="a266ac917166ee0259163c2faf11d3ac1"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MaxGoalCurrentMaxRange</b> = 642</td></tr>
+<tr class="memdesc:a266ac917166ee0259163c2faf11d3ac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大電流設定値　最大値 <br /></td></tr>
+<tr class="separator:a266ac917166ee0259163c2faf11d3ac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e09fc76cddb9e223f692dbb814d1711" id="r_a3e09fc76cddb9e223f692dbb814d1711"><td class="memItemLeft" align="right" valign="top"><a id="a3e09fc76cddb9e223f692dbb814d1711" name="a3e09fc76cddb9e223f692dbb814d1711"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MaxGoalTorqueMinRange</b> = 644</td></tr>
+<tr class="memdesc:a3e09fc76cddb9e223f692dbb814d1711"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大トルク設定値　最小値 <br /></td></tr>
+<tr class="separator:a3e09fc76cddb9e223f692dbb814d1711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5fd9de12cb3968d0c73c0929e0437b1" id="r_ac5fd9de12cb3968d0c73c0929e0437b1"><td class="memItemLeft" align="right" valign="top"><a id="ac5fd9de12cb3968d0c73c0929e0437b1" name="ac5fd9de12cb3968d0c73c0929e0437b1"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::RamAddrList::MaxGoalTorqueMaxRange</b> = 646</td></tr>
+<tr class="memdesc:ac5fd9de12cb3968d0c73c0929e0437b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">最大トルク設定値　最大値 <br /></td></tr>
+<tr class="separator:ac5fd9de12cb3968d0c73c0929e0437b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8fb5b33af1ff7695d29b1332812e869" id="r_ae8fb5b33af1ff7695d29b1332812e869"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#ae8fb5b33af1ff7695d29b1332812e869">PMX::RamAddrList::GoalCommandValue1</a> = 700</td></tr>
+<tr class="memdesc:ae8fb5b33af1ff7695d29b1332812e869"><td class="mdescLeft">&#160;</td><td class="mdescRight">目標指令値1(PMXのV1.0.1.x～)  <br /></td></tr>
+<tr class="separator:ae8fb5b33af1ff7695d29b1332812e869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd26c1a48ab4a138666e49b1e751b609" id="r_acd26c1a48ab4a138666e49b1e751b609"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#acd26c1a48ab4a138666e49b1e751b609">PMX::RamAddrList::GoalCommandValue2</a> = 702</td></tr>
+<tr class="memdesc:acd26c1a48ab4a138666e49b1e751b609"><td class="mdescLeft">&#160;</td><td class="mdescRight">目標指令値2(PMXのV1.0.1.x～)  <br /></td></tr>
+<tr class="separator:acd26c1a48ab4a138666e49b1e751b609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b316f704395104cd10840a0a47eeb2d" id="r_a3b316f704395104cd10840a0a47eeb2d"><td class="memItemLeft" align="right" valign="top">constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_p_m_x_1_1_ram_addr_list.html#a3b316f704395104cd10840a0a47eeb2d">PMX::RamAddrList::GoalCommandValue3</a> = 704</td></tr>
+<tr class="memdesc:a3b316f704395104cd10840a0a47eeb2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">目標指令値3(PMXのV1.0.1.x～)  <br /></td></tr>
+<tr class="separator:a3b316f704395104cd10840a0a47eeb2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a357b4de38a1acc3c683454704e8c1c9a" id="r_a357b4de38a1acc3c683454704e8c1c9a"><td class="memItemLeft" align="right" valign="top"><a id="a357b4de38a1acc3c683454704e8c1c9a" name="a357b4de38a1acc3c683454704e8c1c9a"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::Position</b> = 0x01</td></tr>
+<tr class="memdesc:a357b4de38a1acc3c683454704e8c1c9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置制御 <br /></td></tr>
+<tr class="separator:a357b4de38a1acc3c683454704e8c1c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3451dc9e87850c57efa8e3f090fa5e0" id="r_ab3451dc9e87850c57efa8e3f090fa5e0"><td class="memItemLeft" align="right" valign="top"><a id="ab3451dc9e87850c57efa8e3f090fa5e0" name="ab3451dc9e87850c57efa8e3f090fa5e0"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::Speed</b> = 0x02</td></tr>
+<tr class="memdesc:ab3451dc9e87850c57efa8e3f090fa5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度制御 <br /></td></tr>
+<tr class="separator:ab3451dc9e87850c57efa8e3f090fa5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bb91dba50f9f5df13019c1e4c21d472" id="r_a1bb91dba50f9f5df13019c1e4c21d472"><td class="memItemLeft" align="right" valign="top"><a id="a1bb91dba50f9f5df13019c1e4c21d472" name="a1bb91dba50f9f5df13019c1e4c21d472"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::PositionSpeed</b> = 0x03</td></tr>
+<tr class="memdesc:a1bb91dba50f9f5df13019c1e4c21d472"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置/速度制御 <br /></td></tr>
+<tr class="separator:a1bb91dba50f9f5df13019c1e4c21d472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f61a3f5528caeb3d45f08f30cf4d037" id="r_a3f61a3f5528caeb3d45f08f30cf4d037"><td class="memItemLeft" align="right" valign="top"><a id="a3f61a3f5528caeb3d45f08f30cf4d037" name="a3f61a3f5528caeb3d45f08f30cf4d037"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::Current</b> = 0x04</td></tr>
+<tr class="memdesc:a3f61a3f5528caeb3d45f08f30cf4d037"><td class="mdescLeft">&#160;</td><td class="mdescRight">電流制御 <br /></td></tr>
+<tr class="separator:a3f61a3f5528caeb3d45f08f30cf4d037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e0a31e7b28bfa64b4c47593edeabcc9" id="r_a2e0a31e7b28bfa64b4c47593edeabcc9"><td class="memItemLeft" align="right" valign="top"><a id="a2e0a31e7b28bfa64b4c47593edeabcc9" name="a2e0a31e7b28bfa64b4c47593edeabcc9"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::PositionCurrent</b> = 0x05</td></tr>
+<tr class="memdesc:a2e0a31e7b28bfa64b4c47593edeabcc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置/電流制御 <br /></td></tr>
+<tr class="separator:a2e0a31e7b28bfa64b4c47593edeabcc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac16bdb2747a669ce9f9f7f9655b2ac6b" id="r_ac16bdb2747a669ce9f9f7f9655b2ac6b"><td class="memItemLeft" align="right" valign="top"><a id="ac16bdb2747a669ce9f9f7f9655b2ac6b" name="ac16bdb2747a669ce9f9f7f9655b2ac6b"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::SpeedCurrent</b> = 0x06</td></tr>
+<tr class="memdesc:ac16bdb2747a669ce9f9f7f9655b2ac6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度/電流制御 <br /></td></tr>
+<tr class="separator:ac16bdb2747a669ce9f9f7f9655b2ac6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acef23d32aea525a24e1897c57dc92710" id="r_acef23d32aea525a24e1897c57dc92710"><td class="memItemLeft" align="right" valign="top"><a id="acef23d32aea525a24e1897c57dc92710" name="acef23d32aea525a24e1897c57dc92710"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::PositionSpeedCurrent</b> = 0x07</td></tr>
+<tr class="memdesc:acef23d32aea525a24e1897c57dc92710"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置/速度/電流制御 <br /></td></tr>
+<tr class="separator:acef23d32aea525a24e1897c57dc92710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad594616a29684c03b2c468ad128e7554" id="r_ad594616a29684c03b2c468ad128e7554"><td class="memItemLeft" align="right" valign="top"><a id="ad594616a29684c03b2c468ad128e7554" name="ad594616a29684c03b2c468ad128e7554"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::Torque</b> = 0x08</td></tr>
+<tr class="memdesc:ad594616a29684c03b2c468ad128e7554"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルク制御 <br /></td></tr>
+<tr class="separator:ad594616a29684c03b2c468ad128e7554"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24bbc57f3247c687c87ca641cc6901f7" id="r_a24bbc57f3247c687c87ca641cc6901f7"><td class="memItemLeft" align="right" valign="top"><a id="a24bbc57f3247c687c87ca641cc6901f7" name="a24bbc57f3247c687c87ca641cc6901f7"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::PositionTorque</b> = 0x09</td></tr>
+<tr class="memdesc:a24bbc57f3247c687c87ca641cc6901f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置/トルク制御 <br /></td></tr>
+<tr class="separator:a24bbc57f3247c687c87ca641cc6901f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00da6a408903d591ad4988a22bc2fbbb" id="r_a00da6a408903d591ad4988a22bc2fbbb"><td class="memItemLeft" align="right" valign="top"><a id="a00da6a408903d591ad4988a22bc2fbbb" name="a00da6a408903d591ad4988a22bc2fbbb"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::SpeedTorque</b> = 0x0A</td></tr>
+<tr class="memdesc:a00da6a408903d591ad4988a22bc2fbbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">速度/トルク制御 <br /></td></tr>
+<tr class="separator:a00da6a408903d591ad4988a22bc2fbbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89ea0960f1952d79c08ca1f6e0664ac7" id="r_a89ea0960f1952d79c08ca1f6e0664ac7"><td class="memItemLeft" align="right" valign="top"><a id="a89ea0960f1952d79c08ca1f6e0664ac7" name="a89ea0960f1952d79c08ca1f6e0664ac7"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::PositionSpeedTprque</b> = 0x0B</td></tr>
+<tr class="memdesc:a89ea0960f1952d79c08ca1f6e0664ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置/速度/トルク制御 <br /></td></tr>
+<tr class="separator:a89ea0960f1952d79c08ca1f6e0664ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeec98134c34753315f26ba4bdac0d593" id="r_aeec98134c34753315f26ba4bdac0d593"><td class="memItemLeft" align="right" valign="top"><a id="aeec98134c34753315f26ba4bdac0d593" name="aeec98134c34753315f26ba4bdac0d593"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::PWM</b> = 0x10</td></tr>
+<tr class="memdesc:aeec98134c34753315f26ba4bdac0d593"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM制御 <br /></td></tr>
+<tr class="separator:aeec98134c34753315f26ba4bdac0d593"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c5e209f01ce0f512175b93486801e12" id="r_a5c5e209f01ce0f512175b93486801e12"><td class="memItemLeft" align="right" valign="top"><a id="a5c5e209f01ce0f512175b93486801e12" name="a5c5e209f01ce0f512175b93486801e12"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::Time</b> = 0x20</td></tr>
+<tr class="memdesc:a5c5e209f01ce0f512175b93486801e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">時間(単体制御はないので定義のみ) <br /></td></tr>
+<tr class="separator:a5c5e209f01ce0f512175b93486801e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37539a73cc0f7cac7f0b86794c7048b5" id="r_a37539a73cc0f7cac7f0b86794c7048b5"><td class="memItemLeft" align="right" valign="top"><a id="a37539a73cc0f7cac7f0b86794c7048b5" name="a37539a73cc0f7cac7f0b86794c7048b5"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::PositionTime</b> = 0x21</td></tr>
+<tr class="memdesc:a37539a73cc0f7cac7f0b86794c7048b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置/時間制御 <br /></td></tr>
+<tr class="separator:a37539a73cc0f7cac7f0b86794c7048b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c854a130c3c30acb037ae8a7cfd3518" id="r_a5c854a130c3c30acb037ae8a7cfd3518"><td class="memItemLeft" align="right" valign="top"><a id="a5c854a130c3c30acb037ae8a7cfd3518" name="a5c854a130c3c30acb037ae8a7cfd3518"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::PositionCurrentTime</b> = 0x25</td></tr>
+<tr class="memdesc:a5c854a130c3c30acb037ae8a7cfd3518"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置/電流/時間制御 <br /></td></tr>
+<tr class="separator:a5c854a130c3c30acb037ae8a7cfd3518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a097bd18a1f60aa40c5b99815522cdbc0" id="r_a097bd18a1f60aa40c5b99815522cdbc0"><td class="memItemLeft" align="right" valign="top"><a id="a097bd18a1f60aa40c5b99815522cdbc0" name="a097bd18a1f60aa40c5b99815522cdbc0"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ControlMode::PositionTorqueTime</b> = 0x29</td></tr>
+<tr class="memdesc:a097bd18a1f60aa40c5b99815522cdbc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">位置/トルク/時間制御 <br /></td></tr>
+<tr class="separator:a097bd18a1f60aa40c5b99815522cdbc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacaec53a9f6678c92af87659f620030c" id="r_aacaec53a9f6678c92af87659f620030c"><td class="memItemLeft" align="right" valign="top"><a id="aacaec53a9f6678c92af87659f620030c" name="aacaec53a9f6678c92af87659f620030c"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::TrajectoryType::Even</b> = 0x01</td></tr>
+<tr class="memdesc:aacaec53a9f6678c92af87659f620030c"><td class="mdescLeft">&#160;</td><td class="mdescRight">均等補間 <br /></td></tr>
+<tr class="separator:aacaec53a9f6678c92af87659f620030c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9611f434cc5fa0fe3ade2ff2251bcc11" id="r_a9611f434cc5fa0fe3ade2ff2251bcc11"><td class="memItemLeft" align="right" valign="top"><a id="a9611f434cc5fa0fe3ade2ff2251bcc11" name="a9611f434cc5fa0fe3ade2ff2251bcc11"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::TrajectoryType::FifthPoly</b> = 0x05</td></tr>
+<tr class="memdesc:a9611f434cc5fa0fe3ade2ff2251bcc11"><td class="mdescLeft">&#160;</td><td class="mdescRight">5次多項式補間 <br /></td></tr>
+<tr class="separator:a9611f434cc5fa0fe3ade2ff2251bcc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeab4af0f5b17b69e7796645f26535c8" id="r_abeab4af0f5b17b69e7796645f26535c8"><td class="memItemLeft" align="right" valign="top"><a id="abeab4af0f5b17b69e7796645f26535c8" name="abeab4af0f5b17b69e7796645f26535c8"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::TrajectoryType::Error</b> = 0xFF</td></tr>
+<tr class="memdesc:abeab4af0f5b17b69e7796645f26535c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">エラー <br /></td></tr>
+<tr class="separator:abeab4af0f5b17b69e7796645f26535c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f5ab312daf121cfbfb6dcfb89243e2" id="r_a00f5ab312daf121cfbfb6dcfb89243e2"><td class="memItemLeft" align="right" valign="top"><a id="a00f5ab312daf121cfbfb6dcfb89243e2" name="a00f5ab312daf121cfbfb6dcfb89243e2"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::EditBaudrate::_57600</b> = 0x00</td></tr>
+<tr class="memdesc:a00f5ab312daf121cfbfb6dcfb89243e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">57600bps <br /></td></tr>
+<tr class="separator:a00f5ab312daf121cfbfb6dcfb89243e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a18e9e9df35525f575a4eaa710e6ab8" id="r_a9a18e9e9df35525f575a4eaa710e6ab8"><td class="memItemLeft" align="right" valign="top"><a id="a9a18e9e9df35525f575a4eaa710e6ab8" name="a9a18e9e9df35525f575a4eaa710e6ab8"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::EditBaudrate::_115200</b> = 0x01</td></tr>
+<tr class="memdesc:a9a18e9e9df35525f575a4eaa710e6ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">115200bps <br /></td></tr>
+<tr class="separator:a9a18e9e9df35525f575a4eaa710e6ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21942a5fff748b9d6d1e92c6ac65e298" id="r_a21942a5fff748b9d6d1e92c6ac65e298"><td class="memItemLeft" align="right" valign="top"><a id="a21942a5fff748b9d6d1e92c6ac65e298" name="a21942a5fff748b9d6d1e92c6ac65e298"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::EditBaudrate::_625000</b> = 0x02</td></tr>
+<tr class="memdesc:a21942a5fff748b9d6d1e92c6ac65e298"><td class="mdescLeft">&#160;</td><td class="mdescRight">625000bps <br /></td></tr>
+<tr class="separator:a21942a5fff748b9d6d1e92c6ac65e298"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0eb5fcb33dad9875084fc8cd15dea79" id="r_ac0eb5fcb33dad9875084fc8cd15dea79"><td class="memItemLeft" align="right" valign="top"><a id="ac0eb5fcb33dad9875084fc8cd15dea79" name="ac0eb5fcb33dad9875084fc8cd15dea79"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::EditBaudrate::_1000000</b> = 0x03</td></tr>
+<tr class="memdesc:ac0eb5fcb33dad9875084fc8cd15dea79"><td class="mdescLeft">&#160;</td><td class="mdescRight">1Mbps <br /></td></tr>
+<tr class="separator:ac0eb5fcb33dad9875084fc8cd15dea79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a999d18b0cde122055872503b5b5577d2" id="r_a999d18b0cde122055872503b5b5577d2"><td class="memItemLeft" align="right" valign="top"><a id="a999d18b0cde122055872503b5b5577d2" name="a999d18b0cde122055872503b5b5577d2"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::EditBaudrate::_1250000</b> = 0x04</td></tr>
+<tr class="memdesc:a999d18b0cde122055872503b5b5577d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">1.25Mbps <br /></td></tr>
+<tr class="separator:a999d18b0cde122055872503b5b5577d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f13e8c63ff90d2f66f6752f1f01c6ef" id="r_a1f13e8c63ff90d2f66f6752f1f01c6ef"><td class="memItemLeft" align="right" valign="top"><a id="a1f13e8c63ff90d2f66f6752f1f01c6ef" name="a1f13e8c63ff90d2f66f6752f1f01c6ef"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::EditBaudrate::_1500000</b> = 0x05</td></tr>
+<tr class="memdesc:a1f13e8c63ff90d2f66f6752f1f01c6ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">1.5Mbps <br /></td></tr>
+<tr class="separator:a1f13e8c63ff90d2f66f6752f1f01c6ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af03d7628a492e104f7799d6240b0b6b8" id="r_af03d7628a492e104f7799d6240b0b6b8"><td class="memItemLeft" align="right" valign="top"><a id="af03d7628a492e104f7799d6240b0b6b8" name="af03d7628a492e104f7799d6240b0b6b8"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::EditBaudrate::_2000000</b> = 0x06</td></tr>
+<tr class="memdesc:af03d7628a492e104f7799d6240b0b6b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">2Mbps <br /></td></tr>
+<tr class="separator:af03d7628a492e104f7799d6240b0b6b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af355c545ec204779d854f43a929f3717" id="r_af355c545ec204779d854f43a929f3717"><td class="memItemLeft" align="right" valign="top"><a id="af355c545ec204779d854f43a929f3717" name="af355c545ec204779d854f43a929f3717"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::EditBaudrate::_3000000</b> = 0x07</td></tr>
+<tr class="memdesc:af355c545ec204779d854f43a929f3717"><td class="mdescLeft">&#160;</td><td class="mdescRight">3Mbps <br /></td></tr>
+<tr class="separator:af355c545ec204779d854f43a929f3717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87fd77a06909a53f7b17e15bde5e0345" id="r_a87fd77a06909a53f7b17e15bde5e0345"><td class="memItemLeft" align="right" valign="top"><a id="a87fd77a06909a53f7b17e15bde5e0345" name="a87fd77a06909a53f7b17e15bde5e0345"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::EditParity::ParityNone</b> = 0x00</td></tr>
+<tr class="memdesc:a87fd77a06909a53f7b17e15bde5e0345"><td class="mdescLeft">&#160;</td><td class="mdescRight">パリティなし <br /></td></tr>
+<tr class="separator:a87fd77a06909a53f7b17e15bde5e0345"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0adf7be4aa43e872f65c9f08d7611266" id="r_a0adf7be4aa43e872f65c9f08d7611266"><td class="memItemLeft" align="right" valign="top"><a id="a0adf7be4aa43e872f65c9f08d7611266" name="a0adf7be4aa43e872f65c9f08d7611266"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::EditParity::Odd</b> = 0x01</td></tr>
+<tr class="memdesc:a0adf7be4aa43e872f65c9f08d7611266"><td class="mdescLeft">&#160;</td><td class="mdescRight">パリティ奇数 <br /></td></tr>
+<tr class="separator:a0adf7be4aa43e872f65c9f08d7611266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac323586dc18fb174fd8b440ccc95175e" id="r_ac323586dc18fb174fd8b440ccc95175e"><td class="memItemLeft" align="right" valign="top"><a id="ac323586dc18fb174fd8b440ccc95175e" name="ac323586dc18fb174fd8b440ccc95175e"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::EditParity::Even</b> = 0x02</td></tr>
+<tr class="memdesc:ac323586dc18fb174fd8b440ccc95175e"><td class="mdescLeft">&#160;</td><td class="mdescRight">パリティ偶数 <br /></td></tr>
+<tr class="separator:ac323586dc18fb174fd8b440ccc95175e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae228e213be2178dfc2184e422bc8ee0e" id="r_ae228e213be2178dfc2184e422bc8ee0e"><td class="memItemLeft" align="right" valign="top"><a id="ae228e213be2178dfc2184e422bc8ee0e" name="ae228e213be2178dfc2184e422bc8ee0e"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::EditParity::Error</b> = 0xFF</td></tr>
+<tr class="memdesc:ae228e213be2178dfc2184e422bc8ee0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">パリティエラー <br /></td></tr>
+<tr class="separator:ae228e213be2178dfc2184e422bc8ee0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af25965ed3707dd25a6d316369f30316e" id="r_af25965ed3707dd25a6d316369f30316e"><td class="memItemLeft" align="right" valign="top"><a id="af25965ed3707dd25a6d316369f30316e" name="af25965ed3707dd25a6d316369f30316e"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::SendCmd::MemREAD</b> = 0xa0</td></tr>
+<tr class="memdesc:af25965ed3707dd25a6d316369f30316e"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAM上のデータを読み取る <br /></td></tr>
+<tr class="separator:af25965ed3707dd25a6d316369f30316e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb5ae6ccb3cb6e4841200b56c9f79cb" id="r_abeb5ae6ccb3cb6e4841200b56c9f79cb"><td class="memItemLeft" align="right" valign="top"><a id="abeb5ae6ccb3cb6e4841200b56c9f79cb" name="abeb5ae6ccb3cb6e4841200b56c9f79cb"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::SendCmd::MemWRITE</b> = 0xa1</td></tr>
+<tr class="memdesc:abeb5ae6ccb3cb6e4841200b56c9f79cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAM上へデータを書き込む <br /></td></tr>
+<tr class="separator:abeb5ae6ccb3cb6e4841200b56c9f79cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac86b214b1347064def484bdfca4febb6" id="r_ac86b214b1347064def484bdfca4febb6"><td class="memItemLeft" align="right" valign="top"><a id="ac86b214b1347064def484bdfca4febb6" name="ac86b214b1347064def484bdfca4febb6"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::SendCmd::LOAD</b> = 0xa2</td></tr>
+<tr class="memdesc:ac86b214b1347064def484bdfca4febb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">フラッシュメモリーに保存されているデータをRAMへ展開する <br /></td></tr>
+<tr class="separator:ac86b214b1347064def484bdfca4febb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1921640f9c6dec3fb994702a886f8f2d" id="r_a1921640f9c6dec3fb994702a886f8f2d"><td class="memItemLeft" align="right" valign="top"><a id="a1921640f9c6dec3fb994702a886f8f2d" name="a1921640f9c6dec3fb994702a886f8f2d"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::SendCmd::SAVE</b> = 0xa3</td></tr>
+<tr class="memdesc:a1921640f9c6dec3fb994702a886f8f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAMのデータをフラッシュメモリーに保存する <br /></td></tr>
+<tr class="separator:a1921640f9c6dec3fb994702a886f8f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae44d141c572acca88528bff2b76a55e" id="r_aae44d141c572acca88528bff2b76a55e"><td class="memItemLeft" align="right" valign="top"><a id="aae44d141c572acca88528bff2b76a55e" name="aae44d141c572acca88528bff2b76a55e"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::SendCmd::MotorREAD</b> = 0xa4</td></tr>
+<tr class="memdesc:aae44d141c572acca88528bff2b76a55e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ポジション指定コマンド <br /></td></tr>
+<tr class="separator:aae44d141c572acca88528bff2b76a55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8c548ba115ec8fdcdc4d8cadef96162" id="r_af8c548ba115ec8fdcdc4d8cadef96162"><td class="memItemLeft" align="right" valign="top"><a id="af8c548ba115ec8fdcdc4d8cadef96162" name="af8c548ba115ec8fdcdc4d8cadef96162"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::SendCmd::MotorWRITE</b> = 0xa5</td></tr>
+<tr class="memdesc:af8c548ba115ec8fdcdc4d8cadef96162"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAM上へデータを書き込む <br /></td></tr>
+<tr class="separator:af8c548ba115ec8fdcdc4d8cadef96162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f7bd243b8c4cad89e4204563b44ea5" id="r_a83f7bd243b8c4cad89e4204563b44ea5"><td class="memItemLeft" align="right" valign="top"><a id="a83f7bd243b8c4cad89e4204563b44ea5" name="a83f7bd243b8c4cad89e4204563b44ea5"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::SendCmd::SystemREAD</b> = 0xbb</td></tr>
+<tr class="memdesc:a83f7bd243b8c4cad89e4204563b44ea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">IDシリアル番号等の読み込み <br /></td></tr>
+<tr class="separator:a83f7bd243b8c4cad89e4204563b44ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54887dd1f97d4489b8066ba090e5fb23" id="r_a54887dd1f97d4489b8066ba090e5fb23"><td class="memItemLeft" align="right" valign="top"><a id="a54887dd1f97d4489b8066ba090e5fb23" name="a54887dd1f97d4489b8066ba090e5fb23"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::SendCmd::SystemWRITE</b> = 0xbc</td></tr>
+<tr class="memdesc:a54887dd1f97d4489b8066ba090e5fb23"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID・通信速度・パリティ書き込み <br /></td></tr>
+<tr class="separator:a54887dd1f97d4489b8066ba090e5fb23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c39b356bf7b9b1083616374d16f394d" id="r_a8c39b356bf7b9b1083616374d16f394d"><td class="memItemLeft" align="right" valign="top"><a id="a8c39b356bf7b9b1083616374d16f394d" name="a8c39b356bf7b9b1083616374d16f394d"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::SendCmd::ReBoot</b> = 0xbd</td></tr>
+<tr class="memdesc:a8c39b356bf7b9b1083616374d16f394d"><td class="mdescLeft">&#160;</td><td class="mdescRight">リセットコマンド <br /></td></tr>
+<tr class="separator:a8c39b356bf7b9b1083616374d16f394d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a283e927d81735b15486d58c74b9a8b3f" id="r_a283e927d81735b15486d58c74b9a8b3f"><td class="memItemLeft" align="right" valign="top"><a id="a283e927d81735b15486d58c74b9a8b3f" name="a283e927d81735b15486d58c74b9a8b3f"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::SendCmd::FactoryReset</b> = 0xbe</td></tr>
+<tr class="memdesc:a283e927d81735b15486d58c74b9a8b3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">工場出荷時設定へ戻す <br /></td></tr>
+<tr class="separator:a283e927d81735b15486d58c74b9a8b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a656621252b5c28c0c46d3a0c1e63324c" id="r_a656621252b5c28c0c46d3a0c1e63324c"><td class="memItemLeft" align="right" valign="top"><a id="a656621252b5c28c0c46d3a0c1e63324c" name="a656621252b5c28c0c46d3a0c1e63324c"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::BuffPter::Header</b> = 0</td></tr>
+<tr class="separator:a656621252b5c28c0c46d3a0c1e63324c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa29b653296ff96433f37b1daeea3cc64" id="r_aa29b653296ff96433f37b1daeea3cc64"><td class="memItemLeft" align="right" valign="top"><a id="aa29b653296ff96433f37b1daeea3cc64" name="aa29b653296ff96433f37b1daeea3cc64"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::BuffPter::Header1</b> = 1</td></tr>
+<tr class="separator:aa29b653296ff96433f37b1daeea3cc64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735134dae3c7d80d26aba354f755e2f8" id="r_a735134dae3c7d80d26aba354f755e2f8"><td class="memItemLeft" align="right" valign="top"><a id="a735134dae3c7d80d26aba354f755e2f8" name="a735134dae3c7d80d26aba354f755e2f8"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::BuffPter::ID</b> = 2</td></tr>
+<tr class="separator:a735134dae3c7d80d26aba354f755e2f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd6bb432a0e0e97ec066da7afdb738d1" id="r_acd6bb432a0e0e97ec066da7afdb738d1"><td class="memItemLeft" align="right" valign="top"><a id="acd6bb432a0e0e97ec066da7afdb738d1" name="acd6bb432a0e0e97ec066da7afdb738d1"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::BuffPter::Length</b> = 3</td></tr>
+<tr class="separator:acd6bb432a0e0e97ec066da7afdb738d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad89ef390ae23f7dc3113016293f3cb37" id="r_ad89ef390ae23f7dc3113016293f3cb37"><td class="memItemLeft" align="right" valign="top"><a id="ad89ef390ae23f7dc3113016293f3cb37" name="ad89ef390ae23f7dc3113016293f3cb37"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::BuffPter::CMD</b> = 4</td></tr>
+<tr class="separator:ad89ef390ae23f7dc3113016293f3cb37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54271bac6a484d099430d55560346be1" id="r_a54271bac6a484d099430d55560346be1"><td class="memItemLeft" align="right" valign="top"><a id="a54271bac6a484d099430d55560346be1" name="a54271bac6a484d099430d55560346be1"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::BuffPter::Option</b> = 5</td></tr>
+<tr class="separator:a54271bac6a484d099430d55560346be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a826cabc303747c42900ec1e11775ee91" id="r_a826cabc303747c42900ec1e11775ee91"><td class="memItemLeft" align="right" valign="top"><a id="a826cabc303747c42900ec1e11775ee91" name="a826cabc303747c42900ec1e11775ee91"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::BuffPter::Status</b> = 5</td></tr>
+<tr class="separator:a826cabc303747c42900ec1e11775ee91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bc41c1031052faba09fabe0fbb99222" id="r_a8bc41c1031052faba09fabe0fbb99222"><td class="memItemLeft" align="right" valign="top"><a id="a8bc41c1031052faba09fabe0fbb99222" name="a8bc41c1031052faba09fabe0fbb99222"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::BuffPter::Data</b> = 6</td></tr>
+<tr class="separator:a8bc41c1031052faba09fabe0fbb99222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da2c19294de9425af1a1a923157bf1d" id="r_a2da2c19294de9425af1a1a923157bf1d"><td class="memItemLeft" align="right" valign="top"><a id="a2da2c19294de9425af1a1a923157bf1d" name="a2da2c19294de9425af1a1a923157bf1d"></a>
+constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::BuffPter::ACK</b> = 6</td></tr>
+<tr class="separator:a2da2c19294de9425af1a1a923157bf1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb0a0850653517bcb521a88ab06cd12" id="r_addb0a0850653517bcb521a88ab06cd12"><td class="memItemLeft" align="right" valign="top"><a id="addb0a0850653517bcb521a88ab06cd12" name="addb0a0850653517bcb521a88ab06cd12"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ReceiveDataOption::NoReturn</b> = 0x00</td></tr>
+<tr class="separator:addb0a0850653517bcb521a88ab06cd12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5837f479b6f045a0f807e949cca0c3dc" id="r_a5837f479b6f045a0f807e949cca0c3dc"><td class="memItemLeft" align="right" valign="top"><a id="a5837f479b6f045a0f807e949cca0c3dc" name="a5837f479b6f045a0f807e949cca0c3dc"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ReceiveDataOption::Position</b> = 0x01</td></tr>
+<tr class="separator:a5837f479b6f045a0f807e949cca0c3dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e4cb199c940a9d1f06542d9f21973e3" id="r_a8e4cb199c940a9d1f06542d9f21973e3"><td class="memItemLeft" align="right" valign="top"><a id="a8e4cb199c940a9d1f06542d9f21973e3" name="a8e4cb199c940a9d1f06542d9f21973e3"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ReceiveDataOption::Speed</b> = 0x02</td></tr>
+<tr class="separator:a8e4cb199c940a9d1f06542d9f21973e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a53f219087b06b187ab7a743f4d14d3" id="r_a0a53f219087b06b187ab7a743f4d14d3"><td class="memItemLeft" align="right" valign="top"><a id="a0a53f219087b06b187ab7a743f4d14d3" name="a0a53f219087b06b187ab7a743f4d14d3"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ReceiveDataOption::Current</b> = 0x04</td></tr>
+<tr class="separator:a0a53f219087b06b187ab7a743f4d14d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af162fd9e3f95634c942044ada83b4a5c" id="r_af162fd9e3f95634c942044ada83b4a5c"><td class="memItemLeft" align="right" valign="top"><a id="af162fd9e3f95634c942044ada83b4a5c" name="af162fd9e3f95634c942044ada83b4a5c"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ReceiveDataOption::Torque</b> = 0x08</td></tr>
+<tr class="separator:af162fd9e3f95634c942044ada83b4a5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4e0241013acf51dd8a4cdd7c8ab31b7" id="r_ab4e0241013acf51dd8a4cdd7c8ab31b7"><td class="memItemLeft" align="right" valign="top"><a id="ab4e0241013acf51dd8a4cdd7c8ab31b7" name="ab4e0241013acf51dd8a4cdd7c8ab31b7"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ReceiveDataOption::Pwm</b> = 0x10</td></tr>
+<tr class="separator:ab4e0241013acf51dd8a4cdd7c8ab31b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bc64382fcc87c0eff639b9c71099a9e" id="r_a9bc64382fcc87c0eff639b9c71099a9e"><td class="memItemLeft" align="right" valign="top"><a id="a9bc64382fcc87c0eff639b9c71099a9e" name="a9bc64382fcc87c0eff639b9c71099a9e"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ReceiveDataOption::MotorTemp</b> = 0x20</td></tr>
+<tr class="separator:a9bc64382fcc87c0eff639b9c71099a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb500f2fe5fb30faac26fcb1a91e8abd" id="r_afb500f2fe5fb30faac26fcb1a91e8abd"><td class="memItemLeft" align="right" valign="top"><a id="afb500f2fe5fb30faac26fcb1a91e8abd" name="afb500f2fe5fb30faac26fcb1a91e8abd"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ReceiveDataOption::CpuTemp</b> = 0x40</td></tr>
+<tr class="separator:afb500f2fe5fb30faac26fcb1a91e8abd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd5c21d5f2225fe0305a6f9bee87a10f" id="r_acd5c21d5f2225fe0305a6f9bee87a10f"><td class="memItemLeft" align="right" valign="top"><a id="acd5c21d5f2225fe0305a6f9bee87a10f" name="acd5c21d5f2225fe0305a6f9bee87a10f"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ReceiveDataOption::Voltage</b> = 0x80</td></tr>
+<tr class="separator:acd5c21d5f2225fe0305a6f9bee87a10f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58ce3d066b2cf406f76c64597a18015e" id="r_a58ce3d066b2cf406f76c64597a18015e"><td class="memItemLeft" align="right" valign="top"><a id="a58ce3d066b2cf406f76c64597a18015e" name="a58ce3d066b2cf406f76c64597a18015e"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ReceiveDataOption::Full</b> = 0xFF</td></tr>
+<tr class="separator:a58ce3d066b2cf406f76c64597a18015e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92056809e94caa1126affbd6d3a64095" id="r_a92056809e94caa1126affbd6d3a64095"><td class="memItemLeft" align="right" valign="top"><a id="a92056809e94caa1126affbd6d3a64095" name="a92056809e94caa1126affbd6d3a64095"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ComError::OK</b> = 0</td></tr>
+<tr class="memdesc:a92056809e94caa1126affbd6d3a64095"><td class="mdescLeft">&#160;</td><td class="mdescRight">正常 <br /></td></tr>
+<tr class="separator:a92056809e94caa1126affbd6d3a64095"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e60dbd8e9d567e40ff0415f9c59c872" id="r_a2e60dbd8e9d567e40ff0415f9c59c872"><td class="memItemLeft" align="right" valign="top"><a id="a2e60dbd8e9d567e40ff0415f9c59c872" name="a2e60dbd8e9d567e40ff0415f9c59c872"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ComError::TimeOut</b> = 0xFF00</td></tr>
+<tr class="memdesc:a2e60dbd8e9d567e40ff0415f9c59c872"><td class="mdescLeft">&#160;</td><td class="mdescRight">無応答/Timeoutエラー <br /></td></tr>
+<tr class="separator:a2e60dbd8e9d567e40ff0415f9c59c872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adafed8e5a9a22114ebf35caa5c276cf6" id="r_adafed8e5a9a22114ebf35caa5c276cf6"><td class="memItemLeft" align="right" valign="top"><a id="adafed8e5a9a22114ebf35caa5c276cf6" name="adafed8e5a9a22114ebf35caa5c276cf6"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ComError::CrcError</b> = 0xFE00</td></tr>
+<tr class="memdesc:adafed8e5a9a22114ebf35caa5c276cf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRCエラー <br /></td></tr>
+<tr class="separator:adafed8e5a9a22114ebf35caa5c276cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25869f3eccf7596f3157e379bb37606f" id="r_a25869f3eccf7596f3157e379bb37606f"><td class="memItemLeft" align="right" valign="top"><a id="a25869f3eccf7596f3157e379bb37606f" name="a25869f3eccf7596f3157e379bb37606f"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ComError::FormatError</b> = 0xFD00</td></tr>
+<tr class="memdesc:a25869f3eccf7596f3157e379bb37606f"><td class="mdescLeft">&#160;</td><td class="mdescRight">作られたデータのフォーマットに異常があった <br /></td></tr>
+<tr class="separator:a25869f3eccf7596f3157e379bb37606f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8e6eb73c4176eabee9b34947d25dd93" id="r_ac8e6eb73c4176eabee9b34947d25dd93"><td class="memItemLeft" align="right" valign="top"><a id="ac8e6eb73c4176eabee9b34947d25dd93" name="ac8e6eb73c4176eabee9b34947d25dd93"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ComError::SendError</b> = 0xFC00</td></tr>
+<tr class="memdesc:ac8e6eb73c4176eabee9b34947d25dd93"><td class="mdescLeft">&#160;</td><td class="mdescRight">送信する際に異常があった <br /></td></tr>
+<tr class="separator:ac8e6eb73c4176eabee9b34947d25dd93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53921c0c15404fdcc0e3703acc9935c0" id="r_a53921c0c15404fdcc0e3703acc9935c0"><td class="memItemLeft" align="right" valign="top"><a id="a53921c0c15404fdcc0e3703acc9935c0" name="a53921c0c15404fdcc0e3703acc9935c0"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ComError::ReceiveError</b> = 0xFB00</td></tr>
+<tr class="memdesc:a53921c0c15404fdcc0e3703acc9935c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">受信したデータに異常があった <br /></td></tr>
+<tr class="separator:a53921c0c15404fdcc0e3703acc9935c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a696a4c0b98aed834479fabab775894b7" id="r_a696a4c0b98aed834479fabab775894b7"><td class="memItemLeft" align="right" valign="top"><a id="a696a4c0b98aed834479fabab775894b7" name="a696a4c0b98aed834479fabab775894b7"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ComError::MotorREADConvertError</b> = 0xFA00</td></tr>
+<tr class="memdesc:a696a4c0b98aed834479fabab775894b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">MotorREADのデータ変換に異常があった <br /></td></tr>
+<tr class="separator:a696a4c0b98aed834479fabab775894b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e23c3ac6be07ebb37d2b8e4a970a3e8" id="r_a7e23c3ac6be07ebb37d2b8e4a970a3e8"><td class="memItemLeft" align="right" valign="top"><a id="a7e23c3ac6be07ebb37d2b8e4a970a3e8" name="a7e23c3ac6be07ebb37d2b8e4a970a3e8"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ComError::NG</b> = 0xFA00</td></tr>
+<tr class="memdesc:a7e23c3ac6be07ebb37d2b8e4a970a3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">上記以外のエラー <br /></td></tr>
+<tr class="separator:a7e23c3ac6be07ebb37d2b8e4a970a3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2819f5ea01d0ce85efa9b82ee8ebf774" id="r_a2819f5ea01d0ce85efa9b82ee8ebf774"><td class="memItemLeft" align="right" valign="top"><a id="a2819f5ea01d0ce85efa9b82ee8ebf774" name="a2819f5ea01d0ce85efa9b82ee8ebf774"></a>
+constexpr unsigned short&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::ComError::ErrorMask</b> = 0xFF00</td></tr>
+<tr class="memdesc:a2819f5ea01d0ce85efa9b82ee8ebf774"><td class="mdescLeft">&#160;</td><td class="mdescRight">マスク用のデータ <br /></td></tr>
+<tr class="separator:a2819f5ea01d0ce85efa9b82ee8ebf774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa774f12b648212e75dbf8d3e2932ee7b" id="r_aa774f12b648212e75dbf8d3e2932ee7b"><td class="memItemLeft" align="right" valign="top"><a id="aa774f12b648212e75dbf8d3e2932ee7b" name="aa774f12b648212e75dbf8d3e2932ee7b"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::MinimumLength::Send</b> = 8</td></tr>
+<tr class="memdesc:aa774f12b648212e75dbf8d3e2932ee7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">送信コマンドの最低サイズ <br /></td></tr>
+<tr class="separator:aa774f12b648212e75dbf8d3e2932ee7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98435aedf3d24b85014b8f1fcb64671a" id="r_a98435aedf3d24b85014b8f1fcb64671a"><td class="memItemLeft" align="right" valign="top"><a id="a98435aedf3d24b85014b8f1fcb64671a" name="a98435aedf3d24b85014b8f1fcb64671a"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::MinimumLength::Receive</b> = 8</td></tr>
+<tr class="memdesc:a98435aedf3d24b85014b8f1fcb64671a"><td class="mdescLeft">&#160;</td><td class="mdescRight">受信コマンドの最低サイズ <br /></td></tr>
+<tr class="separator:a98435aedf3d24b85014b8f1fcb64671a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cc7ba618dc06b1e83be31241a9c0ecf" id="r_a8cc7ba618dc06b1e83be31241a9c0ecf"><td class="memItemLeft" align="right" valign="top"><a id="a8cc7ba618dc06b1e83be31241a9c0ecf" name="a8cc7ba618dc06b1e83be31241a9c0ecf"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::PmxStatusErrorList::SystemError</b> = 0x01</td></tr>
+<tr class="memdesc:a8cc7ba618dc06b1e83be31241a9c0ecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">System Error <br /></td></tr>
+<tr class="separator:a8cc7ba618dc06b1e83be31241a9c0ecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01e5e714f42ddfa05bdd47b89ee6a61e" id="r_a01e5e714f42ddfa05bdd47b89ee6a61e"><td class="memItemLeft" align="right" valign="top"><a id="a01e5e714f42ddfa05bdd47b89ee6a61e" name="a01e5e714f42ddfa05bdd47b89ee6a61e"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::PmxStatusErrorList::MotorError</b> = 0x02</td></tr>
+<tr class="memdesc:a01e5e714f42ddfa05bdd47b89ee6a61e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Motor Error <br /></td></tr>
+<tr class="separator:a01e5e714f42ddfa05bdd47b89ee6a61e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2129f9e5a59cd79de5f61ae5ef9d7bc8" id="r_a2129f9e5a59cd79de5f61ae5ef9d7bc8"><td class="memItemLeft" align="right" valign="top"><a id="a2129f9e5a59cd79de5f61ae5ef9d7bc8" name="a2129f9e5a59cd79de5f61ae5ef9d7bc8"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::PmxStatusErrorList::CommunicationError</b> = 0x04</td></tr>
+<tr class="memdesc:a2129f9e5a59cd79de5f61ae5ef9d7bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Communication Error <br /></td></tr>
+<tr class="separator:a2129f9e5a59cd79de5f61ae5ef9d7bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63665d4f937c13357dea8c3300a75cbf" id="r_a63665d4f937c13357dea8c3300a75cbf"><td class="memItemLeft" align="right" valign="top"><a id="a63665d4f937c13357dea8c3300a75cbf" name="a63665d4f937c13357dea8c3300a75cbf"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::PmxStatusErrorList::CommandError</b> = 0x08</td></tr>
+<tr class="memdesc:a63665d4f937c13357dea8c3300a75cbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command Error <br /></td></tr>
+<tr class="separator:a63665d4f937c13357dea8c3300a75cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad058cb6b0a0636fe39714a7d0b4daf14" id="r_ad058cb6b0a0636fe39714a7d0b4daf14"><td class="memItemLeft" align="right" valign="top"><a id="ad058cb6b0a0636fe39714a7d0b4daf14" name="ad058cb6b0a0636fe39714a7d0b4daf14"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::PmxStatusErrorList::RamAccessError</b> = 0x10</td></tr>
+<tr class="memdesc:ad058cb6b0a0636fe39714a7d0b4daf14"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAM Access Error <br /></td></tr>
+<tr class="separator:ad058cb6b0a0636fe39714a7d0b4daf14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5702a54dd4306138c657f6376319720b" id="r_a5702a54dd4306138c657f6376319720b"><td class="memItemLeft" align="right" valign="top"><a id="a5702a54dd4306138c657f6376319720b" name="a5702a54dd4306138c657f6376319720b"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::PmxStatusErrorList::ModeError</b> = 0x20</td></tr>
+<tr class="memdesc:a5702a54dd4306138c657f6376319720b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode Error <br /></td></tr>
+<tr class="separator:a5702a54dd4306138c657f6376319720b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd8173cba78dac42f52edd9ea0f7eadd" id="r_acd8173cba78dac42f52edd9ea0f7eadd"><td class="memItemLeft" align="right" valign="top"><a id="acd8173cba78dac42f52edd9ea0f7eadd" name="acd8173cba78dac42f52edd9ea0f7eadd"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::PmxStatusErrorList::DataError</b> = 0x40</td></tr>
+<tr class="memdesc:acd8173cba78dac42f52edd9ea0f7eadd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data Error <br /></td></tr>
+<tr class="separator:acd8173cba78dac42f52edd9ea0f7eadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a535e4f291588132da4d70b0256874311" id="r_a535e4f291588132da4d70b0256874311"><td class="memItemLeft" align="right" valign="top"><a id="a535e4f291588132da4d70b0256874311" name="a535e4f291588132da4d70b0256874311"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::PmxStatusErrorList::RunError</b> = 0x80</td></tr>
+<tr class="memdesc:a535e4f291588132da4d70b0256874311"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run Error <br /></td></tr>
+<tr class="separator:a535e4f291588132da4d70b0256874311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad80d237c0f0abdb44d91f0bf25d483bb" id="r_ad80d237c0f0abdb44d91f0bf25d483bb"><td class="memItemLeft" align="right" valign="top"><a id="ad80d237c0f0abdb44d91f0bf25d483bb" name="ad80d237c0f0abdb44d91f0bf25d483bb"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::TorqueSwitchType::Control</b> = 0x00</td></tr>
+<tr class="memdesc:ad80d237c0f0abdb44d91f0bf25d483bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">MotorWriteのオプションで使用 <br /></td></tr>
+<tr class="separator:ad80d237c0f0abdb44d91f0bf25d483bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a355b0814fbc16b256c8d6bad2ee6891b" id="r_a355b0814fbc16b256c8d6bad2ee6891b"><td class="memItemLeft" align="right" valign="top"><a id="a355b0814fbc16b256c8d6bad2ee6891b" name="a355b0814fbc16b256c8d6bad2ee6891b"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::TorqueSwitchType::TorqueOn</b> = 0x01</td></tr>
+<tr class="memdesc:a355b0814fbc16b256c8d6bad2ee6891b"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルクON <br /></td></tr>
+<tr class="separator:a355b0814fbc16b256c8d6bad2ee6891b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3812916475e7334cf52d81976ad970a" id="r_aa3812916475e7334cf52d81976ad970a"><td class="memItemLeft" align="right" valign="top"><a id="aa3812916475e7334cf52d81976ad970a" name="aa3812916475e7334cf52d81976ad970a"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::TorqueSwitchType::Free</b> = 0x02</td></tr>
+<tr class="memdesc:aa3812916475e7334cf52d81976ad970a"><td class="mdescLeft">&#160;</td><td class="mdescRight">フリーモード <br /></td></tr>
+<tr class="separator:aa3812916475e7334cf52d81976ad970a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab67f186b6c92b63777497c610153c36a" id="r_ab67f186b6c92b63777497c610153c36a"><td class="memItemLeft" align="right" valign="top"><a id="ab67f186b6c92b63777497c610153c36a" name="ab67f186b6c92b63777497c610153c36a"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::TorqueSwitchType::Brake</b> = 0x04</td></tr>
+<tr class="memdesc:ab67f186b6c92b63777497c610153c36a"><td class="mdescLeft">&#160;</td><td class="mdescRight">ショートブレーキモード <br /></td></tr>
+<tr class="separator:ab67f186b6c92b63777497c610153c36a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a047e6ef4add7dd4fcafcc9495f76b771" id="r_a047e6ef4add7dd4fcafcc9495f76b771"><td class="memItemLeft" align="right" valign="top"><a id="a047e6ef4add7dd4fcafcc9495f76b771" name="a047e6ef4add7dd4fcafcc9495f76b771"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::TorqueSwitchType::Hold</b> = 0x08</td></tr>
+<tr class="memdesc:a047e6ef4add7dd4fcafcc9495f76b771"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holdモード <br /></td></tr>
+<tr class="separator:a047e6ef4add7dd4fcafcc9495f76b771"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a988b2e817d9af53df7a0b3b9c6240845" id="r_a988b2e817d9af53df7a0b3b9c6240845"><td class="memItemLeft" align="right" valign="top"><a id="a988b2e817d9af53df7a0b3b9c6240845" name="a988b2e817d9af53df7a0b3b9c6240845"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::TorqueSwitchType::Mask</b> = 0x0F</td></tr>
+<tr class="memdesc:a988b2e817d9af53df7a0b3b9c6240845"><td class="mdescLeft">&#160;</td><td class="mdescRight">トルクON/OFFを抜き出すためのマスクする値 <br /></td></tr>
+<tr class="separator:a988b2e817d9af53df7a0b3b9c6240845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20c5c7b0e2bf1db57b4c40ee36ed8cd5" id="r_a20c5c7b0e2bf1db57b4c40ee36ed8cd5"><td class="memItemLeft" align="right" valign="top"><a id="a20c5c7b0e2bf1db57b4c40ee36ed8cd5" name="a20c5c7b0e2bf1db57b4c40ee36ed8cd5"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::TorqueSwitchType::Error</b> = 0xFF</td></tr>
+<tr class="memdesc:a20c5c7b0e2bf1db57b4c40ee36ed8cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">エラー <br /></td></tr>
+<tr class="separator:a20c5c7b0e2bf1db57b4c40ee36ed8cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5421b97e9e64f323800c0c818868a4bf" id="r_a5421b97e9e64f323800c0c818868a4bf"><td class="memItemLeft" align="right" valign="top"><a id="a5421b97e9e64f323800c0c818868a4bf" name="a5421b97e9e64f323800c0c818868a4bf"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::CloneReverseType::Clone</b> = 0x01</td></tr>
+<tr class="memdesc:a5421b97e9e64f323800c0c818868a4bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">cloneOnの設定値 <br /></td></tr>
+<tr class="separator:a5421b97e9e64f323800c0c818868a4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24b2312897c2cca68b4e171266a3931d" id="r_a24b2312897c2cca68b4e171266a3931d"><td class="memItemLeft" align="right" valign="top"><a id="a24b2312897c2cca68b4e171266a3931d" name="a24b2312897c2cca68b4e171266a3931d"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::CloneReverseType::Reverse</b> = 0x02</td></tr>
+<tr class="memdesc:a24b2312897c2cca68b4e171266a3931d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ReverseOnの設定値 <br /></td></tr>
+<tr class="separator:a24b2312897c2cca68b4e171266a3931d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3df5032ace8c8b596e5b7125f4cb667" id="r_af3df5032ace8c8b596e5b7125f4cb667"><td class="memItemLeft" align="right" valign="top"><a id="af3df5032ace8c8b596e5b7125f4cb667" name="af3df5032ace8c8b596e5b7125f4cb667"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::LedModeType::Normal</b> = 0x00</td></tr>
+<tr class="memdesc:af3df5032ace8c8b596e5b7125f4cb667"><td class="mdescLeft">&#160;</td><td class="mdescRight">標準モード <br /></td></tr>
+<tr class="separator:af3df5032ace8c8b596e5b7125f4cb667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d4fa65bcfce70c91534ea3d4fc65ca9" id="r_a3d4fa65bcfce70c91534ea3d4fc65ca9"><td class="memItemLeft" align="right" valign="top"><a id="a3d4fa65bcfce70c91534ea3d4fc65ca9" name="a3d4fa65bcfce70c91534ea3d4fc65ca9"></a>
+constexpr byte&#160;</td><td class="memItemRight" valign="bottom"><b>PMX::LedModeType::Off</b> = 0x01</td></tr>
+<tr class="memdesc:a3d4fa65bcfce70c91534ea3d4fc65ca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">消灯モード <br /></td></tr>
+<tr class="separator:a3d4fa65bcfce70c91534ea3d4fc65ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p><a class="el" href="namespace_p_m_x.html" title="PMXの固有値の定義">PMX</a> library header file </p>
+<dl class="section author"><dt>著者</dt><dd>Kondo Kagaku Co.,Ltd. </dd>
+<dd>
+T.Nobuhara,Gotanda,hn.Kondo </dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2024/07/08 </dd></dl>
+<dl class="section version"><dt>バージョン</dt><dd>1.0.3 </dd></dl>
+<dl class="section copyright"><dt>著作権所有</dt><dd>Kondo Kagaku Co.,Ltd. 2024 </dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>コメントに不備がありますのでご注意ください </dd></dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="_pmx_base_class_8h.html">PmxBaseClass.h</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>

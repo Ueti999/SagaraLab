@@ -1,0 +1,12 @@
+<map id="PmxBase::ReBoot" name="PmxBase::ReBoot">
+<area shape="rect" id="Node000001" title="サーボモータを再起動させます。" alt="" coords="5,31,135,57"/>
+<area shape="rect" id="Node000002" href="$class_pmx_base.html#a3e19e5b95ac9794bed063d1d8f6f1261" title="checkRecv関数は、受信パケットのヘッダー、パケット長、およびコマンドをチェックします。" alt="" coords="183,5,332,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,33,167,28,167,34,135,38"/>
+<area shape="rect" id="Node000005" href="$class_pmx_crc16.html#a54e686351d21df95514c07ecdc660d91" title="PMXの送信データにCRCを付け加える関数" alt="" coords="388,56,531,83"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="135,46,373,61,373,66,135,51"/>
+<area shape="rect" id="Node000003" href="$class_pmx_crc16.html#ae6173fe005b5a31c788fd287eaa71b0b" title="受信したデータのCRCがあっているかどうかの確認する関数" alt="" coords="380,5,539,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="332,16,364,16,364,21,332,21"/>
+<area shape="rect" id="Node000004" href="$class_pmx_crc16.html#ada7523ae0cb5947fc5a2074b6271920f" title="PMXの送信/受信データの配列を取得し、CRCを計算するライブラリ" alt="" coords="587,31,730,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="540,26,572,30,571,36,539,31"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="531,58,571,52,572,58,532,63"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="PmxBase" name="PmxBase">
+<area shape="rect" id="Node000001" title="PMXで使用する関数や定義をひとまとまりにしたものです" alt="" coords="20,5,99,32"/>
+<area shape="rect" id="Node000002" href="$class_pmx_hard_serial.html" title="PMXで使用する関数や定義をひとまとまりにしたもので、ArduinoのHardwareSerialを使用して動作します。" alt="" coords="5,80,114,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="62,48,62,80,57,80,57,48"/>
+</map>

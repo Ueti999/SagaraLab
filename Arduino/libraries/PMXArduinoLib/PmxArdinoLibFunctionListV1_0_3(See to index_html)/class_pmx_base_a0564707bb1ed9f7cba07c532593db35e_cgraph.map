@@ -1,0 +1,8 @@
+<map id="PmxBase::setPosition" name="PmxBase::setPosition">
+<area shape="rect" id="Node000001" title="指定した ID のモータの位置パラメーターを設定し、データをモーター コントローラーに送信します。" alt="" coords="5,29,157,56"/>
+<area shape="rect" id="Node000002" href="$class_pmx_base.html#a2236d8c2292135048af4c9c5cbbfa67e" title="MotorWRITEでデータ指示一つの場合に使用します" alt="" coords="205,29,401,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,40,189,40,189,45,157,45"/>
+<area shape="rect" id="Node000003" href="$class_pmx_base.html#a82026615d6107b62e5d1f9e70f6d8bc6" title="MotorWRITE 機能は、モータの制御やトルクのオン/オフを切り替えるコマンドを送信し、モーターからステータスとデータを受信します。" alt="" coords="449,29,609,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="402,40,433,40,433,45,402,45"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="491,30,484,21,489,11,504,5,529,3,556,5,570,12,568,17,555,10,529,8,505,10,492,15,489,20,495,27"/>
+</map>

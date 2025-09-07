@@ -1,0 +1,14 @@
+<map id="PmxBase::getResponseTime" name="PmxBase::getResponseTime">
+<area shape="rect" id="Node000001" title="システム読み取り操作のステータスと応答時間を取得します。" alt="" coords="5,31,196,57"/>
+<area shape="rect" id="Node000002" href="$class_pmx_base.html#aa4c49cde33ec880a6f565886b338b827" title="SystemREAD 関数は、サーボからシステム情報を読み取ります。" alt="" coords="244,31,411,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,41,228,41,228,47,196,47"/>
+<area shape="rect" id="Node000003" href="$class_pmx_base.html#a3e19e5b95ac9794bed063d1d8f6f1261" title="checkRecv関数は、受信パケットのヘッダー、パケット長、およびコマンドをチェックします。" alt="" coords="459,5,608,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="411,31,443,27,444,32,412,36"/>
+<area shape="rect" id="Node000006" href="$class_pmx_crc16.html#a54e686351d21df95514c07ecdc660d91" title="PMXの送信データにCRCを付け加える関数" alt="" coords="665,56,807,83"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="411,46,650,61,649,67,411,52"/>
+<area shape="rect" id="Node000004" href="$class_pmx_crc16.html#ae6173fe005b5a31c788fd287eaa71b0b" title="受信したデータのCRCがあっているかどうかの確認する関数" alt="" coords="656,5,816,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="609,16,641,16,641,21,609,21"/>
+<area shape="rect" id="Node000005" href="$class_pmx_crc16.html#ada7523ae0cb5947fc5a2074b6271920f" title="PMXの送信/受信データの配列を取得し、CRCを計算するライブラリ" alt="" coords="864,31,1006,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="816,26,848,30,848,36,816,31"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="807,58,848,52,848,58,808,63"/>
+</map>

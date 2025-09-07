@@ -1,0 +1,5 @@
+<map id="PmxCrc16::setCrc16" name="PmxCrc16::setCrc16">
+<area shape="rect" id="Node000001" title="PMXの送信データにCRCを付け加える関数" alt="" coords="5,5,148,32"/>
+<area shape="rect" id="Node000002" href="$class_pmx_crc16.html#ada7523ae0cb5947fc5a2074b6271920f" title="PMXの送信/受信データの配列を取得し、CRCを計算するライブラリ" alt="" coords="196,5,338,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,16,180,16,180,21,148,21"/>
+</map>

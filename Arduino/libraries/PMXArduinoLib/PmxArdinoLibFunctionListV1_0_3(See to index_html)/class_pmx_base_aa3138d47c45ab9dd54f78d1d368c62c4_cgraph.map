@@ -1,0 +1,16 @@
+<map id="PmxBase::getSerialNumber" name="PmxBase::getSerialNumber">
+<area shape="rect" id="Node000001" title="指定したIDのサーボからシリアル番号を取得します。" alt="" coords="5,56,188,83"/>
+<area shape="rect" id="Node000002" href="$class_pmx_base.html#aa4c49cde33ec880a6f565886b338b827" title="SystemREAD 関数は、サーボからシステム情報を読み取ります。" alt="" coords="236,31,403,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,56,220,53,220,58,188,62"/>
+<area shape="rect" id="Node000007" href="$class_data_conv.html#ab5d623a073588a93819e04f0b21d9c26" title="Uint32(符号なし4byte)のデータをByte配列に変換します" alt="" coords="236,81,403,108"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="188,77,220,81,220,86,188,82"/>
+<area shape="rect" id="Node000003" href="$class_pmx_base.html#a3e19e5b95ac9794bed063d1d8f6f1261" title="checkRecv関数は、受信パケットのヘッダー、パケット長、およびコマンドをチェックします。" alt="" coords="451,5,600,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="403,31,435,27,436,32,404,36"/>
+<area shape="rect" id="Node000006" href="$class_pmx_crc16.html#a54e686351d21df95514c07ecdc660d91" title="PMXの送信データにCRCを付け加える関数" alt="" coords="657,56,799,83"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="403,46,642,61,641,67,403,52"/>
+<area shape="rect" id="Node000004" href="$class_pmx_crc16.html#ae6173fe005b5a31c788fd287eaa71b0b" title="受信したデータのCRCがあっているかどうかの確認する関数" alt="" coords="648,5,808,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="601,16,633,16,633,21,601,21"/>
+<area shape="rect" id="Node000005" href="$class_pmx_crc16.html#ada7523ae0cb5947fc5a2074b6271920f" title="PMXの送信/受信データの配列を取得し、CRCを計算するライブラリ" alt="" coords="856,31,998,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="808,26,840,30,840,36,808,31"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="799,58,840,52,840,58,800,63"/>
+</map>

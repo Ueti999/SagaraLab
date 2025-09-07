@@ -1,0 +1,21 @@
+<map id="PmxBase::MotorWRITE" name="PmxBase::MotorWRITE">
+<area shape="rect" id="Node000001" title="MotorWRITE 機能は、モータの制御やトルクのオン/オフを切り替えるコマンドを送信し、モーターからステータスとデータを受信します。" alt="" coords="5,132,166,159"/>
+<area shape="rect" id="Node000002" href="$class_pmx_base.html#a8b1d2c093ebad2e83b2d527ff661190c" title="制御モード、応答モードを基に必要とするデータが合計何byteになるのか計算をします。" alt="" coords="493,5,663,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,129,151,97,213,67,280,47,349,33,477,19,478,24,350,39,281,52,215,72,153,102,106,134"/>
+<area shape="rect" id="Node000003" href="$class_pmx_base.html#a9fc2c9c71be4f3772415416e1c69c392" title="受信モードに基づいてMotorWRITE/Readで送られて来たデータを変換します。" alt="" coords="214,81,445,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,129,246,109,247,114,154,134"/>
+<area shape="rect" id="Node000006" href="$class_pmx_base.html#a3e19e5b95ac9794bed063d1d8f6f1261" title="checkRecv関数は、受信パケットのヘッダー、パケット長、およびコマンドをチェックします。" alt="" coords="255,157,404,184"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="166,151,240,159,239,164,166,156"/>
+<area shape="rect" id="Node000009" href="$class_pmx_crc16.html#a54e686351d21df95514c07ecdc660d91" title="PMXの送信データにCRCを付け加える関数" alt="" coords="258,208,400,235"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="119,157,214,193,244,202,243,207,213,199,117,162"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="374,78,492,41,515,35,517,40,494,47,376,83"/>
+<area shape="rect" id="Node000004" href="$class_data_conv.html#a96057e8430f656de04254ebb9b60857c" title="Byte配列データをint16(符号あり2byte)に変換します" alt="" coords="499,56,657,83"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="445,80,483,76,484,82,446,86"/>
+<area shape="rect" id="Node000005" href="$class_data_conv.html#aeeb9f80acef926a0810013a1b5471d14" title="Byte配列データをUint16(符号なし2byte)に変換します" alt="" coords="494,107,662,133"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="446,104,479,107,479,113,445,109"/>
+<area shape="rect" id="Node000007" href="$class_pmx_crc16.html#ae6173fe005b5a31c788fd287eaa71b0b" title="受信したデータのCRCがあっているかどうかの確認する関数" alt="" coords="498,157,658,184"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="405,168,483,168,483,173,405,173"/>
+<area shape="rect" id="Node000008" href="$class_pmx_crc16.html#ada7523ae0cb5947fc5a2074b6271920f" title="PMXの送信/受信データの配列を取得し、CRCを計算するライブラリ" alt="" coords="711,183,854,209"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="658,178,696,183,696,188,658,183"/>
+<area shape="poly" id="edge10_Node000009_Node000008" title=" " alt="" coords="401,215,696,198,696,203,401,220"/>
+</map>

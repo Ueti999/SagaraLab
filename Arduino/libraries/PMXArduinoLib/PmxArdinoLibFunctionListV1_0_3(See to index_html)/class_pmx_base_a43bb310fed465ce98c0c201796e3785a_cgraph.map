@@ -1,0 +1,16 @@
+<map id="PmxBase::getMinVoltageLimitRange" name="PmxBase::getMinVoltageLimitRange">
+<area shape="rect" id="Node000001" title="指定したIDの入力最小電圧リミット値(MinVoltageLimit)の設定可能な最小/最大の範囲を取得します。" alt="" coords="5,23,203,65"/>
+<area shape="rect" id="Node000002" href="$class_data_conv.html#aeeb9f80acef926a0810013a1b5471d14" title="Byte配列データをUint16(符号なし2byte)に変換します" alt="" coords="251,5,418,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,30,235,27,235,32,204,36"/>
+<area shape="rect" id="Node000003" href="$class_pmx_base.html#acbf5ebd6f62b9b027aba4d78733812bf" title="MemREADコマンドでPMXサーボモータからデータを取得します。" alt="" coords="259,56,410,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,52,243,57,243,62,203,58"/>
+<area shape="rect" id="Node000004" href="$class_pmx_base.html#a3e19e5b95ac9794bed063d1d8f6f1261" title="checkRecv関数は、受信パケットのヘッダー、パケット長、およびコマンドをチェックします。" alt="" coords="466,31,615,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="410,57,450,52,451,58,411,63"/>
+<area shape="rect" id="Node000007" href="$class_pmx_crc16.html#a54e686351d21df95514c07ecdc660d91" title="PMXの送信データにCRCを付け加える関数" alt="" coords="672,81,814,108"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="411,71,656,87,656,92,410,77"/>
+<area shape="rect" id="Node000005" href="$class_pmx_crc16.html#ae6173fe005b5a31c788fd287eaa71b0b" title="受信したデータのCRCがあっているかどうかの確認する関数" alt="" coords="663,31,823,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="616,41,648,41,648,47,616,47"/>
+<area shape="rect" id="Node000006" href="$class_pmx_crc16.html#ada7523ae0cb5947fc5a2074b6271920f" title="PMXの送信/受信データの配列を取得し、CRCを計算するライブラリ" alt="" coords="871,56,1013,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="823,52,855,56,855,61,823,57"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="814,83,855,78,855,83,815,88"/>
+</map>

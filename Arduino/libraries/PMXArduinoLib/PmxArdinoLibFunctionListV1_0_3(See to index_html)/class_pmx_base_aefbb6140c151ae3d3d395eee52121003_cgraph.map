@@ -1,0 +1,18 @@
+<map id="PmxBase::getTorqueKiGain2" name="PmxBase::getTorqueKiGain2">
+<area shape="rect" id="Node000001" title="指定した ID のトルク制御のIゲイン2を取得します。" alt="" coords="5,31,195,57"/>
+<area shape="rect" id="Node000002" href="$class_pmx_base.html#ad739208f2219a5fa44aa75515cdc6db8" title="MemREADで取得したデータをUint32(符号なし4byte)に変換して取得します。" alt="" coords="243,31,445,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,41,227,41,227,47,195,47"/>
+<area shape="rect" id="Node000003" href="$class_data_conv.html#a6cc203e45aa230c2950041788747ace8" title="Byte配列データをint32(符号あり4byte)に変換します" alt="" coords="493,5,651,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="445,30,477,27,478,32,446,35"/>
+<area shape="rect" id="Node000004" href="$class_pmx_base.html#acbf5ebd6f62b9b027aba4d78733812bf" title="MemREADコマンドでPMXサーボモータからデータを取得します。" alt="" coords="496,56,648,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="446,53,481,57,481,62,445,58"/>
+<area shape="rect" id="Node000005" href="$class_pmx_base.html#a3e19e5b95ac9794bed063d1d8f6f1261" title="checkRecv関数は、受信パケットのヘッダー、パケット長、およびコマンドをチェックします。" alt="" coords="699,31,849,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="648,57,684,53,684,58,649,62"/>
+<area shape="rect" id="Node000008" href="$class_pmx_crc16.html#a54e686351d21df95514c07ecdc660d91" title="PMXの送信データにCRCを付け加える関数" alt="" coords="905,81,1048,108"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="648,71,889,87,889,92,648,77"/>
+<area shape="rect" id="Node000006" href="$class_pmx_crc16.html#ae6173fe005b5a31c788fd287eaa71b0b" title="受信したデータのCRCがあっているかどうかの確認する関数" alt="" coords="897,31,1056,57"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="849,41,881,41,881,47,849,47"/>
+<area shape="rect" id="Node000007" href="$class_pmx_crc16.html#ada7523ae0cb5947fc5a2074b6271920f" title="PMXの送信/受信データの配列を取得し、CRCを計算するライブラリ" alt="" coords="1104,56,1246,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1057,52,1089,56,1088,61,1056,57"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="1048,83,1088,78,1089,83,1048,88"/>
+</map>

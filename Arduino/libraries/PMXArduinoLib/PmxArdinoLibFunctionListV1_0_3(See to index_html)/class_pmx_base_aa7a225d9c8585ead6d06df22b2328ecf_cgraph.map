@@ -1,0 +1,6 @@
+<map id="PmxBase::MotorWRITE" name="PmxBase::MotorWRITE">
+<area shape="rect" id="Node000001" title="MotorWRITE 機能は、モータの制御やトルクのオン/オフを切り替えるコマンドを送信し、モーターからステータスとデータを受信します。" alt="" coords="5,29,166,56"/>
+<area shape="rect" id="Node000002" href="$class_pmx_base.html#a82026615d6107b62e5d1f9e70f6d8bc6" title="MotorWRITE 機能は、モータの制御やトルクのオン/オフを切り替えるコマンドを送信し、モーターからステータスとデータを受信します。" alt="" coords="214,29,374,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,40,198,40,198,45,166,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="259,30,252,21,257,11,271,5,294,3,319,5,332,12,329,16,317,10,294,8,272,10,260,15,258,20,263,27"/>
+</map>

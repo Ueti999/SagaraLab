@@ -1,0 +1,16 @@
+<map id="PmxBase::getSpeedPresetNum" name="PmxBase::getSpeedPresetNum">
+<area shape="rect" id="Node000001" title="指定した ID の速度制御プリセットゲイン番号を取得します。" alt="" coords="5,31,212,57"/>
+<area shape="rect" id="Node000002" href="$class_pmx_base.html#a3392960c36352fcff0a26e7d64ad3c73" title="MemREADで取得したデータをbyte(符号なし1byte)に変換して取得します。" alt="" coords="260,31,452,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,41,244,41,244,47,212,47"/>
+<area shape="rect" id="Node000003" href="$class_pmx_base.html#acbf5ebd6f62b9b027aba4d78733812bf" title="MemREADコマンドでPMXサーボモータからデータを取得します。" alt="" coords="500,31,651,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="452,41,484,41,484,47,452,47"/>
+<area shape="rect" id="Node000004" href="$class_pmx_base.html#a3e19e5b95ac9794bed063d1d8f6f1261" title="checkRecv関数は、受信パケットのヘッダー、パケット長、およびコマンドをチェックします。" alt="" coords="699,5,849,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="651,32,684,28,684,33,652,37"/>
+<area shape="rect" id="Node000007" href="$class_pmx_crc16.html#a54e686351d21df95514c07ecdc660d91" title="PMXの送信データにCRCを付け加える関数" alt="" coords="905,56,1048,83"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="652,46,890,61,890,67,652,51"/>
+<area shape="rect" id="Node000005" href="$class_pmx_crc16.html#ae6173fe005b5a31c788fd287eaa71b0b" title="受信したデータのCRCがあっているかどうかの確認する関数" alt="" coords="897,5,1056,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="849,16,881,16,881,21,849,21"/>
+<area shape="rect" id="Node000006" href="$class_pmx_crc16.html#ada7523ae0cb5947fc5a2074b6271920f" title="PMXの送信/受信データの配列を取得し、CRCを計算するライブラリ" alt="" coords="1104,31,1246,57"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1057,26,1089,30,1088,36,1056,31"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="1048,58,1088,52,1089,58,1048,63"/>
+</map>

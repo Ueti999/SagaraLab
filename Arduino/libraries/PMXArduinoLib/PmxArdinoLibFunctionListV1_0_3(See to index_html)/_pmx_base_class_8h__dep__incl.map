@@ -1,0 +1,10 @@
+<map id="PmxBaseClass.h" name="PmxBaseClass.h">
+<area shape="rect" id="Node000001" title="PMX library header file" alt="" coords="118,5,240,32"/>
+<area shape="rect" id="Node000002" href="$_pmx_base_class_8cpp.html" title="PMX library source file" alt="" coords="5,80,142,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,43,93,82,90,77,147,39"/>
+<area shape="rect" id="Node000003" href="$_pmx_hard_serial_class_8cpp.html" title="PMX arduino (HardwareSerial) library source file" alt="" coords="152,155,318,181"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,46,207,106,230,153,225,155,202,108,183,48"/>
+<area shape="rect" id="Node000004" href="$_pmx_hard_serial_class_8h.html" title="PMX arduino (HardwareSerial) library header file" alt="" coords="216,80,368,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="213,38,274,77,271,82,210,43"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="275,121,247,156,243,153,271,117"/>
+</map>

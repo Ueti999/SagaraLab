@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.11.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PmxArdinoLib: PmxCrc16 クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="800-KONDO-Arduino.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">PmxArdinoLib<span id="projectnumber">&#160;1.0.3</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.11.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('class_pmx_crc16.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="class_pmx_crc16-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">PmxCrc16 クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>PMXで使用するCRCの演算  
+ <a href="#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_pmx_c_r_c_8h_source.html">PmxCRC.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:ada7523ae0cb5947fc5a2074b6271920f" id="r_ada7523ae0cb5947fc5a2074b6271920f"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada7523ae0cb5947fc5a2074b6271920f">getCrc16</a> (unsigned char data[], int length)</td></tr>
+<tr class="memdesc:ada7523ae0cb5947fc5a2074b6271920f"><td class="mdescLeft">&#160;</td><td class="mdescRight">PMXの送信/受信データの配列を取得し、CRCを計算するライブラリ  <br /></td></tr>
+<tr class="separator:ada7523ae0cb5947fc5a2074b6271920f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54e686351d21df95514c07ecdc660d91" id="r_a54e686351d21df95514c07ecdc660d91"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54e686351d21df95514c07ecdc660d91">setCrc16</a> (unsigned char data[])</td></tr>
+<tr class="memdesc:a54e686351d21df95514c07ecdc660d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">PMXの送信データにCRCを付け加える関数  <br /></td></tr>
+<tr class="separator:a54e686351d21df95514c07ecdc660d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6173fe005b5a31c788fd287eaa71b0b" id="r_ae6173fe005b5a31c788fd287eaa71b0b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6173fe005b5a31c788fd287eaa71b0b">checkCrc16</a> (unsigned char data[])</td></tr>
+<tr class="memdesc:ae6173fe005b5a31c788fd287eaa71b0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">受信したデータのCRCがあっているかどうかの確認する関数  <br /></td></tr>
+<tr class="separator:ae6173fe005b5a31c788fd287eaa71b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>PMXで使用するCRCの演算 </p>
+<ul>
+<li>生成多項式：x^16+x^12+x^5+1 (CRC-16-CCITT)</li>
+<li>ビットシフト方向：左送り</li>
+<li>初期値：0x0000</li>
+<li>出力：非反転 （出力XOR：0x0000） </li>
+</ul>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="ae6173fe005b5a31c788fd287eaa71b0b" name="ae6173fe005b5a31c788fd287eaa71b0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6173fe005b5a31c788fd287eaa71b0b">&#9670;&#160;</a></span>checkCrc16()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PmxCrc16::checkCrc16 </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char</td>          <td class="paramname"><span class="paramname"><em>data</em></span>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>受信したデータのCRCがあっているかどうかの確認する関数 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>受信したデータのデータ配列 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>true CRCチェックOK </dd>
+<dd>
+false CRCチェックNG </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pmx_crc16_ae6173fe005b5a31c788fd287eaa71b0b_cgraph.png" border="0" usemap="#aclass_pmx_crc16_ae6173fe005b5a31c788fd287eaa71b0b_cgraph" alt=""/></div>
+<map name="aclass_pmx_crc16_ae6173fe005b5a31c788fd287eaa71b0b_cgraph" id="aclass_pmx_crc16_ae6173fe005b5a31c788fd287eaa71b0b_cgraph">
+<area shape="rect" title="受信したデータのCRCがあっているかどうかの確認する関数" alt="" coords="5,5,165,32"/>
+<area shape="rect" href="class_pmx_crc16.html#ada7523ae0cb5947fc5a2074b6271920f" title="PMXの送信/受信データの配列を取得し、CRCを計算するライブラリ" alt="" coords="213,5,355,32"/>
+<area shape="poly" title=" " alt="" coords="165,16,197,16,197,21,165,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ada7523ae0cb5947fc5a2074b6271920f" name="ada7523ae0cb5947fc5a2074b6271920f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada7523ae0cb5947fc5a2074b6271920f">&#9670;&#160;</a></span>getCrc16()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int PmxCrc16::getCrc16 </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char</td>          <td class="paramname"><span class="paramname"><em>data</em></span>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>PMXの送信/受信データの配列を取得し、CRCを計算するライブラリ </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>CRCを計算するデータの配列 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>dataの長さ </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>unsigned int CRCの計算データ</dd></dl>
+<dl class="section note"><dt>覚え書き</dt><dd>生成多項式：x^16+x^12+x^5+1 (CRC-16-CCITT) </dd>
+<dd>
+ビットシフト方向：左送り </dd>
+<dd>
+初期値：0x0000 </dd>
+<dd>
+出力：非反転 （出力XOR：0x0000） </dd></dl>
+
+</div>
+</div>
+<a id="a54e686351d21df95514c07ecdc660d91" name="a54e686351d21df95514c07ecdc660d91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54e686351d21df95514c07ecdc660d91">&#9670;&#160;</a></span>setCrc16()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PmxCrc16::setCrc16 </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char</td>          <td class="paramname"><span class="paramname"><em>data</em></span>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>PMXの送信データにCRCを付け加える関数 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[in/out]</td><td>data 送信データ配列</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>覚え書き</dt><dd>配列の長さはコマンド内に含まれるため特に配列の長さを渡す必要はない </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_pmx_crc16_a54e686351d21df95514c07ecdc660d91_cgraph.png" border="0" usemap="#aclass_pmx_crc16_a54e686351d21df95514c07ecdc660d91_cgraph" alt=""/></div>
+<map name="aclass_pmx_crc16_a54e686351d21df95514c07ecdc660d91_cgraph" id="aclass_pmx_crc16_a54e686351d21df95514c07ecdc660d91_cgraph">
+<area shape="rect" title="PMXの送信データにCRCを付け加える関数" alt="" coords="5,5,148,32"/>
+<area shape="rect" href="class_pmx_crc16.html#ada7523ae0cb5947fc5a2074b6271920f" title="PMXの送信/受信データの配列を取得し、CRCを計算するライブラリ" alt="" coords="196,5,338,32"/>
+<area shape="poly" title=" " alt="" coords="148,16,180,16,180,21,148,21"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="_pmx_c_r_c_8h_source.html">PmxCRC.h</a></li>
+<li><b>PmxCRC.cpp</b></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_pmx_crc16.html">PmxCrc16</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
+  </ul>
+</div>
+</body>
+</html>

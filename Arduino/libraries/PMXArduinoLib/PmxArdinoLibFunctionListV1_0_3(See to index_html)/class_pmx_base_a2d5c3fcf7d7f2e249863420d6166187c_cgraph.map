@@ -1,0 +1,6 @@
+<map id="PmxBase::setMotorTorqueOn" name="PmxBase::setMotorTorqueOn">
+<area shape="rect" id="Node000001" title="指定した ID のモータをトルクオンにし、ステータス、モータのON/OFF、受信データを取得します。" alt="" coords="5,29,199,56"/>
+<area shape="rect" id="Node000002" href="$class_pmx_base.html#a82026615d6107b62e5d1f9e70f6d8bc6" title="MotorWRITE 機能は、モータの制御やトルクのオン/オフを切り替えるコマンドを送信し、モーターからステータスとデータを受信します。" alt="" coords="247,29,407,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,40,231,40,231,45,199,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="289,30,282,21,287,11,302,5,327,3,353,5,368,12,365,17,352,10,327,8,303,10,290,15,287,20,293,27"/>
+</map>

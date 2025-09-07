@@ -1,0 +1,5 @@
+<map id="PmxCrc16::checkCrc16" name="PmxCrc16::checkCrc16">
+<area shape="rect" id="Node000001" title="受信したデータのCRCがあっているかどうかの確認する関数" alt="" coords="5,5,165,32"/>
+<area shape="rect" id="Node000002" href="$class_pmx_crc16.html#ada7523ae0cb5947fc5a2074b6271920f" title="PMXの送信/受信データの配列を取得し、CRCを計算するライブラリ" alt="" coords="213,5,355,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,16,197,16,197,21,165,21"/>
+</map>

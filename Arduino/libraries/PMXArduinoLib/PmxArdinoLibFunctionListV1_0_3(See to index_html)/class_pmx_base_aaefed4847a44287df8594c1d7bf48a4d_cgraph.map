@@ -1,0 +1,16 @@
+<map id="PmxBase::setTorqueGain3" name="PmxBase::setTorqueGain3">
+<area shape="rect" id="Node000001" title="指定した ID のトルク制御のPIDゲイン3を変更します。" alt="" coords="5,56,183,83"/>
+<area shape="rect" id="Node000002" href="$class_pmx_base.html#afc4a7cf9dfd526ba5714c52559c6d579" title="PMXサーボモータにMemWRITEコマンドを発行し、結果を取得します。" alt="" coords="236,31,392,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,56,220,52,221,57,184,62"/>
+<area shape="rect" id="Node000007" href="$class_data_conv.html#ab5d623a073588a93819e04f0b21d9c26" title="Uint32(符号なし4byte)のデータをByte配列に変換します" alt="" coords="231,81,398,108"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="184,77,215,81,215,86,183,82"/>
+<area shape="rect" id="Node000003" href="$class_pmx_base.html#a3e19e5b95ac9794bed063d1d8f6f1261" title="checkRecv関数は、受信パケットのヘッダー、パケット長、およびコマンドをチェックします。" alt="" coords="446,5,595,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="392,32,430,27,431,32,393,37"/>
+<area shape="rect" id="Node000006" href="$class_pmx_crc16.html#a54e686351d21df95514c07ecdc660d91" title="PMXの送信データにCRCを付け加える関数" alt="" coords="652,56,794,83"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="393,46,636,61,636,67,393,51"/>
+<area shape="rect" id="Node000004" href="$class_pmx_crc16.html#ae6173fe005b5a31c788fd287eaa71b0b" title="受信したデータのCRCがあっているかどうかの確認する関数" alt="" coords="643,5,803,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="596,16,628,16,628,21,596,21"/>
+<area shape="rect" id="Node000005" href="$class_pmx_crc16.html#ada7523ae0cb5947fc5a2074b6271920f" title="PMXの送信/受信データの配列を取得し、CRCを計算するライブラリ" alt="" coords="851,31,993,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="803,26,835,30,835,36,803,31"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="794,58,835,52,835,58,795,63"/>
+</map>
