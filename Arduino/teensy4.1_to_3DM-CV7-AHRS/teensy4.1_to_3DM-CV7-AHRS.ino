@@ -92,51 +92,52 @@ void loop() {
 void configureSensor() {
   Serial.println("センサー設定中...");
   
-  // AHRSデータストリーム（フィルター済みデータ）を有効化するコマンド
-  uint8_t enable_ahrs[] = {
+  // IMUデータストリームを有効化するコマンド
+  uint8_t enable_imu[] = {
     0x75, 0x65,  // Sync bytes
     0x0C,        // Command set (3DM Command)
     0x0A,        // Payload length
     0x08,        // Command field (Write Message Format)
     0x01,        // Apply new settings
-    0x03,        // AHRS data set (0x82)
-    0x04, 0x00,  // フィルター済み加速度 (0x04)
-    0x01,        // Enable
-    0x00, 0x00, 0x0A,  // Rate divisor (10Hz)
+    0x01,        // IMU data set descriptor
+    0x02,        // Number of fields
+    0x04, 0x00, 0x0A,  // 加速度 (0x04), Rate divisor (10Hz)
+    0x05, 0x00, 0x0A,  // ジャイロ (0x05), Rate divisor (10Hz)
     0x00, 0x00   // チェックサム用プレースホルダー（2バイト）
   };
   
   // チェックサム計算
   uint8_t checksum1, checksum2;
+  calculateChecksum(enable_imu, sizeof(enable_imu) - 2, &checksum1, &checksum2);
+  enable_imu[sizeof(enable_imu) - 2] = checksum1;
+  enable_imu[sizeof(enable_imu) - 1] = checksum2;
+  
+  // IMUストリーム有効化
+  userial.write(enable_imu, sizeof(enable_imu));
+  delay(100);
+  
+  // AHRSデータストリーム（フィルター済みデータ）を有効化
+  uint8_t enable_ahrs[] = {
+    0x75, 0x65,  // Sync bytes
+    0x0C,        // Command set
+    0x10,        // Payload length (増加)
+    0x08,        // Command field
+    0x01,        // Apply new settings
+    0x03,        // AHRS/Filter data set descriptor
+    0x03,        // Number of fields
+    0x04, 0x00, 0x0A,  // フィルター済み加速度 (0x04), Rate divisor
+    0x05, 0x00, 0x0A,  // フィルター済みジャイロ (0x05), Rate divisor
+    0x0C, 0x00, 0x0A,  // オイラー角 (0x0C), Rate divisor
+    0x00, 0x00   // チェックサム
+  };
+  
   calculateChecksum(enable_ahrs, sizeof(enable_ahrs) - 2, &checksum1, &checksum2);
   enable_ahrs[sizeof(enable_ahrs) - 2] = checksum1;
   enable_ahrs[sizeof(enable_ahrs) - 1] = checksum2;
   
-  // AHRSストリーム有効化
   userial.write(enable_ahrs, sizeof(enable_ahrs));
-  delay(100);
   
-  // ジャイロデータも有効化
-  uint8_t enable_gyro[] = {
-    0x75, 0x65,  // Sync bytes
-    0x0C,        // Command set
-    0x0A,        // Payload length
-    0x08,        // Command field
-    0x01,        // Apply new settings
-    0x03,        // AHRS data set
-    0x05, 0x00,  // フィルター済みジャイロ (0x05)
-    0x01,        // Enable
-    0x00, 0x00, 0x0A,  // Rate divisor (10Hz)
-    0x00, 0x00   // チェックサム
-  };
-  
-  calculateChecksum(enable_gyro, sizeof(enable_gyro) - 2, &checksum1, &checksum2);
-  enable_gyro[sizeof(enable_gyro) - 2] = checksum1;
-  enable_gyro[sizeof(enable_gyro) - 1] = checksum2;
-  
-  userial.write(enable_gyro, sizeof(enable_gyro));
-  
-  Serial.println("AHRSフィルター済みデータ設定完了");
+  Serial.println("IMUおよびAHRSデータストリーム設定完了");
 }
 
 void sendPingCommand() {
@@ -303,7 +304,9 @@ void parseIMUData(uint8_t* data, int length) {
   int index = 0;
   
   if (DEBUG_MODE) {
-    Serial.println("IMUデータ解析中...");
+    Serial.println("=== IMUデータ解析 ===");
+    Serial.print("総バイト数: ");
+    Serial.println(length);
   }
   
   while (index < length - 2) {  // 最低2バイト必要
@@ -319,9 +322,23 @@ void parseIMUData(uint8_t* data, int length) {
     }
     
     if (DEBUG_MODE) {
-      Serial.print("  Field: 0x");
+      Serial.print("  [");
+      Serial.print(index);
+      Serial.print("] Field: 0x");
+      if (field_descriptor < 0x10) Serial.print("0");
       Serial.print(field_descriptor, HEX);
-      Serial.print(" Length: ");
+      Serial.print(" (");
+      
+      // フィールドの名前を表示
+      switch(field_descriptor) {
+        case 0x04: Serial.print("加速度"); break;
+        case 0x05: Serial.print("ジャイロ"); break;
+        case 0x06: Serial.print("磁力計"); break;
+        case 0xD3: Serial.print("GPSタイムスタンプ"); break;
+        default: Serial.print("未知"); break;
+      }
+      
+      Serial.print(") Len=");
       Serial.println(field_length);
     }
     
@@ -364,6 +381,26 @@ void parseIMUData(uint8_t* data, int length) {
       Serial.print(" Z=");
       Serial.println(mag_z, 4);
     }
+    // GPSタイムスタンプ (0xD3) - タイムスタンプ付きIMUデータ
+    else if (field_descriptor == 0xD3 && field_length >= 14) {
+      // 最初の8バイトはタイムスタンプ、次の4バイトはステータスフラグ
+      uint32_t timestamp_high = ((uint32_t)data[index + 2] << 24) | 
+                                ((uint32_t)data[index + 3] << 16) | 
+                                ((uint32_t)data[index + 4] << 8) | 
+                                data[index + 5];
+      uint32_t timestamp_low = ((uint32_t)data[index + 6] << 24) | 
+                               ((uint32_t)data[index + 7] << 16) | 
+                               ((uint32_t)data[index + 8] << 8) | 
+                               data[index + 9];
+      
+      // タイムスタンプはナノ秒単位の64ビット値
+      uint64_t timestamp = ((uint64_t)timestamp_high << 32) | timestamp_low;
+      double time_seconds = timestamp / 1000000000.0; // ナノ秒から秒に変換
+      
+      Serial.print("GPSタイムスタンプ: ");
+      Serial.print(time_seconds, 6);
+      Serial.println(" 秒");
+    }
     
     // 次のフィールドへ
     index += field_length;
@@ -374,7 +411,9 @@ void parseAHRSData(uint8_t* data, int length) {
   int index = 0;
   
   if (DEBUG_MODE) {
-    Serial.println("AHRSデータ解析中...");
+    Serial.println("=== AHRSデータ解析 ===");
+    Serial.print("総バイト数: ");
+    Serial.println(length);
   }
   
   while (index < length - 2) {
