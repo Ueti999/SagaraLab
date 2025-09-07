@@ -383,23 +383,43 @@ void parseIMUData(uint8_t* data, int length) {
     }
     // GPSタイムスタンプ (0xD3) - タイムスタンプ付きIMUデータ
     else if (field_descriptor == 0xD3 && field_length >= 14) {
-      // 最初の8バイトはタイムスタンプ、次の4バイトはステータスフラグ
-      uint32_t timestamp_high = ((uint32_t)data[index + 2] << 24) | 
-                                ((uint32_t)data[index + 3] << 16) | 
-                                ((uint32_t)data[index + 4] << 8) | 
-                                data[index + 5];
-      uint32_t timestamp_low = ((uint32_t)data[index + 6] << 24) | 
-                               ((uint32_t)data[index + 7] << 16) | 
-                               ((uint32_t)data[index + 8] << 8) | 
-                               data[index + 9];
+      // MIPプロトコルのタイムスタンプフォーマット
+      // 最初の4バイト: タイムスタンプ（秒、float）
+      // 次の4バイト: タイムスタンプ（マイクロ秒、uint32）
+      // 最後の4バイト: ステータスフラグ
       
-      // タイムスタンプはナノ秒単位の64ビット値
-      uint64_t timestamp = ((uint64_t)timestamp_high << 32) | timestamp_low;
-      double time_seconds = timestamp / 1000000000.0; // ナノ秒から秒に変換
+      float time_seconds = parseFloat(&data[index + 2]);
+      
+      // uint32のマイクロ秒部分（ビッグエンディアン）
+      uint32_t time_microseconds = ((uint32_t)data[index + 6] << 24) | 
+                                   ((uint32_t)data[index + 7] << 16) | 
+                                   ((uint32_t)data[index + 8] << 8) | 
+                                   data[index + 9];
+      
+      // ステータスフラグ（最後の4バイト）
+      uint32_t status = ((uint32_t)data[index + 10] << 24) | 
+                       ((uint32_t)data[index + 11] << 16) | 
+                       ((uint32_t)data[index + 12] << 8) | 
+                       data[index + 13];
       
       Serial.print("GPSタイムスタンプ: ");
-      Serial.print(time_seconds, 6);
-      Serial.println(" 秒");
+      if (!isnan(time_seconds) && !isinf(time_seconds)) {
+        Serial.print(time_seconds, 3);
+        Serial.print(" 秒 + ");
+        Serial.print(time_microseconds);
+        Serial.print(" μs (ステータス: 0x");
+        Serial.print(status, HEX);
+        Serial.println(")");
+      } else {
+        // タイムスタンプが無効な場合、生データを表示
+        Serial.print("無効なタイムスタンプ - 生データ: ");
+        for (int i = 2; i < 14; i++) {
+          if (data[index + i] < 0x10) Serial.print("0");
+          Serial.print(data[index + i], HEX);
+          Serial.print(" ");
+        }
+        Serial.println();
+      }
     }
     
     // 次のフィールドへ
