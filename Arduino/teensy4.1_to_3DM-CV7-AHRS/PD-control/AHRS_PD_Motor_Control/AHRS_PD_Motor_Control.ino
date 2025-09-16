@@ -13,7 +13,7 @@ USBHub hub2(myusb);
 USBSerial userial(myusb, 1);
 
 // ========== モータ制御設定 ==========
-const byte EN_PIN = 31;            // Serial1のENピン
+const byte EN_PIN = 31;            // Serial1のENピン31→255にしてEN信号を無効化
 const long MOTOR_BAUDRATE = 115200;
 const int MOTOR_TIMEOUT = 1000;
 PmxHardSerial pmx(&Serial1, EN_PIN, MOTOR_BAUDRATE, MOTOR_TIMEOUT);
@@ -32,7 +32,7 @@ const double Kp = 8.0;              // 比例ゲイン
 const double Kd = 0.3;              // 微分ゲイン
 double theta_target = 0.0;          // 目標角度[rad] (初期値0度)
 const double CONTROL_PERIOD = 10;   // 制御周期[ms]
-const int TORQUE_LIMIT = 16000;     // トルクリミット
+const int TORQUE_LIMIT = 6800;     // トルクリミット
 
 // ========== センサーデータ ==========
 float current_roll = 0.0;
@@ -48,7 +48,7 @@ unsigned long last_control_time = 0;
 unsigned long last_sensor_time = 0;
 
 // ========== デバッグ設定 ==========
-const bool DEBUG_MODE = false;
+const bool DEBUG_MODE = true;
 const bool SHOW_CONTROL_DATA = true;
 
 void setup() {
@@ -85,7 +85,7 @@ void setup() {
   
   // モータ初期化
   Serial.print("モータ通信初期化...");
-  delay(500);
+  delay(3000);//モータ起動待ち時間を0.5sから3sに変更
   pmx.begin();
   
   // モータをトルク制御モードに設定
@@ -157,13 +157,14 @@ void manageSensorConnection() {
       
       userial.begin(115200);
       sensorConnected = true;
-      sensorConfigured = false;
+      sensorConfigured = true;  // SensorConnectで設定済みなので即true
       delay(500);
       
-      // 自動設定
-      Serial.println("センサー自動設定中...");
-      configureSensor();
-      sensorConfigured = true;
+      // 自動設定をスキップ（SensorConnectの設定を使用）
+      Serial.println("SensorConnectの設定を使用します");
+      Serial.println("期待されるデータ:");
+      Serial.println("  - 0x05: オイラー角");
+      Serial.println("  - 0x10: Angular Rate（フィルター済み角速度）");
     }
   } else {
     if (sensorConnected) {
@@ -197,35 +198,20 @@ void configureSensor() {
   userial.write(idle_cmd, sizeof(idle_cmd));
   delay(500);
   
-  // Step 2: IMUデータフォーマット設定（ジャイロ）
-  uint8_t set_imu_format[] = {
-    0x75, 0x65,  // Sync bytes
-    0x0C,        // Command set
-    0x0A,        // Payload length
-    0x08,        // Message Format command
-    0x01,        // Descriptor set (0x01 = IMU)
-    0x01,        // Number of fields
-    0x05,        // Field: Gyroscope
-    0x00, 0x01,  // Rate divider (every packet)
-    0x00, 0x00   // チェックサム
-  };
-  calculateChecksum(set_imu_format, sizeof(set_imu_format) - 2, &checksum1, &checksum2);
-  set_imu_format[sizeof(set_imu_format) - 2] = checksum1;
-  set_imu_format[sizeof(set_imu_format) - 1] = checksum2;
+  // Step 2: IMUストリームを無効化（フィルター済みデータのみ使用）
+  // ※ コメントアウトしてIMUデータを無効化
   
-  Serial.println("Step 2: IMUフォーマット設定（ジャイロ @ 100Hz）");
-  userial.write(set_imu_format, sizeof(set_imu_format));
-  delay(200);
-  
-  // Step 3: AHRSデータフォーマット設定（オイラー角）
+  // Step 3: AHRSデータフォーマット設定（オイラー角 + Angular Rate）
   uint8_t set_ahrs_format[] = {
     0x75, 0x65,  // Sync bytes
     0x0C,        // Command set
-    0x0A,        // Payload length
+    0x0D,        // Payload length (13バイトに増加)
     0x08,        // Message Format command
     0x02,        // Descriptor set (0x02 = AHRS/Filter)
-    0x01,        // Number of fields
-    0x05,        // Field: Euler Angles (Filter内では0x05がオイラー角)
+    0x02,        // Number of fields (2つに変更)
+    0x05,        // Field 1: Euler Angles
+    0x00, 0x01,  // Rate divider (every packet)
+    0x10,        // Field 2: Angular Rate (追加)
     0x00, 0x01,  // Rate divider (every packet)
     0x00, 0x00   // チェックサム
   };
@@ -233,18 +219,18 @@ void configureSensor() {
   set_ahrs_format[sizeof(set_ahrs_format) - 2] = checksum1;
   set_ahrs_format[sizeof(set_ahrs_format) - 1] = checksum2;
   
-  Serial.println("Step 3: AHRSフォーマット設定（オイラー角 @ 100Hz）");
+  Serial.println("Step 3: AHRSフォーマット設定（オイラー角 + Angular Rate @ 100Hz）");
   userial.write(set_ahrs_format, sizeof(set_ahrs_format));
   delay(200);
   
-  // Step 4: 両方のストリームを有効化
+  // Step 4: AHRSストリームのみを有効化
   uint8_t enable_streams[] = {
     0x75, 0x65,  // Sync bytes
     0x0C,        // Command set
     0x05,        // Payload length
     0x11,        // Enable Data Stream
     0x01,        // Function selector
-    0x03,        // Both IMU(0x01) and AHRS(0x02) streams
+    0x02,        // AHRS(0x82) stream only
     0x01,        // Enable
     0x00, 0x00   // チェックサム
   };
@@ -252,14 +238,15 @@ void configureSensor() {
   enable_streams[sizeof(enable_streams) - 2] = checksum1;
   enable_streams[sizeof(enable_streams) - 1] = checksum2;
   
-  Serial.println("Step 4: IMU(0x80)とAHRS(0x82)ストリームを有効化");
+  Serial.println("Step 4: AHRS(0x82)ストリームのみを有効化");
   userial.write(enable_streams, sizeof(enable_streams));
   delay(200);
   
   Serial.println("✅ センサー設定完了！");
   Serial.println("期待される出力:");
-  Serial.println("  - 0x80パケット: ジャイロ(0x05)");
-  Serial.println("  - 0x82パケット: オイラー角(0x05)");
+  Serial.println("  - 0x82パケットのみ");
+  Serial.println("    - 0x05: オイラー角 (Roll/Pitch/Yaw)");
+  Serial.println("    - 0x10: Angular Rate (フィルター済み角速度)");
 }
 
 void readSensorData() {
@@ -378,6 +365,37 @@ void parseAHRSData(uint8_t* data, int length) {
         Serial.println(current_yaw * 180.0 / PI, 1);
       }
     }
+    // Angular Rate (0x10) - フィルター済み角速度
+    else if (field_descriptor == 0x0E && field_length >= 14) {
+      gyro_x = parseFloat(&data[idx + 2]);
+      gyro_y = parseFloat(&data[idx + 6]);
+      gyro_z = parseFloat(&data[idx + 10]);
+      
+      // デバッグ用（5秒ごとに表示）
+      static unsigned long last_gyro_debug = 0;
+      if (millis() - last_gyro_debug > 5000) {
+        Serial.print("[INFO] フィルター済み角速度取得: X=");
+        Serial.print(gyro_x, 4);
+        Serial.print(" Y=");
+        Serial.print(gyro_y, 4);
+        Serial.print(" Z=");
+        Serial.print(gyro_z, 4);
+        Serial.println(" rad/s");
+        last_gyro_debug = millis();
+      }
+    }
+    // デバッグ: 未知のフィールド
+    else {
+      static unsigned long last_unknown = 0;
+      if (millis() - last_unknown > 10000) {  // 10秒ごと
+        Serial.print("[DEBUG] AHRSパケット内のフィールド: 0x");
+        Serial.print(field_descriptor, HEX);
+        Serial.print(" (長さ=");
+        Serial.print(field_length);
+        Serial.println("バイト)");
+        last_unknown = millis();
+      }
+    }
     
     idx += field_length;
   }
@@ -410,7 +428,9 @@ void executePDControl() {
       Serial.print(current_pitch * 180.0 / PI, 1);
       Serial.print("° 誤差=");
       Serial.print(error * 180.0 / PI, 1);
-      Serial.print("° トルク=");
+      Serial.print("° 角速度=");
+      Serial.print(gyro_y, 3);
+      Serial.print("rad/s トルク=");
       Serial.print(motor_torque);
       Serial.println("mNm");
       last_print = millis();
@@ -430,8 +450,8 @@ void adjustPDGains() {
 void setupMotorTorqueMode() {
   // 制御モードをトルク制御に設定
   byte controlMode = PMX::ControlMode::Torque;
-  byte receiveMode = PMX::ReceiveDataOption::Full;
-  byte writeOpt = 1;  // トルクONでも強制書き込み
+  byte receiveMode = PMX::ReceiveDataOption::Position;//fullデータを要求からPositionのみに変更
+  byte writeOpt = 0;  // トルクONでも強制書き込み（1)から通常の書き込みモード（0）に変更した
   
   uint16_t flag = pmx.setControlMode(SERVO_ID, controlMode, writeOpt);
   if (DEBUG_MODE) {
@@ -461,9 +481,8 @@ void sendMotorTorque(int torque_value) {
   byte receiveMode = PMX::ReceiveDataOption::Position;
   long receiveData[8];
   
-  uint16_t flag = pmx.MotorWRITE(SERVO_ID, writeDatas, 1, 
-                                  receiveMode, receiveData, controlMode);
-  
+  uint16_t flag = pmx.MotorWRITE(SERVO_ID, writeDatas, 1, receiveMode, receiveData, controlMode);
+  //モータエラー
   if (DEBUG_MODE && flag != 0) {
     Serial.print("Motor write error: ");
     Serial.println(flag, HEX);
@@ -496,8 +515,14 @@ void handleKeyboardInput() {
         
       case 'c':
       case 'C':
+        Serial.println("※ SensorConnectで設定済みの場合、再設定は不要です");
+        Serial.println("本当に設定を送信する場合は 'f' キーを押してください");
+        break;
+        
+      case 'f':
+      case 'F':
         if (sensorConnected) {
-          Serial.println("センサー再設定...");
+          Serial.println("強制的にセンサー設定を送信...");
           configureSensor();
         } else {
           Serial.println("センサーが接続されていません");
@@ -532,6 +557,13 @@ void displayStatus() {
   Serial.print("° Yaw=");
   Serial.print(current_yaw * 180.0 / PI, 1);
   Serial.println("°");
+  Serial.print("角速度: X=");
+  Serial.print(gyro_x, 3);
+  Serial.print("rad/s Y=");
+  Serial.print(gyro_y, 3);
+  Serial.print("rad/s Z=");
+  Serial.print(gyro_z, 3);
+  Serial.println("rad/s");
 }
 
 void shiftBuffer() {
