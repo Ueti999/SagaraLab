@@ -17,7 +17,7 @@ USBSerial userial(myusb, 1);        // 3DM-CV7-AHRSセンサー用
 // ========== モータ制御設定 ==========
 const byte EN_PIN = 31;            // Serial1のENピン（手動制御に戻す）
 const long MOTOR_BAUDRATE = 115200;
-const int MOTOR_TIMEOUT = 1000;
+const int MOTOR_TIMEOUT = 200;     // 200msに短縮（エラー検出高速化）
 PmxHardSerial pmx(&Serial1, EN_PIN, MOTOR_BAUDRATE, MOTOR_TIMEOUT);
 const byte SERVO_ID = 0;           // サーボのID
 
@@ -35,7 +35,7 @@ const double Kp = 8.0;              // 比例ゲイン
 const double Kd = 0.3;              // 微分ゲイン
 double theta_target = 0.20;         // 目標角度[rad] (初期値約11.5度)
 const double CONTROL_PERIOD = 5;    // 制御周期[ms] (200Hz)
-const int TORQUE_LIMIT = 16000;    // トルクリミット[mNm]
+const int TORQUE_LIMIT = 6800;    // トルクリミット[mNm]
 
 // ========== 動力学パラメータ ==========
 const double m_torso = 0.450;      // 胴体質量[kg]
@@ -169,6 +169,7 @@ void setup() {
   // モータをトルク制御モードに設定
   setupMotorTorqueMode();
 
+  Serial.println("\n===== VERSION 2.1 - ENCODER FIX (度×100形式) =====");  // PMXは度×100で返す
   Serial.println("\n目標角度設定:");
   Serial.println("  '+' : 目標角度 +10度");
   Serial.println("  '-' : 目標角度 -10度");
@@ -854,21 +855,48 @@ void updateMotorState() {
   byte receiveMode = PMX::ReceiveDataOption::Position;  // エンコーダ位置を取得
   uint16_t flag = pmx.MotorREAD(SERVO_ID, receiveMode, receiveData, PMX::ControlMode::Torque);
 
-  // デバッグ: 読み取り結果を表示
-  if (DEBUG_MODE) {
-    static unsigned long last_debug = 0;
-    if (millis() - last_debug > 1000) {
-      Serial.print("[MOTOR READ] flag=");
-      Serial.print(flag, HEX);
-      Serial.print(" pos=");
-      Serial.print(receiveData[1]);
-      Serial.print(" status=");
-      Serial.println(receiveData[0]);
-      last_debug = millis();
-    }
+  // デバッグ: 読み取り結果を表示（常時有効）
+  static unsigned long last_debug = 0;
+  if (millis() - last_debug > 1000) {
+    Serial.print("[MOTOR READ] flag=");
+    Serial.print(flag, HEX);
+    Serial.print(" data[0]=");
+    Serial.print(receiveData[0]);
+    Serial.print(" data[1]=");
+    Serial.print(receiveData[1]);
+    Serial.print(" data[2]=");
+    Serial.print(receiveData[2]);
+    Serial.print(" data[3]=");
+    Serial.println(receiveData[3]);
+    last_debug = millis();
   }
 
   if (flag == 0) {
+    // ===== VERSION 2.1: PMXは度×100形式でデータを返す =====
+    int32_t position_deg_x100 = (int32_t)receiveData[1];  // 度×100形式
+
+    // 360度を超える値の正規化（累積角度の場合）
+    while (position_deg_x100 > 18000) position_deg_x100 -= 36000;   // 180度超えは-360度
+    while (position_deg_x100 < -18000) position_deg_x100 += 36000;  // -180度未満は+360度
+
+    // 度に変換
+    float angle_degrees = position_deg_x100 / 100.0;
+
+    // ラジアンに変換
+    theta_motor = angle_degrees * M_PI / 180.0;
+
+    // デバッグ出力（2秒ごと）
+    static unsigned long last_angle_debug = 0;
+    if (millis() - last_angle_debug > 2000) {
+      Serial.print(" [V2.1 モータ角度: ");
+      Serial.print(angle_degrees, 1);
+      Serial.print("度 / ");
+      Serial.print(theta_motor, 3);
+      Serial.print("rad]");
+      last_angle_debug = millis();
+    }
+
+    /* ===== 元のコード（VERSION 2.0）コメントアウト =====
     int raw_encoder = (int)receiveData[1];  // 現在位置（エンコーダ値）
 
     // エンコーダの境界処理（PMXの分解能に応じて調整が必要）
@@ -890,6 +918,7 @@ void updateMotorState() {
 
     // 角度への変換
     theta_motor = 2.0 * M_PI * offset_encoder / ENCODER_RESOLUTION;
+    ===== 元のコードここまで ===== */
 
     // 角速度の計算
     static unsigned long last_encoder_time = 0;
@@ -899,7 +928,7 @@ void updateMotorState() {
       omega_motor = (theta_motor - previous_theta_motor) / dt;
     }
 
-    previous_encoder = raw_encoder;
+    // previous_encoder = raw_encoder;  // V2.1では不要（度×100を直接使用）
     previous_theta_motor = theta_motor;
     last_encoder_time = now;
   }
@@ -960,15 +989,36 @@ void calculateLegState() {
 }
 
 void initializeEncoder() {
-  // エンコーダの初期値を取得
+  // モータ初期位置を取得
   long receiveData[8];
   byte receiveMode = PMX::ReceiveDataOption::Position;  // 位置情報を取得
   uint16_t flag = pmx.MotorREAD(SERVO_ID, receiveMode, receiveData, PMX::ControlMode::Torque);
 
   if (flag == 0) {
+    // VERSION 2.1: 度×100形式として解釈
+    int32_t initial_pos_x100 = (int32_t)receiveData[1];
+
+    // 360度超えの正規化
+    while (initial_pos_x100 > 18000) initial_pos_x100 -= 36000;
+    while (initial_pos_x100 < -18000) initial_pos_x100 += 36000;
+
+    float initial_degrees = initial_pos_x100 / 100.0;
+    theta_motor = initial_degrees * M_PI / 180.0;
+    previous_theta_motor = theta_motor;
+
+    Serial.print("[V2.1] モータ初期位置: ");
+    Serial.print(initial_degrees, 1);
+    Serial.print("度 (");
+    Serial.print(theta_motor, 3);
+    Serial.println("rad)");
+
+    /* 元のコード（V2.0）
     encoder_offset = (int)receiveData[1];
     previous_encoder = encoder_offset;
     Serial.print("エンコーダオフセット設定: ");
     Serial.println(encoder_offset);
+    */
+  } else {
+    Serial.println("[V2.1] モータ初期位置取得失敗");
   }
 }
