@@ -5,18 +5,17 @@
 #include <PmxHardSerialClass.h>
 #include <DataConvert.h>
 #include <math.h>
-#include <SD.h>
-#include <SPI.h>
+// SDカードはRaspberry Pi側で管理するため不要
 
 // ========== USBホスト設定 ==========
 USBHost myusb;
 USBHub hub1(myusb);
 USBHub hub2(myusb);
 USBSerial userial(myusb, 1);        // 3DM-CV7-AHRSセンサー用
-// USBSerial raspiserial(myusb, 2);    // Raspberry Pi Zero用（ハブ購入まで無効化）
+// Raspberry PiはUSBシリアル（Serial）で通信
 
 // ========== モータ制御設定 ==========
-const byte EN_PIN = 31;            // Serial1のENピン31→255にしてEN信号を無効化
+const byte EN_PIN = 31;            // Serial1のENピン（手動制御に戻す）
 const long MOTOR_BAUDRATE = 115200;
 const int MOTOR_TIMEOUT = 1000;
 PmxHardSerial pmx(&Serial1, EN_PIN, MOTOR_BAUDRATE, MOTOR_TIMEOUT);
@@ -29,7 +28,7 @@ uint8_t buffer[1024];
 int bufferIndex = 0;
 bool sensorConnected = false;
 bool sensorConfigured = false;
-// bool raspiConnected = false;         // Raspberry Pi接続状態（ハブ購入まで無効化）
+bool raspiConnected = false;         // Raspberry Pi接続状態（USBシリアル経由）
 
 // ========== PD制御パラメータ ==========
 const double Kp = 8.0;              // 比例ゲイン
@@ -98,60 +97,53 @@ float parseFloat(uint8_t* bytes);
 void calculateChecksum(uint8_t* data, int length, uint8_t* checksum1, uint8_t* checksum2);
 
 // ========== デバッグ設定 ==========
-const bool DEBUG_MODE = true;
-const bool SHOW_CONTROL_DATA = true;
-const bool ENABLE_RASPI_LOG = false;  // Raspberry Piへのデータ送信無効化（ハブ購入まで）
-const bool ENABLE_SD_LOG = false;     // SDカードロギング無効化（ハブ購入まで）
+const bool DEBUG_MODE = false;         // falseにしてデバッグ出力を無効化
+const bool SHOW_CONTROL_DATA = false;  // 制御データ表示も無効化
+const bool ENABLE_RASPI_LOG = true;   // Raspberry Piへのデータ送信有効化
+const bool ENABLE_SD_LOG = false;     // SDカードは使用しない（Raspberry Pi側で保存）
 
 // ========== データロギング設定 ==========
 unsigned long last_log_time = 0;
 const unsigned long LOG_PERIOD = 10;  // ログ送信周期[ms] (100Hz)
 static int last_torque_for_raspi = 0;  // Raspberry Pi送信用トルク値
 
-// ========== SDカード設定 ==========
-const int chipSelect = BUILTIN_SDCARD;  // Teensy 4.1の内蔵SDカードスロット
-File dataFile;
-String logFileName = "";
-bool sdCardReady = false;
+// SDカード機能はRaspberry Pi側で実装
 unsigned long sessionStartTime = 0;
 
 void setup() {
   Serial.begin(115200);
   
-  // 起動確認LED
+  // 起動確認LED（5回高速点滅 = プログラム開始）
   pinMode(LED_BUILTIN, OUTPUT);
-  for(int i = 0; i < 3; i++) {
+  for(int i = 0; i < 5; i++) {
     digitalWrite(LED_BUILTIN, HIGH);
     delay(100);
     digitalWrite(LED_BUILTIN, LOW);
     delay(100);
   }
-  
-  while (!Serial && millis() < 3000);
-  
-  Serial.println("\n===== AHRS + PMX PD制御システム起動 =====");
-  Serial.println("システム初期化中...");
+
+  // Serialの初期化待ち時間を短縮（Raspberry Pi接続用）
+  delay(500);
+
+  // 起動メッセージを無効化（CSVデータのみ送信）
+  // Serial.println("\n===== AHRS + PMX PD制御システム起動 =====");
+  // Serial.println("システム初期化中...");
   
   // USBホスト初期化
-  Serial.print("USBホスト初期化...");
+  // Serial.print("USBホスト初期化...");
   myusb.begin();
-  Serial.println("完了");
+  // Serial.println("完了");
   
-  // USBホスト接続確認
-  Serial.println("\n[重要] 接続確認:");
-  Serial.println("1. センサーはTeensy 4.1のUSBホストポート(5ピンヘッダー)に接続");
-  Serial.println("2. 通常のUSBポート(Type-B)ではありません");
-  Serial.println("3. USBホストの電源供給を確認");
-  Serial.println("   - VUSBとVINをジャンパーで接続が必要な場合があります");
-  Serial.println("\nコマンド:");
-  Serial.println("  'c' - センサーを設定");
-  Serial.println("  's' - 状態確認\n");
+  // USBホスト接続確認（デバッグ出力を無効化）
+  // 重要な設定情報はコメントとして残す
+  // 1. センサーはTeensy 4.1のUSBホストポート(5ピンヘッダー)に接続
+  // 2. 通常のUSBポート(Type-B)ではありません
   
   // モータ初期化
-  Serial.print("モータ通信初期化...");
+  // Serial.print("モータ通信初期化...");
   delay(3000);  // モータ起動待ち時間
   pmx.begin();
-  Serial.println("開始");
+  // Serial.println("開始");
 
   // モータ接続確認
   Serial.print("モータ接続テスト...");
@@ -177,11 +169,6 @@ void setup() {
   // モータをトルク制御モードに設定
   setupMotorTorqueMode();
 
-  // SDカード初期化（ハブ購入まで無効化）
-  // if (ENABLE_SD_LOG) {
-  //   initializeSDCard();
-  // }
-
   Serial.println("\n目標角度設定:");
   Serial.println("  '+' : 目標角度 +10度");
   Serial.println("  '-' : 目標角度 -10度");
@@ -203,6 +190,15 @@ void setup() {
 }
 
 void loop() {
+  // 動作確認LED（1秒ごとに点滅）
+  static unsigned long last_led_time = 0;
+  static bool led_state = false;
+  if (millis() - last_led_time > 1000) {
+    led_state = !led_state;
+    digitalWrite(LED_BUILTIN, led_state ? HIGH : LOW);
+    last_led_time = millis();
+  }
+
   // USBホストタスク
   myusb.Task();
   
@@ -214,8 +210,13 @@ void loop() {
     readSensorData();
   }
 
-  // Raspberry Pi接続管理（ハブ購入まで無効化）
-  // manageRaspberryPiConnection();
+  // Raspberry Pi接続管理（USBシリアル経由）
+  if (!raspiConnected && Serial) {
+    raspiConnected = true;
+    Serial.println("#CONNECTED:TEENSY");
+    Serial.println("# Raspberry Pi接続確立");
+    sessionStartTime = millis();
+  }
   
   // PD制御実行（10ms周期）
   unsigned long current_time = millis();
@@ -237,21 +238,15 @@ void loop() {
     last_display_time = current_time;
   }
 
-  // Raspberry Piへのデータ送信（10ms周期）- ハブ購入まで無効化
-  // if (ENABLE_RASPI_LOG && raspiConnected) {
-  //   if (current_time - last_log_time >= LOG_PERIOD) {
-  //     sendDataToRaspberryPi();
-  //     last_log_time = current_time;
-  //   }
-  // }
+  // Raspberry Piへのデータ送信（10ms周期）
+  if (ENABLE_RASPI_LOG && raspiConnected) {
+    if (current_time - last_log_time >= LOG_PERIOD) {
+      sendDataToRaspberryPi();
+      last_log_time = current_time;
+    }
+  }
 
-  // SDカードへのデータ保存（10ms周期）- ハブ購入まで無効化
-  // if (ENABLE_SD_LOG && sdCardReady) {
-  //   if (current_time - last_sd_log_time >= LOG_PERIOD) {
-  //     logDataToSDCard();
-  //     last_sd_log_time = current_time;
-  //   }
-  // }
+  // SDカード機能はRaspberry Pi側で実装
 }
 
 void manageSensorConnection() {
@@ -593,7 +588,7 @@ void setupMotorTorqueMode() {
 
   // 制御モードをトルク制御に設定
   byte controlMode = PMX::ControlMode::Torque;
-  byte receiveMode = PMX::ReceiveDataOption::Torque;  // トルク制御に合わせてTorqueに変更
+  byte receiveMode = PMX::ReceiveDataOption::Position;  // PMXManagerの設定（位置+トルク）に合わせる
   byte writeOpt = 1;  // トルクON状態でも強制書き込み
 
   uint16_t flag = pmx.setControlMode(SERVO_ID, controlMode, writeOpt);
@@ -624,7 +619,7 @@ void sendMotorTorque(int torque_value) {
   // トルク値をPMXフォーマットで送信
   long writeDatas[1] = {torque_value};
   byte controlMode = PMX::ControlMode::Torque;
-  byte receiveMode = PMX::ReceiveDataOption::Torque;  // トルク制御に合わせてTorqueに変更
+  byte receiveMode = PMX::ReceiveDataOption::Position;  // 位置データを受信（PMXManager設定に合わせる）
   long receiveData[8];
 
   uint16_t flag = pmx.MotorWRITE(SERVO_ID, writeDatas, 1, receiveMode, receiveData, controlMode);
@@ -708,72 +703,19 @@ void handleKeyboardInput() {
 
       case 'l':
       case 'L':
-        Serial.println("\n💾 SDカードログ状態:");
-        if (!sdCardReady) {
-          Serial.println("  SDカード: 未接続または初期化失敗");
-          Serial.println("  'r'キーでSDカードを再初期化してください");
-        } else {
-          Serial.print("  現在のログファイル: ");
-          Serial.println(logFileName);
-
-          // ファイルサイズを確認
-          if (SD.exists(logFileName.c_str())) {
-            File tempFile = SD.open(logFileName.c_str(), FILE_READ);
-            if (tempFile) {
-              unsigned long fileSize = tempFile.size();
-              Serial.print("  ファイルサイズ: ");
-              Serial.print(fileSize / 1024);
-              Serial.print(" KB (");
-              Serial.print(fileSize);
-              Serial.println(" bytes)");
-              tempFile.close();
-            }
-          }
-
-          // 記録時間
-          unsigned long recordTime = (millis() - sessionStartTime) / 1000;
-          Serial.print("  記録時間: ");
-          Serial.print(recordTime / 60);
-          Serial.print("分");
-          Serial.print(recordTime % 60);
-          Serial.println("秒");
-
-          // SDカード容量確認（Teensy 4.1では簡易的な表示）
-          Serial.println("\n  オプション:");
-          Serial.println("    'n' - 新しいログファイルを開始");
-          Serial.println("    'r' - SDカードを再初期化");
-        }
+        Serial.println("\n💾 ログ機能:");
+        Serial.println("  データロギングはRaspberry Pi側で実行されています");
+        Serial.println("  Raspberry Pi側のログファイルを確認してください");
         break;
 
       case 'n':
       case 'N':
-        if (sdCardReady) {
-          // 現在のファイルを閉じて新しいファイルを作成
-          Serial.println("新しいログファイルを作成中...");
-          sessionStartTime = millis();
-          int fileNum = 0;
-          do {
-            logFileName = "log_" + String(fileNum) + ".csv";
-            fileNum++;
-          } while (SD.exists(logFileName.c_str()));
-
-          dataFile = SD.open(logFileName.c_str(), FILE_WRITE);
-          if (dataFile) {
-            dataFile.println("timestamp,roll,pitch,yaw,gyro_x,gyro_y,gyro_z,theta_motor,theta_leg,dtheta_leg,walk_count,target,torque");
-            dataFile.close();
-            Serial.print("新しいログファイル作成: ");
-            Serial.println(logFileName);
-          }
-        } else {
-          Serial.println("SDカードが初期化されていません");
-        }
+        Serial.println("ログファイル作成はRaspberry Pi側で管理されています");
         break;
 
       case 'r':
       case 'R':
-        Serial.println("SDカード機能は現在無効化されています（ハブ購入まで）");
-        // sdCardReady = false;
-        // initializeSDCard();
+        Serial.println("SDカード機能は無効化されています（Raspberry Piでログ記録）");
         break;
     }
   }
@@ -861,75 +803,48 @@ void calculateChecksum(uint8_t* data, int length, uint8_t* checksum1, uint8_t* c
   *checksum2 = sum2;
 }
 
-// ========== Raspberry Piデータ送信関数（ハブ購入まで無効化） ==========
-/*
+// ラズパイにデータを送信（USBシリアル版）
 void sendDataToRaspberryPi() {
-  if (!raspiserial || !raspiConnected) return;
+  if (!raspiConnected) return;
 
   // CSV形式でデータ送信
   // Format: timestamp,roll,pitch,yaw,gyro_x,gyro_y,gyro_z,theta_motor,theta_leg,dtheta_leg,walk_count,target,torque
 
   // タイムスタンプ（ミリ秒）
-  raspiserial.print(millis());
-  raspiserial.print(",");
+  Serial.print(millis());
+  Serial.print(",");
 
   // IMUデータ
-  raspiserial.print(current_roll, 4);
-  raspiserial.print(",");
-  raspiserial.print(current_pitch, 4);
-  raspiserial.print(",");
-  raspiserial.print(current_yaw, 4);
-  raspiserial.print(",");
-  raspiserial.print(gyro_x, 4);
-  raspiserial.print(",");
-  raspiserial.print(gyro_y, 4);
-  raspiserial.print(",");
-  raspiserial.print(gyro_z, 4);
-  raspiserial.print(",");
+  Serial.print(current_roll, 4);
+  Serial.print(",");
+  Serial.print(current_pitch, 4);
+  Serial.print(",");
+  Serial.print(current_yaw, 4);
+  Serial.print(",");
+  Serial.print(gyro_x, 4);
+  Serial.print(",");
+  Serial.print(gyro_y, 4);
+  Serial.print(",");
+  Serial.print(gyro_z, 4);
+  Serial.print(",");
 
   // モータ・支持脚データ
-  raspiserial.print(theta_motor, 4);
-  raspiserial.print(",");
-  raspiserial.print(theta_leg, 4);
-  raspiserial.print(",");
-  raspiserial.print(dtheta_leg, 4);
-  raspiserial.print(",");
-  raspiserial.print(walk_count);
-  raspiserial.print(",");
-  raspiserial.print(theta_target, 4);
-  raspiserial.print(",");
-  raspiserial.println(last_torque_for_raspi);
+  Serial.print(theta_motor, 4);
+  Serial.print(",");
+  Serial.print(theta_leg, 4);
+  Serial.print(",");
+  Serial.print(dtheta_leg, 4);
+  Serial.print(",");
 
-  // Raspberry Piからのコマンド受信（オプション）
-  while (raspiserial.available()) {
-    String cmd = raspiserial.readStringUntil('\n');
-    if (cmd.startsWith("#CMD:")) {
-      processRaspberryPiCommand(cmd.substring(5));
-    }
-  }
-}
+  // 歩数カウント
+  Serial.print(walk_count);
+  Serial.print(",");
 
-void processRaspberryPiCommand(String cmd) {
-  // Raspberry Piからのコマンド処理
-  if (cmd == "START") {
-    Serial.println("[RasPi] ログ開始コマンド受信");
-  } else if (cmd == "STOP") {
-    Serial.println("[RasPi] ログ停止コマンド受信");
-  } else if (cmd.startsWith("TARGET:")) {
-    // 目標角度の変更
-    float new_target = cmd.substring(7).toFloat();
-    theta_target = new_target;
-    Serial.print("[RasPi] 目標角度変更: ");
-    Serial.println(new_target);
-  } else if (cmd == "STATUS") {
-    // ステータス要求
-    raspiserial.print("#STATUS:");
-    raspiserial.print(sensorConnected ? "1" : "0");
-    raspiserial.print(",");
-    raspiserial.println(walk_count);
-  }
+  // PD制御データ
+  Serial.print(theta_target, 4);
+  Serial.print(",");
+  Serial.println(last_torque_for_raspi);
 }
-*/
 
 // ========== モータエンコーダ関連関数 ==========
 void updateMotorState() {
@@ -1057,116 +972,3 @@ void initializeEncoder() {
     Serial.println(encoder_offset);
   }
 }
-
-// ========== SDカード関連関数 ==========
-void initializeSDCard() {
-  Serial.print("SDカード初期化...");
-
-  if (!SD.begin(chipSelect)) {
-    Serial.println("失敗");
-    Serial.println("  - SDカードが挿入されているか確認");
-    Serial.println("  - Teensy 4.1の内蔵スロットを使用");
-    sdCardReady = false;
-    return;
-  }
-
-  Serial.println("成功");
-
-  // セッション毎に新しいファイルを作成
-  sessionStartTime = millis();
-  int fileNum = 0;
-  do {
-    logFileName = "log_" + String(fileNum) + ".csv";
-    fileNum++;
-  } while (SD.exists(logFileName.c_str()));
-
-  // CSVヘッダーを書き込み
-  dataFile = SD.open(logFileName.c_str(), FILE_WRITE);
-  if (dataFile) {
-    dataFile.println("timestamp,roll,pitch,yaw,gyro_x,gyro_y,gyro_z,theta_motor,theta_leg,dtheta_leg,walk_count,target,torque");
-    dataFile.close();
-    Serial.print("ログファイル作成: ");
-    Serial.println(logFileName);
-    sdCardReady = true;
-  } else {
-    Serial.println("ファイル作成失敗");
-    sdCardReady = false;
-  }
-}
-
-void logDataToSDCard() {
-  if (!sdCardReady) return;
-
-  dataFile = SD.open(logFileName.c_str(), FILE_WRITE);
-  if (dataFile) {
-    // タイムスタンプ（セッション開始からの経過時間）
-    dataFile.print(millis() - sessionStartTime);
-    dataFile.print(",");
-
-    // IMUデータ
-    dataFile.print(current_roll, 4);
-    dataFile.print(",");
-    dataFile.print(current_pitch, 4);
-    dataFile.print(",");
-    dataFile.print(current_yaw, 4);
-    dataFile.print(",");
-    dataFile.print(gyro_x, 4);
-    dataFile.print(",");
-    dataFile.print(gyro_y, 4);
-    dataFile.print(",");
-    dataFile.print(gyro_z, 4);
-    dataFile.print(",");
-
-    // モータ・支持脚データ
-    dataFile.print(theta_motor, 4);
-    dataFile.print(",");
-    dataFile.print(theta_leg, 4);
-    dataFile.print(",");
-    dataFile.print(dtheta_leg, 4);
-    dataFile.print(",");
-    dataFile.print(walk_count);
-    dataFile.print(",");
-    dataFile.print(theta_target, 4);
-    dataFile.print(",");
-    dataFile.println(last_torque_for_raspi);
-
-    dataFile.close();
-
-    // 定期的に保存状態を表示
-    static unsigned long last_sd_status = 0;
-    if (millis() - last_sd_status > 5000) {
-      Serial.print("[SD] データ保存中: ");
-      Serial.println(logFileName);
-      last_sd_status = millis();
-    }
-  } else {
-    // ファイルアクセスエラー
-    static unsigned long last_error = 0;
-    if (millis() - last_error > 10000) {
-      Serial.println("[SD] ファイル書き込みエラー");
-      last_error = millis();
-    }
-  }
-}
-
-/*
-void manageRaspberryPiConnection() {
-  if (raspiserial) {
-    if (!raspiConnected) {
-      Serial.println("\n🔌 Raspberry Pi Zero検出！");
-      raspiserial.begin(115200);
-      raspiConnected = true;
-      delay(100);
-
-      // 接続確認メッセージ送信
-      raspiserial.println("#CONNECTED:TEENSY");
-      Serial.println("Raspberry Piへのデータロギング開始");
-    }
-  } else {
-    if (raspiConnected) {
-      Serial.println("Raspberry Pi Zero切断");
-      raspiConnected = false;
-    }
-  }
-}
-*/
